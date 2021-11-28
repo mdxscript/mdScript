@@ -1,0 +1,3406 @@
+proxies:
+  - {name: namex, server: domainx, port: portx, type: ssr, password: passx, obfs: obfsx, protocol: protocolx, udp: true, obfs-param: bugx}
+proxy-groups:
+  - name: CONFIG
+    type: select
+    proxies:
+      - namex
+  - name: GLOBAL UDP
+    type: select
+    proxies:
+      - namex
+  - name: NODE UDP
+    type: select
+    proxies:
+      - namex
+  - name: STABILIZER
+    type: select
+    proxies:
+      - namex
+script:
+rules:
+  - DOMAIN-SUFFIX,acl4.ssr,GLOBAL UDP
+  - DOMAIN-SUFFIX,ip6-localhost,GLOBAL UDP
+  - DOMAIN-SUFFIX,ip6-loopback,GLOBAL UDP
+  - DOMAIN-SUFFIX,local,GLOBAL UDP
+  - DOMAIN-SUFFIX,localhost,GLOBAL UDP
+  - IP-CIDR,10.0.0.0/8,GLOBAL UDP,no-resolve
+  - IP-CIDR,100.64.0.0/10,GLOBAL UDP,no-resolve
+  - IP-CIDR,127.0.0.0/8,GLOBAL UDP,no-resolve
+  - IP-CIDR,172.16.0.0/12,GLOBAL UDP,no-resolve
+  - IP-CIDR,192.168.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,198.18.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR6,::1/128,GLOBAL UDP,no-resolve
+  - IP-CIDR6,fc00::/7,GLOBAL UDP,no-resolve
+  - IP-CIDR6,fe80::/10,GLOBAL UDP,no-resolve
+  - IP-CIDR6,fd00::/8,GLOBAL UDP,no-resolve
+  - DOMAIN,router.asus.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,hiwifi.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,leike.cc,GLOBAL UDP
+  - DOMAIN-SUFFIX,miwifi.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,my.router,GLOBAL UDP
+  - DOMAIN-SUFFIX,p.to,GLOBAL UDP
+  - DOMAIN-SUFFIX,peiluyou.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,phicomm.me,GLOBAL UDP
+  - DOMAIN-SUFFIX,routerlogin.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,tendawifi.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,zte.home,GLOBAL UDP
+  - DOMAIN-SUFFIX,ol.epicgames.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,dizhensubao.getui.com,GLOBAL UDP
+  - DOMAIN,dl.google.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,googletraveladservices.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,tracking-protection.cdn.mozilla.net,GLOBAL UDP
+  - DOMAIN,origin-a.akamaihd.net,GLOBAL UDP
+  - DOMAIN,fairplay.l.qq.com,GLOBAL UDP
+  - DOMAIN,livew.l.qq.com,GLOBAL UDP
+  - DOMAIN,vd.l.qq.com,GLOBAL UDP
+  - DOMAIN,analytics.strava.com,GLOBAL UDP
+  - DOMAIN,msg.umeng.com,GLOBAL UDP
+  - DOMAIN,msg.umengcloud.com,GLOBAL UDP
+  - DOMAIN,tracking.miui.com,GLOBAL UDP
+  - DOMAIN,app.adjust.com,GLOBAL UDP
+  - DOMAIN,bdtj.tagtic.cn,GLOBAL UDP
+  - DOMAIN-KEYWORD,admarvel,NODE UDP
+  - DOMAIN-KEYWORD,admaster,NODE UDP
+  - DOMAIN-KEYWORD,adsage,NODE UDP
+  - DOMAIN-KEYWORD,adsensor,NODE UDP
+  - DOMAIN-KEYWORD,adservice,NODE UDP
+  - DOMAIN-KEYWORD,adsmogo,NODE UDP
+  - DOMAIN-KEYWORD,adsrvmedia,NODE UDP
+  - DOMAIN-KEYWORD,adsserving,NODE UDP
+  - DOMAIN-KEYWORD,adsystem,NODE UDP
+  - DOMAIN-KEYWORD,adwords,NODE UDP
+  - DOMAIN-KEYWORD,analysis,NODE UDP
+  - DOMAIN-KEYWORD,applovin,NODE UDP
+  - DOMAIN-KEYWORD,appsflyer,NODE UDP
+  - DOMAIN-KEYWORD,domob,NODE UDP
+  - DOMAIN-KEYWORD,duomeng,NODE UDP
+  - DOMAIN-KEYWORD,dwtrack,NODE UDP
+  - DOMAIN-KEYWORD,guanggao,NODE UDP
+  - DOMAIN-KEYWORD,omgmta,NODE UDP
+  - DOMAIN-KEYWORD,omniture,NODE UDP
+  - DOMAIN-KEYWORD,openx,NODE UDP
+  - DOMAIN-KEYWORD,partnerad,NODE UDP
+  - DOMAIN-KEYWORD,pingfore,NODE UDP
+  - DOMAIN-KEYWORD,socdm,NODE UDP
+  - DOMAIN-KEYWORD,supersonicads,NODE UDP
+  - DOMAIN-KEYWORD,usage,NODE UDP
+  - DOMAIN-KEYWORD,wlmonitor,NODE UDP
+  - DOMAIN-KEYWORD,zjtoolbar,NODE UDP
+  - DOMAIN-SUFFIX,admob.com,NODE UDP
+  - DOMAIN-SUFFIX,ads.gmodules.com,NODE UDP
+  - DOMAIN-SUFFIX,ads.google.com,NODE UDP
+  - DOMAIN-SUFFIX,adservice.google.com,NODE UDP
+  - DOMAIN-SUFFIX,afd.l.google.com,NODE UDP
+  - DOMAIN-SUFFIX,badad.googleplex.com,NODE UDP
+  - DOMAIN-SUFFIX,csi.gstatic.com,NODE UDP
+  - DOMAIN-SUFFIX,doubleclick.com,NODE UDP
+  - DOMAIN-SUFFIX,doubleclick.net,NODE UDP
+  - DOMAIN-SUFFIX,google-analytics.com,NODE UDP
+  - DOMAIN-SUFFIX,googleadservices.com,NODE UDP
+  - DOMAIN-SUFFIX,googleadsserving.cn,NODE UDP
+  - DOMAIN-SUFFIX,googlecommerce.com,NODE UDP
+  - DOMAIN-SUFFIX,googlesyndication.com,NODE UDP
+  - DOMAIN-SUFFIX,mobileads.google.com,NODE UDP
+  - DOMAIN-SUFFIX,pagead-tpc.l.google.com,NODE UDP
+  - DOMAIN-SUFFIX,pagead.google.com,NODE UDP
+  - DOMAIN-SUFFIX,pagead.l.google.com,NODE UDP
+  - DOMAIN-SUFFIX,service.urchin.com,NODE UDP
+  - DOMAIN-SUFFIX,09mk.cn,NODE UDP
+  - DOMAIN-SUFFIX,100peng.com,NODE UDP
+  - DOMAIN-SUFFIX,114la.com,NODE UDP
+  - DOMAIN-SUFFIX,123juzi.net,NODE UDP
+  - DOMAIN-SUFFIX,138lm.com,NODE UDP
+  - DOMAIN-SUFFIX,17un.com,NODE UDP
+  - DOMAIN-SUFFIX,2cnt.net,NODE UDP
+  - DOMAIN-SUFFIX,3gmimo.com,NODE UDP
+  - DOMAIN-SUFFIX,3xx.vip,NODE UDP
+  - DOMAIN-SUFFIX,51.la,NODE UDP
+  - DOMAIN-SUFFIX,51taifu.com,NODE UDP
+  - DOMAIN-SUFFIX,51yes.com,NODE UDP
+  - DOMAIN-SUFFIX,600ad.com,NODE UDP
+  - DOMAIN-SUFFIX,6dad.com,NODE UDP
+  - DOMAIN-SUFFIX,70e.com,NODE UDP
+  - DOMAIN-SUFFIX,86.cc,NODE UDP
+  - DOMAIN-SUFFIX,8le8le.com,NODE UDP
+  - DOMAIN-SUFFIX,8ox.cn,NODE UDP
+  - DOMAIN-SUFFIX,95558000.com,NODE UDP
+  - DOMAIN-SUFFIX,99click.com,NODE UDP
+  - DOMAIN-SUFFIX,99youmeng.com,NODE UDP
+  - DOMAIN-SUFFIX,a3p4.net,NODE UDP
+  - DOMAIN-SUFFIX,acs86.com,NODE UDP
+  - DOMAIN-SUFFIX,acxiom-online.com,NODE UDP
+  - DOMAIN-SUFFIX,ad-brix.com,NODE UDP
+  - DOMAIN-SUFFIX,ad-delivery.net,NODE UDP
+  - DOMAIN-SUFFIX,ad-locus.com,NODE UDP
+  - DOMAIN-SUFFIX,ad-plus.cn,NODE UDP
+  - DOMAIN-SUFFIX,ad7.com,NODE UDP
+  - DOMAIN-SUFFIX,adadapted.com,NODE UDP
+  - DOMAIN-SUFFIX,adadvisor.net,NODE UDP
+  - DOMAIN-SUFFIX,adap.tv,NODE UDP
+  - DOMAIN-SUFFIX,adbana.com,NODE UDP
+  - DOMAIN-SUFFIX,adchina.com,NODE UDP
+  - DOMAIN-SUFFIX,adcome.cn,NODE UDP
+  - DOMAIN-SUFFIX,ader.mobi,NODE UDP
+  - DOMAIN-SUFFIX,adform.net,NODE UDP
+  - DOMAIN-SUFFIX,adfuture.cn,NODE UDP
+  - DOMAIN-SUFFIX,adhouyi.com,NODE UDP
+  - DOMAIN-SUFFIX,adinfuse.com,NODE UDP
+  - DOMAIN-SUFFIX,adirects.com,NODE UDP
+  - DOMAIN-SUFFIX,adjust.io,NODE UDP
+  - DOMAIN-SUFFIX,adkmob.com,NODE UDP
+  - DOMAIN-SUFFIX,adlive.cn,NODE UDP
+  - DOMAIN-SUFFIX,adlocus.com,NODE UDP
+  - DOMAIN-SUFFIX,admaji.com,NODE UDP
+  - DOMAIN-SUFFIX,admin6.com,NODE UDP
+  - DOMAIN-SUFFIX,admon.cn,NODE UDP
+  - DOMAIN-SUFFIX,adnyg.com,NODE UDP
+  - DOMAIN-SUFFIX,adpolestar.net,NODE UDP
+  - DOMAIN-SUFFIX,adpro.cn,NODE UDP
+  - DOMAIN-SUFFIX,adpush.cn,NODE UDP
+  - DOMAIN-SUFFIX,adquan.com,NODE UDP
+  - DOMAIN-SUFFIX,adreal.cn,NODE UDP
+  - DOMAIN-SUFFIX,ads8.com,NODE UDP
+  - DOMAIN-SUFFIX,adsame.com,NODE UDP
+  - DOMAIN-SUFFIX,adsmogo.com,NODE UDP
+  - DOMAIN-SUFFIX,adsmogo.org,NODE UDP
+  - DOMAIN-SUFFIX,adsunflower.com,NODE UDP
+  - DOMAIN-SUFFIX,adsunion.com,NODE UDP
+  - DOMAIN-SUFFIX,adtrk.me,NODE UDP
+  - DOMAIN-SUFFIX,adups.com,NODE UDP
+  - DOMAIN-SUFFIX,aduu.cn,NODE UDP
+  - DOMAIN-SUFFIX,advertising.com,NODE UDP
+  - DOMAIN-SUFFIX,adview.cn,NODE UDP
+  - DOMAIN-SUFFIX,advmob.cn,NODE UDP
+  - DOMAIN-SUFFIX,adwetec.com,NODE UDP
+  - DOMAIN-SUFFIX,adwhirl.com,NODE UDP
+  - DOMAIN-SUFFIX,adwo.com,NODE UDP
+  - DOMAIN-SUFFIX,adxmi.com,NODE UDP
+  - DOMAIN-SUFFIX,adyun.com,NODE UDP
+  - DOMAIN-SUFFIX,adzerk.net,NODE UDP
+  - DOMAIN-SUFFIX,agrant.cn,NODE UDP
+  - DOMAIN-SUFFIX,agrantsem.com,NODE UDP
+  - DOMAIN-SUFFIX,aihaoduo.cn,NODE UDP
+  - DOMAIN-SUFFIX,ajapk.com,NODE UDP
+  - DOMAIN-SUFFIX,allyes.cn,NODE UDP
+  - DOMAIN-SUFFIX,allyes.com,NODE UDP
+  - DOMAIN-SUFFIX,amazon-adsystem.com,NODE UDP
+  - DOMAIN-SUFFIX,analysys.cn,NODE UDP
+  - DOMAIN-SUFFIX,angsrvr.com,NODE UDP
+  - DOMAIN-SUFFIX,anquan.org,NODE UDP
+  - DOMAIN-SUFFIX,anysdk.com,NODE UDP
+  - DOMAIN-SUFFIX,appadhoc.com,NODE UDP
+  - DOMAIN-SUFFIX,appads.com,NODE UDP
+  - DOMAIN-SUFFIX,appboy.com,NODE UDP
+  - DOMAIN-SUFFIX,appdriver.cn,NODE UDP
+  - DOMAIN-SUFFIX,appjiagu.com,NODE UDP
+  - DOMAIN-SUFFIX,applifier.com,NODE UDP
+  - DOMAIN-SUFFIX,appsflyer.com,NODE UDP
+  - DOMAIN-SUFFIX,atdmt.com,NODE UDP
+  - DOMAIN-SUFFIX,baifendian.com,NODE UDP
+  - DOMAIN-SUFFIX,banmamedia.com,NODE UDP
+  - DOMAIN-SUFFIX,baoyatu.cc,NODE UDP
+  - DOMAIN-SUFFIX,baycode.cn,NODE UDP
+  - DOMAIN-SUFFIX,bayimob.com,NODE UDP
+  - DOMAIN-SUFFIX,behe.com,NODE UDP
+  - DOMAIN-SUFFIX,bfshan.cn,NODE UDP
+  - DOMAIN-SUFFIX,biddingos.com,NODE UDP
+  - DOMAIN-SUFFIX,biddingx.com,NODE UDP
+  - DOMAIN-SUFFIX,bjvvqu.cn,NODE UDP
+  - DOMAIN-SUFFIX,bjxiaohua.com,NODE UDP
+  - DOMAIN-SUFFIX,bloggerads.net,NODE UDP
+  - DOMAIN-SUFFIX,branch.io,NODE UDP
+  - DOMAIN-SUFFIX,bsdev.cn,NODE UDP
+  - DOMAIN-SUFFIX,bshare.cn,NODE UDP
+  - DOMAIN-SUFFIX,btyou.com,NODE UDP
+  - DOMAIN-SUFFIX,bugtags.com,NODE UDP
+  - DOMAIN-SUFFIX,buysellads.com,NODE UDP
+  - DOMAIN-SUFFIX,c0563.com,NODE UDP
+  - DOMAIN-SUFFIX,cacafly.com,NODE UDP
+  - DOMAIN-SUFFIX,casee.cn,NODE UDP
+  - DOMAIN-SUFFIX,cdnmaster.com,NODE UDP
+  - DOMAIN-SUFFIX,chance-ad.com,NODE UDP
+  - DOMAIN-SUFFIX,chanet.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,chartbeat.com,NODE UDP
+  - DOMAIN-SUFFIX,chartboost.com,NODE UDP
+  - DOMAIN-SUFFIX,chengadx.com,NODE UDP
+  - DOMAIN-SUFFIX,chmae.com,NODE UDP
+  - DOMAIN-SUFFIX,clickadu.com,NODE UDP
+  - DOMAIN-SUFFIX,clicki.cn,NODE UDP
+  - DOMAIN-SUFFIX,clicktracks.com,NODE UDP
+  - DOMAIN-SUFFIX,clickzs.com,NODE UDP
+  - DOMAIN-SUFFIX,cloudmobi.net,NODE UDP
+  - DOMAIN-SUFFIX,cmcore.com,NODE UDP
+  - DOMAIN-SUFFIX,cnxad.com,NODE UDP
+  - DOMAIN-SUFFIX,cnzz.com,NODE UDP
+  - DOMAIN-SUFFIX,cnzzlink.com,NODE UDP
+  - DOMAIN-SUFFIX,cocounion.com,NODE UDP
+  - DOMAIN-SUFFIX,coocaatv.com,NODE UDP
+  - DOMAIN-SUFFIX,cooguo.com,NODE UDP
+  - DOMAIN-SUFFIX,coolguang.com,NODE UDP
+  - DOMAIN-SUFFIX,coremetrics.com,NODE UDP
+  - DOMAIN-SUFFIX,cpmchina.co,NODE UDP
+  - DOMAIN-SUFFIX,cpx24.com,NODE UDP
+  - DOMAIN-SUFFIX,crasheye.cn,NODE UDP
+  - DOMAIN-SUFFIX,crosschannel.com,NODE UDP
+  - DOMAIN-SUFFIX,ctrmi.com,NODE UDP
+  - DOMAIN-SUFFIX,customer-security.online,NODE UDP
+  - DOMAIN-SUFFIX,daoyoudao.com,NODE UDP
+  - DOMAIN-SUFFIX,datouniao.com,NODE UDP
+  - DOMAIN-SUFFIX,ddapp.cn,NODE UDP
+  - DOMAIN-SUFFIX,dianjoy.com,NODE UDP
+  - DOMAIN-SUFFIX,dianru.com,NODE UDP
+  - DOMAIN-SUFFIX,disqusads.com,NODE UDP
+  - DOMAIN-SUFFIX,domob.cn,NODE UDP
+  - DOMAIN-SUFFIX,domob.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,domob.org,NODE UDP
+  - DOMAIN-SUFFIX,dotmore.com.tw,NODE UDP
+  - DOMAIN-SUFFIX,doubleverify.com,NODE UDP
+  - DOMAIN-SUFFIX,doudouguo.com,NODE UDP
+  - DOMAIN-SUFFIX,doumob.com,NODE UDP
+  - DOMAIN-SUFFIX,duanat.com,NODE UDP
+  - DOMAIN-SUFFIX,duiba.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,duomeng.cn,NODE UDP
+  - DOMAIN-SUFFIX,dxpmedia.com,NODE UDP
+  - DOMAIN-SUFFIX,edigitalsurvey.com,NODE UDP
+  - DOMAIN-SUFFIX,eduancm.com,NODE UDP
+  - DOMAIN-SUFFIX,emarbox.com,NODE UDP
+  - DOMAIN-SUFFIX,epsilon.com,NODE UDP
+  - DOMAIN-SUFFIX,exosrv.com,NODE UDP
+  - DOMAIN-SUFFIX,fancyapi.com,NODE UDP
+  - DOMAIN-SUFFIX,feitian001.com,NODE UDP
+  - DOMAIN-SUFFIX,feixin2.com,NODE UDP
+  - DOMAIN-SUFFIX,flashtalking.com,NODE UDP
+  - DOMAIN-SUFFIX,fraudmetrix.cn,NODE UDP
+  - DOMAIN-SUFFIX,g1.tagtic.cn,NODE UDP
+  - DOMAIN-SUFFIX,gentags.net,NODE UDP
+  - DOMAIN-SUFFIX,gepush.com,NODE UDP
+  - DOMAIN-SUFFIX,getui.com,NODE UDP
+  - DOMAIN-SUFFIX,glispa.com,NODE UDP
+  - DOMAIN-SUFFIX,go-mpulse,NODE UDP
+  - DOMAIN-SUFFIX,go-mpulse.net,NODE UDP
+  - DOMAIN-SUFFIX,godloveme.cn,NODE UDP
+  - DOMAIN-SUFFIX,gridsum.com,NODE UDP
+  - DOMAIN-SUFFIX,gridsumdissector.cn,NODE UDP
+  - DOMAIN-SUFFIX,gridsumdissector.com,NODE UDP
+  - DOMAIN-SUFFIX,growingio.com,NODE UDP
+  - DOMAIN-SUFFIX,guohead.com,NODE UDP
+  - DOMAIN-SUFFIX,guomob.com,NODE UDP
+  - DOMAIN-SUFFIX,haoghost.com,NODE UDP
+  - DOMAIN-SUFFIX,hivecn.cn,NODE UDP
+  - DOMAIN-SUFFIX,hypers.com,NODE UDP
+  - DOMAIN-SUFFIX,icast.cn,NODE UDP
+  - DOMAIN-SUFFIX,igexin.com,NODE UDP
+  - DOMAIN-SUFFIX,il8r.com,NODE UDP
+  - DOMAIN-SUFFIX,imageter.com,NODE UDP
+  - DOMAIN-SUFFIX,immob.cn,NODE UDP
+  - DOMAIN-SUFFIX,inad.com,NODE UDP
+  - DOMAIN-SUFFIX,inmobi.cn,NODE UDP
+  - DOMAIN-SUFFIX,inmobi.net,NODE UDP
+  - DOMAIN-SUFFIX,inmobicdn.cn,NODE UDP
+  - DOMAIN-SUFFIX,inmobicdn.net,NODE UDP
+  - DOMAIN-SUFFIX,innity.com,NODE UDP
+  - DOMAIN-SUFFIX,instabug.com,NODE UDP
+  - DOMAIN-SUFFIX,intely.cn,NODE UDP
+  - DOMAIN-SUFFIX,iperceptions.com,NODE UDP
+  - DOMAIN-SUFFIX,ipinyou.com,NODE UDP
+  - DOMAIN-SUFFIX,irs01.com,NODE UDP
+  - DOMAIN-SUFFIX,irs01.net,NODE UDP
+  - DOMAIN-SUFFIX,irs09.com,NODE UDP
+  - DOMAIN-SUFFIX,istreamsche.com,NODE UDP
+  - DOMAIN-SUFFIX,jesgoo.com,NODE UDP
+  - DOMAIN-SUFFIX,jiaeasy.net,NODE UDP
+  - DOMAIN-SUFFIX,jiguang.cn,NODE UDP
+  - DOMAIN-SUFFIX,jimdo.com,NODE UDP
+  - DOMAIN-SUFFIX,jisucn.com,NODE UDP
+  - DOMAIN-SUFFIX,jmgehn.cn,NODE UDP
+  - DOMAIN-SUFFIX,jpush.cn,NODE UDP
+  - DOMAIN-SUFFIX,jusha.com,NODE UDP
+  - DOMAIN-SUFFIX,juzi.cn,NODE UDP
+  - DOMAIN-SUFFIX,juzilm.com,NODE UDP
+  - DOMAIN-SUFFIX,kejet.com,NODE UDP
+  - DOMAIN-SUFFIX,kejet.net,NODE UDP
+  - DOMAIN-SUFFIX,keydot.net,NODE UDP
+  - DOMAIN-SUFFIX,keyrun.cn,NODE UDP
+  - DOMAIN-SUFFIX,kmd365.com,NODE UDP
+  - DOMAIN-SUFFIX,krux.net,NODE UDP
+  - DOMAIN-SUFFIX,lnk0.com,NODE UDP
+  - DOMAIN-SUFFIX,lnk8.cn,NODE UDP
+  - DOMAIN-SUFFIX,localytics.com,NODE UDP
+  - DOMAIN-SUFFIX,lomark.cn,NODE UDP
+  - DOMAIN-SUFFIX,lotuseed.com,NODE UDP
+  - DOMAIN-SUFFIX,lrswl.com,NODE UDP
+  - DOMAIN-SUFFIX,lufax.com,NODE UDP
+  - DOMAIN-SUFFIX,madhouse.cn,NODE UDP
+  - DOMAIN-SUFFIX,madmini.com,NODE UDP
+  - DOMAIN-SUFFIX,madserving.com,NODE UDP
+  - DOMAIN-SUFFIX,magicwindow.cn,NODE UDP
+  - DOMAIN-SUFFIX,mathtag.com,NODE UDP
+  - DOMAIN-SUFFIX,maysunmedia.com,NODE UDP
+  - DOMAIN-SUFFIX,mbai.cn,NODE UDP
+  - DOMAIN-SUFFIX,mediaplex.com,NODE UDP
+  - DOMAIN-SUFFIX,mediav.com,NODE UDP
+  - DOMAIN-SUFFIX,megajoy.com,NODE UDP
+  - DOMAIN-SUFFIX,meiqia.com,NODE UDP
+  - DOMAIN-SUFFIX,mgogo.com,NODE UDP
+  - DOMAIN-SUFFIX,miaozhen.com,NODE UDP
+  - DOMAIN-SUFFIX,microad-cn.com,NODE UDP
+  - DOMAIN-SUFFIX,miidi.net,NODE UDP
+  - DOMAIN-SUFFIX,mijifen.com,NODE UDP
+  - DOMAIN-SUFFIX,mixpanel.com,NODE UDP
+  - DOMAIN-SUFFIX,mjmobi.com,NODE UDP
+  - DOMAIN-SUFFIX,mng-ads.com,NODE UDP
+  - DOMAIN-SUFFIX,moad.cn,NODE UDP
+  - DOMAIN-SUFFIX,moatads.com,NODE UDP
+  - DOMAIN-SUFFIX,mobaders.com,NODE UDP
+  - DOMAIN-SUFFIX,mobclix.com,NODE UDP
+  - DOMAIN-SUFFIX,mobgi.com,NODE UDP
+  - DOMAIN-SUFFIX,mobisage.cn,NODE UDP
+  - DOMAIN-SUFFIX,mobvista.com,NODE UDP
+  - DOMAIN-SUFFIX,mopub.com,NODE UDP
+  - DOMAIN-SUFFIX,moquanad.com,NODE UDP
+  - DOMAIN-SUFFIX,mpush.cn,NODE UDP
+  - DOMAIN-SUFFIX,mxpnl.com,NODE UDP
+  - DOMAIN-SUFFIX,myhug.cn,NODE UDP
+  - DOMAIN-SUFFIX,mzy2014.com,NODE UDP
+  - DOMAIN-SUFFIX,networkbench.com,NODE UDP
+  - DOMAIN-SUFFIX,ninebox.cn,NODE UDP
+  - DOMAIN-SUFFIX,ntalker.com,NODE UDP
+  - DOMAIN-SUFFIX,nylalobghyhirgh.com,NODE UDP
+  - DOMAIN-SUFFIX,o2omobi.com,NODE UDP
+  - DOMAIN-SUFFIX,oadz.com,NODE UDP
+  - DOMAIN-SUFFIX,oneapm.com,NODE UDP
+  - DOMAIN-SUFFIX,onetad.com,NODE UDP
+  - DOMAIN-SUFFIX,optaim.com,NODE UDP
+  - DOMAIN-SUFFIX,optimix.asia,NODE UDP
+  - DOMAIN-SUFFIX,optimix.cn,NODE UDP
+  - DOMAIN-SUFFIX,optimizelyapis.com,NODE UDP
+  - DOMAIN-SUFFIX,overture.com,NODE UDP
+  - DOMAIN-SUFFIX,p0y.cn,NODE UDP
+  - DOMAIN-SUFFIX,pagechoice.net,NODE UDP
+  - DOMAIN-SUFFIX,pingdom.net,NODE UDP
+  - DOMAIN-SUFFIX,plugrush.com,NODE UDP
+  - DOMAIN-SUFFIX,popin.cc,NODE UDP
+  - DOMAIN-SUFFIX,pro.cn,NODE UDP
+  - DOMAIN-SUFFIX,publicidad.net,NODE UDP
+  - DOMAIN-SUFFIX,publicidad.tv,NODE UDP
+  - DOMAIN-SUFFIX,pubmatic.com,NODE UDP
+  - DOMAIN-SUFFIX,pubnub.com,NODE UDP
+  - DOMAIN-SUFFIX,qcl777.com,NODE UDP
+  - DOMAIN-SUFFIX,qiyou.com,NODE UDP
+  - DOMAIN-SUFFIX,qtmojo.com,NODE UDP
+  - DOMAIN-SUFFIX,quantcount.com,NODE UDP
+  - DOMAIN-SUFFIX,qucaigg.com,NODE UDP
+  - DOMAIN-SUFFIX,qumi.com,NODE UDP
+  - DOMAIN-SUFFIX,qxxys.com,NODE UDP
+  - DOMAIN-SUFFIX,reachmax.cn,NODE UDP
+  - DOMAIN-SUFFIX,responsys.net,NODE UDP
+  - DOMAIN-SUFFIX,revsci.net,NODE UDP
+  - DOMAIN-SUFFIX,rlcdn.com,NODE UDP
+  - DOMAIN-SUFFIX,rtbasia.com,NODE UDP
+  - DOMAIN-SUFFIX,sanya1.com,NODE UDP
+  - DOMAIN-SUFFIX,scupio.com,NODE UDP
+  - DOMAIN-SUFFIX,serving-sys.com,NODE UDP
+  - DOMAIN-SUFFIX,shuiguo.com,NODE UDP
+  - DOMAIN-SUFFIX,shuzilm.cn,NODE UDP
+  - DOMAIN-SUFFIX,similarweb.com,NODE UDP
+  - DOMAIN-SUFFIX,sitemeter.com,NODE UDP
+  - DOMAIN-SUFFIX,sitescout.com,NODE UDP
+  - DOMAIN-SUFFIX,sitetag.us,NODE UDP
+  - DOMAIN-SUFFIX,smartmad.com,NODE UDP
+  - DOMAIN-SUFFIX,social-touch.com,NODE UDP
+  - DOMAIN-SUFFIX,somecoding.com,NODE UDP
+  - DOMAIN-SUFFIX,sponsorpay.com,NODE UDP
+  - DOMAIN-SUFFIX,stargame.com,NODE UDP
+  - DOMAIN-SUFFIX,stg8.com,NODE UDP
+  - DOMAIN-SUFFIX,switchadhub.com,NODE UDP
+  - DOMAIN-SUFFIX,sycbbs.com,NODE UDP
+  - DOMAIN-SUFFIX,synacast.com,NODE UDP
+  - DOMAIN-SUFFIX,sysdig.com,NODE UDP
+  - DOMAIN-SUFFIX,talkingdata.com,NODE UDP
+  - DOMAIN-SUFFIX,talkingdata.net,NODE UDP
+  - DOMAIN-SUFFIX,tansuotv.com,NODE UDP
+  - DOMAIN-SUFFIX,tanv.com,NODE UDP
+  - DOMAIN-SUFFIX,tanx.com,NODE UDP
+  - DOMAIN-SUFFIX,tapjoy.cn,NODE UDP
+  - DOMAIN-SUFFIX,th7.cn,NODE UDP
+  - DOMAIN-SUFFIX,thoughtleadr.com,NODE UDP
+  - DOMAIN-SUFFIX,tianmidian.com,NODE UDP
+  - DOMAIN-SUFFIX,tiqcdn.com,NODE UDP
+  - DOMAIN-SUFFIX,touclick.com,NODE UDP
+  - DOMAIN-SUFFIX,trafficjam.cn,NODE UDP
+  - DOMAIN-SUFFIX,trafficmp.com,NODE UDP
+  - DOMAIN-SUFFIX,tuia.cn,NODE UDP
+  - DOMAIN-SUFFIX,ueadlian.com,NODE UDP
+  - DOMAIN-SUFFIX,uerzyr.cn,NODE UDP
+  - DOMAIN-SUFFIX,ugdtimg.com,NODE UDP
+  - DOMAIN-SUFFIX,ugvip.com,NODE UDP
+  - DOMAIN-SUFFIX,ujian.cc,NODE UDP
+  - DOMAIN-SUFFIX,ukeiae.com,NODE UDP
+  - DOMAIN-SUFFIX,umeng.co,NODE UDP
+  - DOMAIN-SUFFIX,umeng.com,NODE UDP
+  - DOMAIN-SUFFIX,umtrack.com,NODE UDP
+  - DOMAIN-SUFFIX,unimhk.com,NODE UDP
+  - DOMAIN-SUFFIX,union-wifi.com,NODE UDP
+  - DOMAIN-SUFFIX,union001.com,NODE UDP
+  - DOMAIN-SUFFIX,unionsy.com,NODE UDP
+  - DOMAIN-SUFFIX,unlitui.com,NODE UDP
+  - DOMAIN-SUFFIX,uri6.com,NODE UDP
+  - DOMAIN-SUFFIX,ushaqi.com,NODE UDP
+  - DOMAIN-SUFFIX,usingde.com,NODE UDP
+  - DOMAIN-SUFFIX,uuzu.com,NODE UDP
+  - DOMAIN-SUFFIX,uyunad.com,NODE UDP
+  - DOMAIN-SUFFIX,vamaker.com,NODE UDP
+  - DOMAIN-SUFFIX,voiceads.cn,NODE UDP
+  - DOMAIN-SUFFIX,voiceads.com,NODE UDP
+  - DOMAIN-SUFFIX,vpon.com,NODE UDP
+  - DOMAIN-SUFFIX,vungle.cn,NODE UDP
+  - DOMAIN-SUFFIX,vungle.com,NODE UDP
+  - DOMAIN-SUFFIX,waps.cn,NODE UDP
+  - DOMAIN-SUFFIX,wapx.cn,NODE UDP
+  - DOMAIN-SUFFIX,webterren.com,NODE UDP
+  - DOMAIN-SUFFIX,whpxy.com,NODE UDP
+  - DOMAIN-SUFFIX,winads.cn,NODE UDP
+  - DOMAIN-SUFFIX,winasdaq.com,NODE UDP
+  - DOMAIN-SUFFIX,wiyun.com,NODE UDP
+  - DOMAIN-SUFFIX,wooboo.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,wqmobile.com,NODE UDP
+  - DOMAIN-SUFFIX,wrating.com,NODE UDP
+  - DOMAIN-SUFFIX,wumii.cn,NODE UDP
+  - DOMAIN-SUFFIX,xcy8.com,NODE UDP
+  - DOMAIN-SUFFIX,xdrig.com,NODE UDP
+  - DOMAIN-SUFFIX,xiaozhen.com,NODE UDP
+  - DOMAIN-SUFFIX,xibao100.com,NODE UDP
+  - DOMAIN-SUFFIX,xtgreat.com,NODE UDP
+  - DOMAIN-SUFFIX,xy.com,NODE UDP
+  - DOMAIN-SUFFIX,yandui.com,NODE UDP
+  - DOMAIN-SUFFIX,yigao.com,NODE UDP
+  - DOMAIN-SUFFIX,yijifen.com,NODE UDP
+  - DOMAIN-SUFFIX,yinooo.com,NODE UDP
+  - DOMAIN-SUFFIX,yiqifa.com,NODE UDP
+  - DOMAIN-SUFFIX,yiwk.com,NODE UDP
+  - DOMAIN-SUFFIX,ylunion.com,NODE UDP
+  - DOMAIN-SUFFIX,ymapp.com,NODE UDP
+  - DOMAIN-SUFFIX,ymcdn.cn,NODE UDP
+  - DOMAIN-SUFFIX,yongyuelm.com,NODE UDP
+  - DOMAIN-SUFFIX,yooli.com,NODE UDP
+  - DOMAIN-SUFFIX,youmi.net,NODE UDP
+  - DOMAIN-SUFFIX,youxiaoad.com,NODE UDP
+  - DOMAIN-SUFFIX,yoyi.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,yoyi.tv,NODE UDP
+  - DOMAIN-SUFFIX,yrxmr.com,NODE UDP
+  - DOMAIN-SUFFIX,ysjwj.com,NODE UDP
+  - DOMAIN-SUFFIX,yunjiasu.com,NODE UDP
+  - DOMAIN-SUFFIX,yunpifu.cn,NODE UDP
+  - DOMAIN-SUFFIX,zampdsp.com,NODE UDP
+  - DOMAIN-SUFFIX,zamplus.com,NODE UDP
+  - DOMAIN-SUFFIX,zcdsp.com,NODE UDP
+  - DOMAIN-SUFFIX,zhidian3g.cn,NODE UDP
+  - DOMAIN-SUFFIX,zhiziyun.com,NODE UDP
+  - DOMAIN-SUFFIX,zhjfad.com,NODE UDP
+  - DOMAIN-SUFFIX,zqzxz.com,NODE UDP
+  - DOMAIN-SUFFIX,zzsx8.com,NODE UDP
+  - DOMAIN-SUFFIX,acuityplatform.com,NODE UDP
+  - DOMAIN-SUFFIX,ad-stir.com,NODE UDP
+  - DOMAIN-SUFFIX,ad-survey.com,NODE UDP
+  - DOMAIN-SUFFIX,ad4game.com,NODE UDP
+  - DOMAIN-SUFFIX,adcloud.jp,NODE UDP
+  - DOMAIN-SUFFIX,adcolony.com,NODE UDP
+  - DOMAIN-SUFFIX,addthis.com,NODE UDP
+  - DOMAIN-SUFFIX,adfurikun.jp,NODE UDP
+  - DOMAIN-SUFFIX,adhigh.net,NODE UDP
+  - DOMAIN-SUFFIX,adhood.com,NODE UDP
+  - DOMAIN-SUFFIX,adinall.com,NODE UDP
+  - DOMAIN-SUFFIX,adition.com,NODE UDP
+  - DOMAIN-SUFFIX,adk2x.com,NODE UDP
+  - DOMAIN-SUFFIX,admarket.mobi,NODE UDP
+  - DOMAIN-SUFFIX,admarvel.com,NODE UDP
+  - DOMAIN-SUFFIX,admedia.com,NODE UDP
+  - DOMAIN-SUFFIX,adnxs.com,NODE UDP
+  - DOMAIN-SUFFIX,adotmob.com,NODE UDP
+  - DOMAIN-SUFFIX,adperium.com,NODE UDP
+  - DOMAIN-SUFFIX,adriver.ru,NODE UDP
+  - DOMAIN-SUFFIX,adroll.com,NODE UDP
+  - DOMAIN-SUFFIX,adsco.re,NODE UDP
+  - DOMAIN-SUFFIX,adservice.com,NODE UDP
+  - DOMAIN-SUFFIX,adsrvr.org,NODE UDP
+  - DOMAIN-SUFFIX,adsymptotic.com,NODE UDP
+  - DOMAIN-SUFFIX,adtaily.com,NODE UDP
+  - DOMAIN-SUFFIX,adtech.de,NODE UDP
+  - DOMAIN-SUFFIX,adtechjp.com,NODE UDP
+  - DOMAIN-SUFFIX,adtechus.com,NODE UDP
+  - DOMAIN-SUFFIX,airpush.com,NODE UDP
+  - DOMAIN-SUFFIX,am15.net,NODE UDP
+  - DOMAIN-SUFFIX,amobee.com,NODE UDP
+  - DOMAIN-SUFFIX,appier.net,NODE UDP
+  - DOMAIN-SUFFIX,applift.com,NODE UDP
+  - DOMAIN-SUFFIX,apsalar.com,NODE UDP
+  - DOMAIN-SUFFIX,atas.io,NODE UDP
+  - DOMAIN-SUFFIX,awempire.com,NODE UDP
+  - DOMAIN-SUFFIX,axonix.com,NODE UDP
+  - DOMAIN-SUFFIX,beintoo.com,NODE UDP
+  - DOMAIN-SUFFIX,bepolite.eu,NODE UDP
+  - DOMAIN-SUFFIX,bidtheatre.com,NODE UDP
+  - DOMAIN-SUFFIX,bidvertiser.com,NODE UDP
+  - DOMAIN-SUFFIX,blismedia.com,NODE UDP
+  - DOMAIN-SUFFIX,brucelead.com,NODE UDP
+  - DOMAIN-SUFFIX,bttrack.com,NODE UDP
+  - DOMAIN-SUFFIX,casalemedia.com,NODE UDP
+  - DOMAIN-SUFFIX,celtra.com,NODE UDP
+  - DOMAIN-SUFFIX,channeladvisor.com,NODE UDP
+  - DOMAIN-SUFFIX,connexity.net,NODE UDP
+  - DOMAIN-SUFFIX,criteo.com,NODE UDP
+  - DOMAIN-SUFFIX,criteo.net,NODE UDP
+  - DOMAIN-SUFFIX,csbew.com,NODE UDP
+  - DOMAIN-SUFFIX,demdex.net,NODE UDP
+  - DOMAIN-SUFFIX,directrev.com,NODE UDP
+  - DOMAIN-SUFFIX,dumedia.ru,NODE UDP
+  - DOMAIN-SUFFIX,effectivemeasure.com,NODE UDP
+  - DOMAIN-SUFFIX,effectivemeasure.net,NODE UDP
+  - DOMAIN-SUFFIX,eqads.com,NODE UDP
+  - DOMAIN-SUFFIX,everesttech.net,NODE UDP
+  - DOMAIN-SUFFIX,exoclick.com,NODE UDP
+  - DOMAIN-SUFFIX,extend.tv,NODE UDP
+  - DOMAIN-SUFFIX,eyereturn.com,NODE UDP
+  - DOMAIN-SUFFIX,fastapi.net,NODE UDP
+  - DOMAIN-SUFFIX,fastclick.com,NODE UDP
+  - DOMAIN-SUFFIX,fastclick.net,NODE UDP
+  - DOMAIN-SUFFIX,flurry.com,NODE UDP
+  - DOMAIN-SUFFIX,gosquared.com,NODE UDP
+  - DOMAIN-SUFFIX,gtags.net,NODE UDP
+  - DOMAIN-SUFFIX,heyzap.com,NODE UDP
+  - DOMAIN-SUFFIX,histats.com,NODE UDP
+  - DOMAIN-SUFFIX,hitslink.com,NODE UDP
+  - DOMAIN-SUFFIX,hot-mob.com,NODE UDP
+  - DOMAIN-SUFFIX,hyperpromote.com,NODE UDP
+  - DOMAIN-SUFFIX,i-mobile.co.jp,NODE UDP
+  - DOMAIN-SUFFIX,imrworldwide.com,NODE UDP
+  - DOMAIN-SUFFIX,inmobi.com,NODE UDP
+  - DOMAIN-SUFFIX,inner-active.mobi,NODE UDP
+  - DOMAIN-SUFFIX,intentiq.com,NODE UDP
+  - DOMAIN-SUFFIX,inter1ads.com,NODE UDP
+  - DOMAIN-SUFFIX,ipredictive.com,NODE UDP
+  - DOMAIN-SUFFIX,ironsrc.com,NODE UDP
+  - DOMAIN-SUFFIX,iskyworker.com,NODE UDP
+  - DOMAIN-SUFFIX,jizzads.com,NODE UDP
+  - DOMAIN-SUFFIX,juicyads.com,NODE UDP
+  - DOMAIN-SUFFIX,kochava.com,NODE UDP
+  - DOMAIN-SUFFIX,leadbolt.com,NODE UDP
+  - DOMAIN-SUFFIX,leadbolt.net,NODE UDP
+  - DOMAIN-SUFFIX,leadboltads.net,NODE UDP
+  - DOMAIN-SUFFIX,leadboltapps.net,NODE UDP
+  - DOMAIN-SUFFIX,leadboltmobile.net,NODE UDP
+  - DOMAIN-SUFFIX,lenzmx.com,NODE UDP
+  - DOMAIN-SUFFIX,liveadvert.com,NODE UDP
+  - DOMAIN-SUFFIX,marketgid.com,NODE UDP
+  - DOMAIN-SUFFIX,marketo.com,NODE UDP
+  - DOMAIN-SUFFIX,mdotm.com,NODE UDP
+  - DOMAIN-SUFFIX,medialytics.com,NODE UDP
+  - DOMAIN-SUFFIX,medialytics.io,NODE UDP
+  - DOMAIN-SUFFIX,meetrics.com,NODE UDP
+  - DOMAIN-SUFFIX,meetrics.net,NODE UDP
+  - DOMAIN-SUFFIX,mgid.com,NODE UDP
+  - DOMAIN-SUFFIX,millennialmedia.com,NODE UDP
+  - DOMAIN-SUFFIX,mobadme.jp,NODE UDP
+  - DOMAIN-SUFFIX,mobfox.com,NODE UDP
+  - DOMAIN-SUFFIX,mobileadtrading.com,NODE UDP
+  - DOMAIN-SUFFIX,mobilityware.com,NODE UDP
+  - DOMAIN-SUFFIX,mojiva.com,NODE UDP
+  - DOMAIN-SUFFIX,mookie1.com,NODE UDP
+  - DOMAIN-SUFFIX,msads.net,NODE UDP
+  - DOMAIN-SUFFIX,mydas.mobi,NODE UDP
+  - DOMAIN-SUFFIX,nend.net,NODE UDP
+  - DOMAIN-SUFFIX,netshelter.net,NODE UDP
+  - DOMAIN-SUFFIX,nexage.com,NODE UDP
+  - DOMAIN-SUFFIX,owneriq.net,NODE UDP
+  - DOMAIN-SUFFIX,pixels.asia,NODE UDP
+  - DOMAIN-SUFFIX,plista.com,NODE UDP
+  - DOMAIN-SUFFIX,popads.net,NODE UDP
+  - DOMAIN-SUFFIX,powerlinks.com,NODE UDP
+  - DOMAIN-SUFFIX,propellerads.com,NODE UDP
+  - DOMAIN-SUFFIX,quantserve.com,NODE UDP
+  - DOMAIN-SUFFIX,rayjump.com,NODE UDP
+  - DOMAIN-SUFFIX,revdepo.com,NODE UDP
+  - DOMAIN-SUFFIX,rubiconproject.com,NODE UDP
+  - DOMAIN-SUFFIX,sape.ru,NODE UDP
+  - DOMAIN-SUFFIX,scorecardresearch.com,NODE UDP
+  - DOMAIN-SUFFIX,segment.com,NODE UDP
+  - DOMAIN-SUFFIX,serving-sys.com,NODE UDP
+  - DOMAIN-SUFFIX,sharethis.com,NODE UDP
+  - DOMAIN-SUFFIX,smaato.com,NODE UDP
+  - DOMAIN-SUFFIX,smaato.net,NODE UDP
+  - DOMAIN-SUFFIX,smartadserver.com,NODE UDP
+  - DOMAIN-SUFFIX,smartnews-ads.com,NODE UDP
+  - DOMAIN-SUFFIX,startapp.com,NODE UDP
+  - DOMAIN-SUFFIX,startappexchange.com,NODE UDP
+  - DOMAIN-SUFFIX,statcounter.com,NODE UDP
+  - DOMAIN-SUFFIX,steelhousemedia.com,NODE UDP
+  - DOMAIN-SUFFIX,stickyadstv.com,NODE UDP
+  - DOMAIN-SUFFIX,supersonic.com,NODE UDP
+  - DOMAIN-SUFFIX,taboola.com,NODE UDP
+  - DOMAIN-SUFFIX,tapjoy.com,NODE UDP
+  - DOMAIN-SUFFIX,tapjoyads.com,NODE UDP
+  - DOMAIN-SUFFIX,trafficjunky.com,NODE UDP
+  - DOMAIN-SUFFIX,trafficjunky.net,NODE UDP
+  - DOMAIN-SUFFIX,tribalfusion.com,NODE UDP
+  - DOMAIN-SUFFIX,turn.com,NODE UDP
+  - DOMAIN-SUFFIX,uberads.com,NODE UDP
+  - DOMAIN-SUFFIX,vidoomy.com,NODE UDP
+  - DOMAIN-SUFFIX,viglink.com,NODE UDP
+  - DOMAIN-SUFFIX,voicefive.com,NODE UDP
+  - DOMAIN-SUFFIX,wedolook.com,NODE UDP
+  - DOMAIN-SUFFIX,yadro.ru,NODE UDP
+  - DOMAIN-SUFFIX,yengo.com,NODE UDP
+  - DOMAIN-SUFFIX,zedo.com,NODE UDP
+  - DOMAIN-SUFFIX,zemanta.com,NODE UDP
+  - DOMAIN-SUFFIX,11h5.com,NODE UDP
+  - DOMAIN-SUFFIX,1kxun.mobi,NODE UDP
+  - DOMAIN-SUFFIX,26zsd.cn,NODE UDP
+  - DOMAIN-SUFFIX,519397.com,NODE UDP
+  - DOMAIN-SUFFIX,626uc.com,NODE UDP
+  - DOMAIN-SUFFIX,915.com,NODE UDP
+  - DOMAIN-SUFFIX,appget.cn,NODE UDP
+  - DOMAIN-SUFFIX,appuu.cn,NODE UDP
+  - DOMAIN-SUFFIX,coinhive.com,NODE UDP
+  - DOMAIN-SUFFIX,huodonghezi.cn,NODE UDP
+  - DOMAIN-SUFFIX,vcbn65.xyz,NODE UDP
+  - DOMAIN-SUFFIX,wanfeng1.com,NODE UDP
+  - DOMAIN-SUFFIX,wep016.top,NODE UDP
+  - DOMAIN-SUFFIX,win-stock.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,zantainet.com,NODE UDP
+  - DOMAIN-SUFFIX,dh54wf.xyz,NODE UDP
+  - DOMAIN-SUFFIX,g2q3e.cn,NODE UDP
+  - DOMAIN-SUFFIX,114so.cn,NODE UDP
+  - DOMAIN-SUFFIX,go.10086.cn,NODE UDP
+  - DOMAIN-SUFFIX,hivedata.cc,NODE UDP
+  - DOMAIN-SUFFIX,navi.gd.chinamobile.com,NODE UDP
+  - DOMAIN-SUFFIX,a.youdao.com,NODE UDP
+  - DOMAIN-SUFFIX,adgeo.corp.163.com,NODE UDP
+  - DOMAIN-SUFFIX,analytics.126.net,NODE UDP
+  - DOMAIN-SUFFIX,bobo.corp.163.com,NODE UDP
+  - DOMAIN-SUFFIX,c.youdao.com,NODE UDP
+  - DOMAIN-SUFFIX,clkservice.youdao.com,NODE UDP
+  - DOMAIN-SUFFIX,conv.youdao.com,NODE UDP
+  - DOMAIN-SUFFIX,dsp-impr2.youdao.com,NODE UDP
+  - DOMAIN-SUFFIX,dsp.youdao.com,NODE UDP
+  - DOMAIN-SUFFIX,fa.corp.163.com,NODE UDP
+  - DOMAIN-SUFFIX,g.corp.163.com,NODE UDP
+  - DOMAIN-SUFFIX,g1.corp.163.com,NODE UDP
+  - DOMAIN-SUFFIX,gb.corp.163.com,NODE UDP
+  - DOMAIN-SUFFIX,gorgon.youdao.com,NODE UDP
+  - DOMAIN-SUFFIX,haitaoad.nosdn.127.net,NODE UDP
+  - DOMAIN-SUFFIX,iadmatvideo.nosdn.127.net,NODE UDP
+  - DOMAIN-SUFFIX,img1.126.net,NODE UDP
+  - DOMAIN-SUFFIX,img2.126.net,NODE UDP
+  - DOMAIN-SUFFIX,ir.mail.126.com,NODE UDP
+  - DOMAIN-SUFFIX,ir.mail.yeah.net,NODE UDP
+  - DOMAIN-SUFFIX,mimg.126.net,NODE UDP
+  - DOMAIN-SUFFIX,nc004x.corp.youdao.com,NODE UDP
+  - DOMAIN-SUFFIX,nc045x.corp.youdao.com,NODE UDP
+  - DOMAIN-SUFFIX,nex.corp.163.com,NODE UDP
+  - DOMAIN-SUFFIX,oimagea2.ydstatic.com,NODE UDP
+  - DOMAIN-SUFFIX,pagechoice.net,NODE UDP
+  - DOMAIN-SUFFIX,prom.gome.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,qchannel0d.cn,NODE UDP
+  - DOMAIN-SUFFIX,qt002x.corp.youdao.com,NODE UDP
+  - DOMAIN-SUFFIX,rlogs.youdao.com,NODE UDP
+  - DOMAIN-SUFFIX,static.flv.uuzuonline.com,NODE UDP
+  - DOMAIN-SUFFIX,tb060x.corp.youdao.com,NODE UDP
+  - DOMAIN-SUFFIX,tb104x.corp.youdao.com,NODE UDP
+  - DOMAIN-SUFFIX,union.youdao.com,NODE UDP
+  - DOMAIN-SUFFIX,wanproxy.127.net,NODE UDP
+  - DOMAIN-SUFFIX,ydpushserver.youdao.com,NODE UDP
+  - DOMAIN-SUFFIX,cvda.17173.com,NODE UDP
+  - DOMAIN-SUFFIX,imgapp.yeyou.com,NODE UDP
+  - DOMAIN-SUFFIX,log1.17173.com,NODE UDP
+  - DOMAIN-SUFFIX,s.17173cdn.com,NODE UDP
+  - DOMAIN-SUFFIX,ue.yeyoucdn.com,NODE UDP
+  - DOMAIN-SUFFIX,vda.17173.com,NODE UDP
+  - DOMAIN-SUFFIX,analytics.wanmei.com,NODE UDP
+  - DOMAIN-SUFFIX,gg.stargame.com,NODE UDP
+  - DOMAIN-SUFFIX,dl.2345.cn,NODE UDP
+  - DOMAIN-SUFFIX,download.2345.cn,NODE UDP
+  - DOMAIN-SUFFIX,houtai.2345.cn,NODE UDP
+  - DOMAIN-SUFFIX,jifen.2345.cn,NODE UDP
+  - DOMAIN-SUFFIX,jifendownload.2345.cn,NODE UDP
+  - DOMAIN-SUFFIX,minipage.2345.cn,NODE UDP
+  - DOMAIN-SUFFIX,wan.2345.cn,NODE UDP
+  - DOMAIN-SUFFIX,zhushou.2345.cn,NODE UDP
+  - DOMAIN-SUFFIX,3600.com,NODE UDP
+  - DOMAIN-SUFFIX,gamebox.360.cn,NODE UDP
+  - DOMAIN-SUFFIX,jiagu.360.cn,NODE UDP
+  - DOMAIN-SUFFIX,kuaikan.netmon.360safe.com,NODE UDP
+  - DOMAIN-SUFFIX,leak.360.cn,NODE UDP
+  - DOMAIN-SUFFIX,lianmeng.360.cn,NODE UDP
+  - DOMAIN-SUFFIX,pub.se.360.cn,NODE UDP
+  - DOMAIN-SUFFIX,s.so.360.cn,NODE UDP
+  - DOMAIN-SUFFIX,shouji.360.cn,NODE UDP
+  - DOMAIN-SUFFIX,soft.data.weather.360.cn,NODE UDP
+  - DOMAIN-SUFFIX,stat.360safe.com,NODE UDP
+  - DOMAIN-SUFFIX,stat.m.360.cn,NODE UDP
+  - DOMAIN-SUFFIX,update.360safe.com,NODE UDP
+  - DOMAIN-SUFFIX,wan.360.cn,NODE UDP
+  - DOMAIN-SUFFIX,58.xgo.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,brandshow.58.com,NODE UDP
+  - DOMAIN-SUFFIX,imp.xgo.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,jing.58.com,NODE UDP
+  - DOMAIN-SUFFIX,stat.xgo.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,track.58.com,NODE UDP
+  - DOMAIN-SUFFIX,tracklog.58.com,NODE UDP
+  - DOMAIN-SUFFIX,acjs.aliyun.com,NODE UDP
+  - DOMAIN-SUFFIX,adash-c.m.taobao.com,NODE UDP
+  - DOMAIN-SUFFIX,adash-c.ut.taobao.com,NODE UDP
+  - DOMAIN-SUFFIX,adashx4yt.m.taobao.com,NODE UDP
+  - DOMAIN-SUFFIX,adashxgc.ut.taobao.com,NODE UDP
+  - DOMAIN-SUFFIX,afp.alicdn.com,NODE UDP
+  - DOMAIN-SUFFIX,ai.m.taobao.com,NODE UDP
+  - DOMAIN-SUFFIX,alipaylog.com,NODE UDP
+  - DOMAIN-SUFFIX,atanx.alicdn.com,NODE UDP
+  - DOMAIN-SUFFIX,atanx2.alicdn.com,NODE UDP
+  - DOMAIN-SUFFIX,fav.simba.taobao.com,NODE UDP
+  - DOMAIN-SUFFIX,g.click.taobao.com,NODE UDP
+  - DOMAIN-SUFFIX,g.tbcdn.cn,NODE UDP
+  - DOMAIN-SUFFIX,gma.alicdn.com,NODE UDP
+  - DOMAIN-SUFFIX,gtmsdd.alicdn.com,NODE UDP
+  - DOMAIN-SUFFIX,hydra.alibaba.com,NODE UDP
+  - DOMAIN-SUFFIX,m.simba.taobao.com,NODE UDP
+  - DOMAIN-SUFFIX,pindao.huoban.taobao.com,NODE UDP
+  - DOMAIN-SUFFIX,re.m.taobao.com,NODE UDP
+  - DOMAIN-SUFFIX,redirect.simba.taobao.com,NODE UDP
+  - DOMAIN-SUFFIX,rj.m.taobao.com,NODE UDP
+  - DOMAIN-SUFFIX,sdkinit.taobao.com,NODE UDP
+  - DOMAIN-SUFFIX,show.re.taobao.com,NODE UDP
+  - DOMAIN-SUFFIX,simaba.m.taobao.com,NODE UDP
+  - DOMAIN-SUFFIX,simaba.taobao.com,NODE UDP
+  - DOMAIN-SUFFIX,srd.simba.taobao.com,NODE UDP
+  - DOMAIN-SUFFIX,strip.taobaocdn.com,NODE UDP
+  - DOMAIN-SUFFIX,tns.simba.taobao.com,NODE UDP
+  - DOMAIN-SUFFIX,tyh.taobao.com,NODE UDP
+  - DOMAIN-SUFFIX,userimg.qunar.com,NODE UDP
+  - DOMAIN-SUFFIX,yiliao.hupan.com,NODE UDP
+  - DOMAIN-SUFFIX,3dns-2.adobe.com,NODE UDP
+  - DOMAIN-SUFFIX,3dns-3.adobe.com,NODE UDP
+  - DOMAIN-SUFFIX,activate-sea.adobe.com,NODE UDP
+  - DOMAIN-SUFFIX,activate-sjc0.adobe.com,NODE UDP
+  - DOMAIN-SUFFIX,activate.adobe.com,NODE UDP
+  - DOMAIN-SUFFIX,activate.wip3.adobe.com,NODE UDP
+  - DOMAIN-SUFFIX,adobe-dns-2.adobe.com,NODE UDP
+  - DOMAIN-SUFFIX,adobe-dns-3.adobe.com,NODE UDP
+  - DOMAIN-SUFFIX,adobe-dns.adobe.com,NODE UDP
+  - DOMAIN-SUFFIX,ereg.adobe.com,NODE UDP
+  - DOMAIN-SUFFIX,ereg.wip3.adobe.com,NODE UDP
+  - DOMAIN-SUFFIX,geo2.adobe.com,NODE UDP
+  - DOMAIN-SUFFIX,hl2rcv.adobe.com,NODE UDP
+  - DOMAIN-SUFFIX,hlrcv.stage.adobe.com,NODE UDP
+  - DOMAIN-SUFFIX,lm.licenses.adobe.com,NODE UDP
+  - DOMAIN-SUFFIX,lmlicenses.wip4.adobe.com,NODE UDP
+  - DOMAIN-SUFFIX,na1r.services.adobe.com,NODE UDP
+  - DOMAIN-SUFFIX,na2m-pr.licenses.adobe.com,NODE UDP
+  - DOMAIN-SUFFIX,practivate.adobe.com,NODE UDP
+  - DOMAIN-SUFFIX,wip3.adobe.com,NODE UDP
+  - DOMAIN-SUFFIX,wwis-dubc1-vip60.adobe.com,NODE UDP
+  - DOMAIN-SUFFIX,adserver.unityads.unity3d.com,NODE UDP
+  - DOMAIN-SUFFIX,33.autohome.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,adproxy.autohome.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,al.autohome.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,alert.autohome.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,applogapi.autohome.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,c.autohome.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,cmx.autohome.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,dspmnt.autohome.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,pcd.autohome.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,push.app.autohome.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,pvx.autohome.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,rd.autohome.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,rdx.autohome.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,stats.autohome.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,a.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,a.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,ad.duapps.com,NODE UDP
+  - DOMAIN-SUFFIX,ad.player.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,adm.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,adm.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,adscdn.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,adscdn.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,adx.xiaodutv.com,NODE UDP
+  - DOMAIN-SUFFIX,ae.bdstatic.com,NODE UDP
+  - DOMAIN-SUFFIX,afd.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,afd.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,als.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,als.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,anquan.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,anquan.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,antivirus.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,api.mobula.sdk.duapps.com,NODE UDP
+  - DOMAIN-SUFFIX,appc.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,appc.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,as.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,as.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,baichuan.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,baidu9635.com,NODE UDP
+  - DOMAIN-SUFFIX,baidustatic.com,NODE UDP
+  - DOMAIN-SUFFIX,baidutv.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,baikebcs.bdimg.com,NODE UDP
+  - DOMAIN-SUFFIX,banlv.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,bar.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,bdimg.share.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,bdplus.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,btlaunch.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,c.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,c.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,cb.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,cb.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,cbjs.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,cbjs.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,cbjslog.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,cbjslog.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,cjhq.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,cjhq.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,cleaner.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,click.bes.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,click.hm.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,click.qianqian.com,NODE UDP
+  - DOMAIN-SUFFIX,cm.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,cm.pos.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,cpro.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,cpro.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,cpro.baidustatic.com,NODE UDP
+  - DOMAIN-SUFFIX,cpro.tieba.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,cpro.zhidao.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,cpro2.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,cpro2.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,cpu-admin.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,crs.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,crs.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,datax.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,dl-vip.bav.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,dl-vip.pcfaster.baidu.co.th,NODE UDP
+  - DOMAIN-SUFFIX,dl.client.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,dl.ops.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,dl1sw.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,dl2.bav.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,dlsw.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,dlsw.br.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,download.bav.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,download.sd.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,drmcmm.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,drmcmm.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,dup.baidustatic.com,NODE UDP
+  - DOMAIN-SUFFIX,dxp.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,dzl.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,e.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,e.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,eclick.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,eclick.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,ecma.bdimg.com,NODE UDP
+  - DOMAIN-SUFFIX,ecmb.bdimg.com,NODE UDP
+  - DOMAIN-SUFFIX,ecmc.bdimg.com,NODE UDP
+  - DOMAIN-SUFFIX,eiv.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,eiv.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,em.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,ers.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,f10.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,fc-.cdn.bcebos.com,NODE UDP
+  - DOMAIN-SUFFIX,fc-feed.cdn.bcebos.com,NODE UDP
+  - DOMAIN-SUFFIX,fclick.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,fexclick.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,g.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,gimg.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,guanjia.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,hc.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,hc.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,hm.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,hm.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,hmma.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,hmma.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,hpd.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,hpd.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,idm-su.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,iebar.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,ikcode.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,imageplus.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,imageplus.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,img.taotaosou.cn,NODE UDP
+  - DOMAIN-SUFFIX,img01.taotaosou.cn,NODE UDP
+  - DOMAIN-SUFFIX,itsdata.map.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,j.br.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,kstj.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,log.music.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,log.nuomi.com,NODE UDP
+  - DOMAIN-SUFFIX,m1.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,ma.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,ma.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,mg09.zhaopin.com,NODE UDP
+  - DOMAIN-SUFFIX,mipcache.bdstatic.com,NODE UDP
+  - DOMAIN-SUFFIX,mobads-logs.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,mobads-logs.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,mobads.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,mobads.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,mpro.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,mtj.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,mtj.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,neirong.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,nsclick.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,nsclick.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,nsclickvideo.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,openrcv.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,pc.videoclick.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,pos.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,pups.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,pups.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,pups.bdimg.com,NODE UDP
+  - DOMAIN-SUFFIX,push.music.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,push.zhanzhang.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,qchannel0d.cn,NODE UDP
+  - DOMAIN-SUFFIX,qianclick.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,release.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,res.limei.com,NODE UDP
+  - DOMAIN-SUFFIX,res.mi.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,rigel.baidustatic.com,NODE UDP
+  - DOMAIN-SUFFIX,river.zhidao.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,rj.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,rj.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,rp.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,rp.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,rplog.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,s.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,s.cpro.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,sa.tuisong.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,sclick.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,sestat.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,shadu.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,share.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,snippet.pos.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,sobar.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,sobartop.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,spcode.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,spcode.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,stat.v.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,su.bdimg.com,NODE UDP
+  - DOMAIN-SUFFIX,su.bdstatic.com,NODE UDP
+  - DOMAIN-SUFFIX,tk.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,tk.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,tkweb.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,tob-cms.bj.bcebos.com,NODE UDP
+  - DOMAIN-SUFFIX,toolbar.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,tracker.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,tuijian.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,tuisong.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,tuisong.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,uat1.bfsspadserver.8le8le.com,NODE UDP
+  - DOMAIN-SUFFIX,ubmcmm.baidustatic.com,NODE UDP
+  - DOMAIN-SUFFIX,ucstat.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,ucstat.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,ulic.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,ulog.imap.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,union.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,union.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,unionimage.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,utility.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,utility.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,utk.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,utk.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,videopush.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,videopush.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,vv84.bj.bcebos.com,NODE UDP
+  - DOMAIN-SUFFIX,w.gdown.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,w.x.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,wangmeng.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,wangmeng.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,weishi.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,wenku-cms.bj.bcebos.com,NODE UDP
+  - DOMAIN-SUFFIX,wisepush.video.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,wm.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,wm.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,wn.pos.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,znsv.baidu.cn,NODE UDP
+  - DOMAIN-SUFFIX,znsv.baidu.com,NODE UDP
+  - DOMAIN-SUFFIX,zz.bdstatic.com,NODE UDP
+  - DOMAIN-SUFFIX,zzy1.quyaoya.com,NODE UDP
+  - DOMAIN-SUFFIX,ad.zhangyue.com,NODE UDP
+  - DOMAIN-SUFFIX,adm.ps.easou.com,NODE UDP
+  - DOMAIN-SUFFIX,aishowbger.com,NODE UDP
+  - DOMAIN-SUFFIX,api.itaoxiaoshuo.com,NODE UDP
+  - DOMAIN-SUFFIX,assets.ps.easou.com,NODE UDP
+  - DOMAIN-SUFFIX,bbcoe.cn,NODE UDP
+  - DOMAIN-SUFFIX,cj.qidian.com,NODE UDP
+  - DOMAIN-SUFFIX,dkeyn.com,NODE UDP
+  - DOMAIN-SUFFIX,drdwy.com,NODE UDP
+  - DOMAIN-SUFFIX,e.aa985.cn,NODE UDP
+  - DOMAIN-SUFFIX,e.v02u9.cn,NODE UDP
+  - DOMAIN-SUFFIX,e701.net,NODE UDP
+  - DOMAIN-SUFFIX,ehxyz.com,NODE UDP
+  - DOMAIN-SUFFIX,ethod.gzgmjcx.com,NODE UDP
+  - DOMAIN-SUFFIX,focuscat.com,NODE UDP
+  - DOMAIN-SUFFIX,game.qidian.com,NODE UDP
+  - DOMAIN-SUFFIX,hdswgc.com,NODE UDP
+  - DOMAIN-SUFFIX,jyd.fjzdmy.com,NODE UDP
+  - DOMAIN-SUFFIX,m.ourlj.com,NODE UDP
+  - DOMAIN-SUFFIX,m.txtxr.com,NODE UDP
+  - DOMAIN-SUFFIX,m.vsxet.com,NODE UDP
+  - DOMAIN-SUFFIX,miam4.cn,NODE UDP
+  - DOMAIN-SUFFIX,o.if.qidian.com,NODE UDP
+  - DOMAIN-SUFFIX,p.vq6nsu.cn,NODE UDP
+  - DOMAIN-SUFFIX,picture.duokan.com,NODE UDP
+  - DOMAIN-SUFFIX,push.zhangyue.com,NODE UDP
+  - DOMAIN-SUFFIX,pyerc.com,NODE UDP
+  - DOMAIN-SUFFIX,s1.cmfu.com,NODE UDP
+  - DOMAIN-SUFFIX,sc.shayugg.com,NODE UDP
+  - DOMAIN-SUFFIX,sdk.cferw.com,NODE UDP
+  - DOMAIN-SUFFIX,sezvc.com,NODE UDP
+  - DOMAIN-SUFFIX,sys.zhangyue.com,NODE UDP
+  - DOMAIN-SUFFIX,tjlog.ps.easou.com,NODE UDP
+  - DOMAIN-SUFFIX,tongji.qidian.com,NODE UDP
+  - DOMAIN-SUFFIX,ut2.shuqistat.com,NODE UDP
+  - DOMAIN-SUFFIX,xgcsr.com,NODE UDP
+  - DOMAIN-SUFFIX,xjq.jxmqkj.com,NODE UDP
+  - DOMAIN-SUFFIX,xpe.cxaerp.com,NODE UDP
+  - DOMAIN-SUFFIX,xtzxmy.com,NODE UDP
+  - DOMAIN-SUFFIX,xyrkl.com,NODE UDP
+  - DOMAIN-SUFFIX,zhuanfakong.com,NODE UDP
+  - DOMAIN-SUFFIX,ad.toutiao.com,NODE UDP
+  - DOMAIN-SUFFIX,dsp.toutiao.com,NODE UDP
+  - DOMAIN-SUFFIX,ic.snssdk.com,NODE UDP
+  - DOMAIN-SUFFIX,log.snssdk.com,NODE UDP
+  - DOMAIN-SUFFIX,nativeapp.toutiao.com,NODE UDP
+  - DOMAIN-SUFFIX,partner.toutiao.com,NODE UDP
+  - DOMAIN-SUFFIX,sm.toutiao.com,NODE UDP
+  - DOMAIN-SUFFIX,a.dangdang.com,NODE UDP
+  - DOMAIN-SUFFIX,click.dangdang.com,NODE UDP
+  - DOMAIN-SUFFIX,schprompt.dangdang.com,NODE UDP
+  - DOMAIN-SUFFIX,t.dangdang.com,NODE UDP
+  - DOMAIN-SUFFIX,ad.duomi.com,NODE UDP
+  - DOMAIN-SUFFIX,boxshows.com,NODE UDP
+  - DOMAIN-SUFFIX,staticxx.facebook.com,NODE UDP
+  - DOMAIN-SUFFIX,click1n.soufun.com,NODE UDP
+  - DOMAIN-SUFFIX,clickm.fang.com,NODE UDP
+  - DOMAIN-SUFFIX,clickn.fang.com,NODE UDP
+  - DOMAIN-SUFFIX,countpvn.light.fang.com,NODE UDP
+  - DOMAIN-SUFFIX,countubn.light.soufun.com,NODE UDP
+  - DOMAIN-SUFFIX,mshow.fang.com,NODE UDP
+  - DOMAIN-SUFFIX,tongji.home.soufun.com,NODE UDP
+  - DOMAIN-SUFFIX,admob.com,NODE UDP
+  - DOMAIN-SUFFIX,ads.gmodules.com,NODE UDP
+  - DOMAIN-SUFFIX,ads.google.com,NODE UDP
+  - DOMAIN-SUFFIX,adservice.google.com,NODE UDP
+  - DOMAIN-SUFFIX,afd.l.google.com,NODE UDP
+  - DOMAIN-SUFFIX,badad.googleplex.com,NODE UDP
+  - DOMAIN-SUFFIX,csi.gstatic.com,NODE UDP
+  - DOMAIN-SUFFIX,doubleclick.com,NODE UDP
+  - DOMAIN-SUFFIX,doubleclick.net,NODE UDP
+  - DOMAIN-SUFFIX,google-analytics.com,NODE UDP
+  - DOMAIN-SUFFIX,googleadservices.com,NODE UDP
+  - DOMAIN-SUFFIX,googleadsserving.cn,NODE UDP
+  - DOMAIN-SUFFIX,googlecommerce.com,NODE UDP
+  - DOMAIN-SUFFIX,googlesyndication.com,NODE UDP
+  - DOMAIN-SUFFIX,mobileads.google.com,NODE UDP
+  - DOMAIN-SUFFIX,pagead-tpc.l.google.com,NODE UDP
+  - DOMAIN-SUFFIX,pagead.google.com,NODE UDP
+  - DOMAIN-SUFFIX,pagead.l.google.com,NODE UDP
+  - DOMAIN-SUFFIX,service.urchin.com,NODE UDP
+  - DOMAIN-SUFFIX,ads.union.jd.com,NODE UDP
+  - DOMAIN-SUFFIX,c-nfa.jd.com,NODE UDP
+  - DOMAIN-SUFFIX,cps.360buy.com,NODE UDP
+  - DOMAIN-SUFFIX,img-x.jd.com,NODE UDP
+  - DOMAIN-SUFFIX,jrclick.jd.com,NODE UDP
+  - DOMAIN-SUFFIX,jzt.jd.com,NODE UDP
+  - DOMAIN-SUFFIX,policy.jd.com,NODE UDP
+  - DOMAIN-SUFFIX,stat.m.jd.com,NODE UDP
+  - DOMAIN-SUFFIX,ads.service.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,adsfile.bssdlbig.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,d.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,downmobile.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,gad.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,game.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,gamebox.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,gcapi.sy.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,gg.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,install.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,install2.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,kgmobilestat.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,kuaikaiapp.com,NODE UDP
+  - DOMAIN-SUFFIX,log.stat.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,log.web.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,minidcsc.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,mo.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,mobilelog.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,msg.mobile.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,mvads.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,p.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,push.mobile.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,rtmonitor.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,sdn.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,tj.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,update.mobile.kugou.com,NODE UDP
+  - DOMAIN-SUFFIX,apk.shouji.koowo.com,NODE UDP
+  - DOMAIN-SUFFIX,deliver.kuwo.cn,NODE UDP
+  - DOMAIN-SUFFIX,g.koowo.com,NODE UDP
+  - DOMAIN-SUFFIX,g.kuwo.cn,NODE UDP
+  - DOMAIN-SUFFIX,kwmsg.kuwo.cn,NODE UDP
+  - DOMAIN-SUFFIX,log.kuwo.cn,NODE UDP
+  - DOMAIN-SUFFIX,mobilead.kuwo.cn,NODE UDP
+  - DOMAIN-SUFFIX,msclick2.kuwo.cn,NODE UDP
+  - DOMAIN-SUFFIX,msphoneclick.kuwo.cn,NODE UDP
+  - DOMAIN-SUFFIX,updatepage.kuwo.cn,NODE UDP
+  - DOMAIN-SUFFIX,wa.kuwo.cn,NODE UDP
+  - DOMAIN-SUFFIX,webstat.kuwo.cn,NODE UDP
+  - DOMAIN-SUFFIX,aider-res.meizu.com,NODE UDP
+  - DOMAIN-SUFFIX,api-flow.meizu.com,NODE UDP
+  - DOMAIN-SUFFIX,api-game.meizu.com,NODE UDP
+  - DOMAIN-SUFFIX,api-push.meizu.com,NODE UDP
+  - DOMAIN-SUFFIX,aries.mzres.com,NODE UDP
+  - DOMAIN-SUFFIX,bro.flyme.cn,NODE UDP
+  - DOMAIN-SUFFIX,cal.meizu.com,NODE UDP
+  - DOMAIN-SUFFIX,ebook.meizu.com,NODE UDP
+  - DOMAIN-SUFFIX,ebook.res.meizu.com,NODE UDP
+  - DOMAIN-SUFFIX,game-res.meizu.com,NODE UDP
+  - DOMAIN-SUFFIX,game.res.meizu.com,NODE UDP
+  - DOMAIN-SUFFIX,infocenter.meizu.com,NODE UDP
+  - DOMAIN-SUFFIX,openapi-news.meizu.com,NODE UDP
+  - DOMAIN-SUFFIX,push.res.meizu.com,NODE UDP
+  - DOMAIN-SUFFIX,reader.meizu.com,NODE UDP
+  - DOMAIN-SUFFIX,reader.res.meizu.com,NODE UDP
+  - DOMAIN-SUFFIX,t-e.flyme.cn,NODE UDP
+  - DOMAIN-SUFFIX,t-flow.flyme.cn,NODE UDP
+  - DOMAIN-SUFFIX,tongji-res1.meizu.com,NODE UDP
+  - DOMAIN-SUFFIX,tongji.meizu.com,NODE UDP
+  - DOMAIN-SUFFIX,umid.orion.meizu.com,NODE UDP
+  - DOMAIN-SUFFIX,upush.res.meizu.com,NODE UDP
+  - DOMAIN-SUFFIX,uxip.meizu.com,NODE UDP
+  - DOMAIN-SUFFIX,a.koudai.com,NODE UDP
+  - DOMAIN-SUFFIX,adui.tg.meitu.com,NODE UDP
+  - DOMAIN-SUFFIX,corp.meitu.com,NODE UDP
+  - DOMAIN-SUFFIX,dc.meitustat.com,NODE UDP
+  - DOMAIN-SUFFIX,gg.meitu.com,NODE UDP
+  - DOMAIN-SUFFIX,mdc.meitustat.com,NODE UDP
+  - DOMAIN-SUFFIX,meitubeauty.meitudata.com,NODE UDP
+  - DOMAIN-SUFFIX,message.meitu.com,NODE UDP
+  - DOMAIN-SUFFIX,rabbit.meitustat.com,NODE UDP
+  - DOMAIN-SUFFIX,rabbit.tg.meitu.com,NODE UDP
+  - DOMAIN-SUFFIX,tuiguang.meitu.com,NODE UDP
+  - DOMAIN-SUFFIX,xiuxiu.android.dl.meitu.com,NODE UDP
+  - DOMAIN-SUFFIX,xiuxiu.mobile.meitudata.com,NODE UDP
+  - DOMAIN-SUFFIX,a.market.xiaomi.com,NODE UDP
+  - DOMAIN-SUFFIX,ad.xiaomi.com,NODE UDP
+  - DOMAIN-SUFFIX,ad1.xiaomi.com,NODE UDP
+  - DOMAIN-SUFFIX,adv.sec.intl.miui.com,NODE UDP
+  - DOMAIN-SUFFIX,adv.sec.miui.com,NODE UDP
+  - DOMAIN-SUFFIX,bss.pandora.xiaomi.com,NODE UDP
+  - DOMAIN-SUFFIX,d.g.mi.com,NODE UDP
+  - DOMAIN-SUFFIX,data.mistat.xiaomi.com,NODE UDP
+  - DOMAIN-SUFFIX,de.pandora.xiaomi.com,NODE UDP
+  - DOMAIN-SUFFIX,dvb.pandora.xiaomi.com,NODE UDP
+  - DOMAIN-SUFFIX,jellyfish.pandora.xiaomi.com,NODE UDP
+  - DOMAIN-SUFFIX,migc.g.mi.com,NODE UDP
+  - DOMAIN-SUFFIX,migcreport.g.mi.com,NODE UDP
+  - DOMAIN-SUFFIX,mis.g.mi.com,NODE UDP
+  - DOMAIN-SUFFIX,notice.game.xiaomi.com,NODE UDP
+  - DOMAIN-SUFFIX,ppurifier.game.xiaomi.com,NODE UDP
+  - DOMAIN-SUFFIX,r.browser.miui.com,NODE UDP
+  - DOMAIN-SUFFIX,security.browser.miui.com,NODE UDP
+  - DOMAIN-SUFFIX,shenghuo.xiaomi.com,NODE UDP
+  - DOMAIN-SUFFIX,stat.pandora.xiaomi.com,NODE UDP
+  - DOMAIN-SUFFIX,union.mi.com,NODE UDP
+  - DOMAIN-SUFFIX,wtradv.market.xiaomi.com,NODE UDP
+  - DOMAIN-SUFFIX,xmpush.xiaomi.com,NODE UDP
+  - DOMAIN-SUFFIX,ad.api.moji.com,NODE UDP
+  - DOMAIN-SUFFIX,app.moji001.com,NODE UDP
+  - DOMAIN-SUFFIX,cdn.moji002.com,NODE UDP
+  - DOMAIN-SUFFIX,cdn2.moji002.com,NODE UDP
+  - DOMAIN-SUFFIX,fds.api.moji.com,NODE UDP
+  - DOMAIN-SUFFIX,log.moji.com,NODE UDP
+  - DOMAIN-SUFFIX,stat.moji.com,NODE UDP
+  - DOMAIN-SUFFIX,ugc.moji001.com,NODE UDP
+  - DOMAIN-SUFFIX,ad.qingting.fm,NODE UDP
+  - DOMAIN-SUFFIX,admgr.qingting.fm,NODE UDP
+  - DOMAIN-SUFFIX,dload.qd.qingting.fm,NODE UDP
+  - DOMAIN-SUFFIX,logger.qingting.fm,NODE UDP
+  - DOMAIN-SUFFIX,s.qd.qingting.fm,NODE UDP
+  - DOMAIN-SUFFIX,s.qd.qingtingfm.com,NODE UDP
+  - DOMAIN-KEYWORD,omgmtaw,NODE UDP
+  - DOMAIN,adsmind.apdcdn.tc.qq.com,NODE UDP
+  - DOMAIN,adsmind.gdtimg.com,NODE UDP
+  - DOMAIN,adsmind.tc.qq.com,NODE UDP
+  - DOMAIN,pgdt.gtimg.cn,NODE UDP
+  - DOMAIN,pgdt.gtimg.com,NODE UDP
+  - DOMAIN,pgdt.ugdtimg.com,NODE UDP
+  - DOMAIN,splashqqlive.gtimg.com,NODE UDP
+  - DOMAIN,wa.gtimg.com,NODE UDP
+  - DOMAIN,wxsnsdy.wxs.qq.com,NODE UDP
+  - DOMAIN,wxsnsdythumb.wxs.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,act.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,ad.qun.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,adsfile.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,bugly.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,buluo.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,e.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,gdt.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,l.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,monitor.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,pingma.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,pingtcss.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,report.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,tajs.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,tcss.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,uu.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,ebp.renren.com,NODE UDP
+  - DOMAIN-SUFFIX,jebe.renren.com,NODE UDP
+  - DOMAIN-SUFFIX,jebe.xnimg.cn,NODE UDP
+  - DOMAIN-SUFFIX,ad.sina.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,adbox.sina.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,add.sina.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,adimg.mobile.sina.cn,NODE UDP
+  - DOMAIN-SUFFIX,adm.sina.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,alitui.weibo.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,biz.weibo.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,cre.dp.sina.cn,NODE UDP
+  - DOMAIN-SUFFIX,dcads.sina.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,dd.sina.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,dmp.sina.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,game.weibo.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,gw5.push.mcp.weibo.cn,NODE UDP
+  - DOMAIN-SUFFIX,leju.sina.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,log.mix.sina.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,mobileads.dx.cn,NODE UDP
+  - DOMAIN-SUFFIX,newspush.sinajs.cn,NODE UDP
+  - DOMAIN-SUFFIX,pay.mobile.sina.cn,NODE UDP
+  - DOMAIN-SUFFIX,sax.mobile.sina.cn,NODE UDP
+  - DOMAIN-SUFFIX,sax.sina.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,saxd.sina.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,sdkapp.mobile.sina.cn,NODE UDP
+  - DOMAIN-SUFFIX,sdkapp.uve.weibo.com,NODE UDP
+  - DOMAIN-SUFFIX,sdkclick.mobile.sina.cn,NODE UDP
+  - DOMAIN-SUFFIX,slog.sina.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,trends.mobile.sina.cn,NODE UDP
+  - DOMAIN-SUFFIX,tui.weibo.com,NODE UDP
+  - DOMAIN-SUFFIX,u1.img.mobile.sina.cn,NODE UDP
+  - DOMAIN-SUFFIX,wax.weibo.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,wbapp.mobile.sina.cn,NODE UDP
+  - DOMAIN-SUFFIX,wbapp.uve.weibo.com,NODE UDP
+  - DOMAIN-SUFFIX,wbclick.mobile.sina.cn,NODE UDP
+  - DOMAIN-SUFFIX,wbpctips.mobile.sina.cn,NODE UDP
+  - DOMAIN-SUFFIX,zymo.mps.weibo.com,NODE UDP
+  - DOMAIN-SUFFIX,123.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,123.sogoucdn.com,NODE UDP
+  - DOMAIN-SUFFIX,adsence.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,amfi.gou.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,brand.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,cpc.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,epro.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,fair.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,files2.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,galaxy.sogoucdn.com,NODE UDP
+  - DOMAIN-SUFFIX,golden1.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,goto.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,inte.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,iwan.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,lu.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,lu.sogoucdn.com,NODE UDP
+  - DOMAIN-SUFFIX,pb.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,pd.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,pv.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,theta.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,wan.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,wangmeng.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,applovin.com,NODE UDP
+  - DOMAIN-SUFFIX,guangzhuiyuan.com,NODE UDP
+  - DOMAIN-SUFFIX,ads-twitter.com,NODE UDP
+  - DOMAIN-SUFFIX,ads.twitter.com,NODE UDP
+  - DOMAIN-SUFFIX,analytics.twitter.com,NODE UDP
+  - DOMAIN-SUFFIX,p.twitter.com,NODE UDP
+  - DOMAIN-SUFFIX,scribe.twitter.com,NODE UDP
+  - DOMAIN-SUFFIX,syndication-o.twitter.com,NODE UDP
+  - DOMAIN-SUFFIX,syndication.twitter.com,NODE UDP
+  - DOMAIN-SUFFIX,tellapart.com,NODE UDP
+  - DOMAIN-SUFFIX,urls.api.twitter.com,NODE UDP
+  - DOMAIN-SUFFIX,adslot.uc.cn,NODE UDP
+  - DOMAIN-SUFFIX,api.mp.uc.cn,NODE UDP
+  - DOMAIN-SUFFIX,applog.uc.cn,NODE UDP
+  - DOMAIN-SUFFIX,client.video.ucweb.com,NODE UDP
+  - DOMAIN-SUFFIX,cms.ucweb.com,NODE UDP
+  - DOMAIN-SUFFIX,dispatcher.upmc.uc.cn,NODE UDP
+  - DOMAIN-SUFFIX,huichuan.sm.cn,NODE UDP
+  - DOMAIN-SUFFIX,log.cs.pp.cn,NODE UDP
+  - DOMAIN-SUFFIX,m.uczzd.cn,NODE UDP
+  - DOMAIN-SUFFIX,patriot.cs.pp.cn,NODE UDP
+  - DOMAIN-SUFFIX,puds.ucweb.com,NODE UDP
+  - DOMAIN-SUFFIX,server.m.pp.cn,NODE UDP
+  - DOMAIN-SUFFIX,track.uc.cn,NODE UDP
+  - DOMAIN-SUFFIX,u.uc123.com,NODE UDP
+  - DOMAIN-SUFFIX,u.ucfly.com,NODE UDP
+  - DOMAIN-SUFFIX,uc.ucweb.com,NODE UDP
+  - DOMAIN-SUFFIX,ucsec.ucweb.com,NODE UDP
+  - DOMAIN-SUFFIX,ucsec1.ucweb.com,NODE UDP
+  - DOMAIN-SUFFIX,aoodoo.feng.com,NODE UDP
+  - DOMAIN-SUFFIX,fengbuy.com,NODE UDP
+  - DOMAIN-SUFFIX,push.feng.com,NODE UDP
+  - DOMAIN-SUFFIX,we.tm,NODE UDP
+  - DOMAIN-SUFFIX,yes1.feng.com,NODE UDP
+  - DOMAIN-SUFFIX,ad.docer.wps.cn,NODE UDP
+  - DOMAIN-SUFFIX,adm.zookingsoft.com,NODE UDP
+  - DOMAIN-SUFFIX,bannera.kingsoft-office-service.com,NODE UDP
+  - DOMAIN-SUFFIX,bole.shangshufang.ksosoft.com,NODE UDP
+  - DOMAIN-SUFFIX,counter.kingsoft.com,NODE UDP
+  - DOMAIN-SUFFIX,docerad.wps.cn,NODE UDP
+  - DOMAIN-SUFFIX,gou.wps.cn,NODE UDP
+  - DOMAIN-SUFFIX,hoplink.ksosoft.com,NODE UDP
+  - DOMAIN-SUFFIX,ic.ksosoft.com,NODE UDP
+  - DOMAIN-SUFFIX,img.gou.wpscdn.cn,NODE UDP
+  - DOMAIN-SUFFIX,info.wps.cn,NODE UDP
+  - DOMAIN-SUFFIX,ios-informationplatform.wps.cn,NODE UDP
+  - DOMAIN-SUFFIX,minfo.wps.cn,NODE UDP
+  - DOMAIN-SUFFIX,mo.res.wpscdn.cn,NODE UDP
+  - DOMAIN-SUFFIX,news.docer.com,NODE UDP
+  - DOMAIN-SUFFIX,notify.wps.cn,NODE UDP
+  - DOMAIN-SUFFIX,pc.uf.ksosoft.com,NODE UDP
+  - DOMAIN-SUFFIX,pcfg.wps.cn,NODE UDP
+  - DOMAIN-SUFFIX,pixiu.shangshufang.ksosoft.com,NODE UDP
+  - DOMAIN-SUFFIX,push.wps.cn,NODE UDP
+  - DOMAIN-SUFFIX,rating6.kingsoft-office-service.com,NODE UDP
+  - DOMAIN-SUFFIX,up.wps.kingsoft.com,NODE UDP
+  - DOMAIN-SUFFIX,wpsweb-dc.wps.cn,NODE UDP
+  - DOMAIN-SUFFIX,c.51y5.net,NODE UDP
+  - DOMAIN-SUFFIX,cdsget.51y5.net,NODE UDP
+  - DOMAIN-SUFFIX,news-imgpb.51y5.net,NODE UDP
+  - DOMAIN-SUFFIX,wifiapidd.51y5.net,NODE UDP
+  - DOMAIN-SUFFIX,wkanc.51y5.net,NODE UDP
+  - DOMAIN-SUFFIX,adse.ximalaya.com,NODE UDP
+  - DOMAIN-SUFFIX,linkeye.ximalaya.com,NODE UDP
+  - DOMAIN-SUFFIX,location.ximalaya.com,NODE UDP
+  - DOMAIN-SUFFIX,xdcs-collector.ximalaya.com,NODE UDP
+  - DOMAIN-SUFFIX,biz5.kankan.com,NODE UDP
+  - DOMAIN-SUFFIX,float.kankan.com,NODE UDP
+  - DOMAIN-SUFFIX,hub5btmain.sandai.net,NODE UDP
+  - DOMAIN-SUFFIX,hub5emu.sandai.net,NODE UDP
+  - DOMAIN-SUFFIX,logic.cpm.cm.kankan.com,NODE UDP
+  - DOMAIN-SUFFIX,upgrade.xl9.xunlei.com,NODE UDP
+  - DOMAIN-SUFFIX,ad.wretch.cc,NODE UDP
+  - DOMAIN-SUFFIX,ads.yahoo.com,NODE UDP
+  - DOMAIN-SUFFIX,adserver.yahoo.com,NODE UDP
+  - DOMAIN-SUFFIX,adss.yahoo.com,NODE UDP
+  - DOMAIN-SUFFIX,analytics.query.yahoo.com,NODE UDP
+  - DOMAIN-SUFFIX,analytics.yahoo.com,NODE UDP
+  - DOMAIN-SUFFIX,ane.yahoo.co.jp,NODE UDP
+  - DOMAIN-SUFFIX,ard.yahoo.co.jp,NODE UDP
+  - DOMAIN-SUFFIX,beap-bc.yahoo.com,NODE UDP
+  - DOMAIN-SUFFIX,clicks.beap.bc.yahoo.com,NODE UDP
+  - DOMAIN-SUFFIX,comet.yahoo.com,NODE UDP
+  - DOMAIN-SUFFIX,doubleplay-conf-yql.media.yahoo.com,NODE UDP
+  - DOMAIN-SUFFIX,flurry.com,NODE UDP
+  - DOMAIN-SUFFIX,gemini.yahoo.com,NODE UDP
+  - DOMAIN-SUFFIX,geo.yahoo.com,NODE UDP
+  - DOMAIN-SUFFIX,js-apac-ss.ysm.yahoo.com,NODE UDP
+  - DOMAIN-SUFFIX,locdrop.query.yahoo.com,NODE UDP
+  - DOMAIN-SUFFIX,onepush.query.yahoo.com,NODE UDP
+  - DOMAIN-SUFFIX,p3p.yahoo.com,NODE UDP
+  - DOMAIN-SUFFIX,partnerads.ysm.yahoo.com,NODE UDP
+  - DOMAIN-SUFFIX,ws.progrss.yahoo.com,NODE UDP
+  - DOMAIN-SUFFIX,yads.yahoo.co.jp,NODE UDP
+  - DOMAIN-SUFFIX,ybp.yahoo.com,NODE UDP
+  - DOMAIN-SUFFIX,sugar.zhihu.com,NODE UDP
+  - DOMAIN-SUFFIX,zhihu-web-analytics.zhihu.com,NODE UDP
+  - DOMAIN-SUFFIX,shrek.6.cn,NODE UDP
+  - DOMAIN-SUFFIX,simba.6.cn,NODE UDP
+  - DOMAIN-SUFFIX,union.6.cn,NODE UDP
+  - DOMAIN-SUFFIX,logger.baofeng.com,NODE UDP
+  - DOMAIN-SUFFIX,xs.houyi.baofeng.net,NODE UDP
+  - DOMAIN-SUFFIX,dotcounter.douyutv.com,NODE UDP
+  - DOMAIN-SUFFIX,api.newad.ifeng.com,NODE UDP
+  - DOMAIN-SUFFIX,exp.3g.ifeng.com,NODE UDP
+  - DOMAIN-SUFFIX,game.ifeng.com,NODE UDP
+  - DOMAIN-SUFFIX,iis3g.deliver.ifeng.com,NODE UDP
+  - DOMAIN-SUFFIX,mfp.deliver.ifeng.com,NODE UDP
+  - DOMAIN-SUFFIX,stadig.ifeng.com,NODE UDP
+  - DOMAIN-SUFFIX,adm.funshion.com,NODE UDP
+  - DOMAIN-SUFFIX,jobsfe.funshion.com,NODE UDP
+  - DOMAIN-SUFFIX,po.funshion.com,NODE UDP
+  - DOMAIN-SUFFIX,pub.funshion.com,NODE UDP
+  - DOMAIN-SUFFIX,pv.funshion.com,NODE UDP
+  - DOMAIN-SUFFIX,stat.funshion.com,NODE UDP
+  - DOMAIN-SUFFIX,ad.m.iqiyi.com,NODE UDP
+  - DOMAIN-SUFFIX,afp.iqiyi.com,NODE UDP
+  - DOMAIN-SUFFIX,c.uaa.iqiyi.com,NODE UDP
+  - DOMAIN-SUFFIX,cloudpush.iqiyi.com,NODE UDP
+  - DOMAIN-SUFFIX,cm.passport.iqiyi.com,NODE UDP
+  - DOMAIN-SUFFIX,cupid.iqiyi.com,NODE UDP
+  - DOMAIN-SUFFIX,emoticon.sns.iqiyi.com,NODE UDP
+  - DOMAIN-SUFFIX,gamecenter.iqiyi.com,NODE UDP
+  - DOMAIN-SUFFIX,ifacelog.iqiyi.com,NODE UDP
+  - DOMAIN-SUFFIX,mbdlog.iqiyi.com,NODE UDP
+  - DOMAIN-SUFFIX,meta.video.qiyi.com,NODE UDP
+  - DOMAIN-SUFFIX,msg.71.am,NODE UDP
+  - DOMAIN-SUFFIX,msg1.video.qiyi.com,NODE UDP
+  - DOMAIN-SUFFIX,msg2.video.qiyi.com,NODE UDP
+  - DOMAIN-SUFFIX,paopao.iqiyi.com,NODE UDP
+  - DOMAIN-SUFFIX,paopaod.qiyipic.com,NODE UDP
+  - DOMAIN-SUFFIX,policy.video.iqiyi.com,NODE UDP
+  - DOMAIN-SUFFIX,yuedu.iqiyi.com,NODE UDP
+  - IP-CIDR,101.227.200.0/24,NODE UDP,no-resolve
+  - IP-CIDR,101.227.200.11/32,NODE UDP,no-resolve
+  - IP-CIDR,101.227.200.28/32,NODE UDP,no-resolve
+  - IP-CIDR,101.227.97.240/32,NODE UDP,no-resolve
+  - IP-CIDR,124.192.153.42/32,NODE UDP,no-resolve
+  - DOMAIN-SUFFIX,gug.ku6cdn.com,NODE UDP
+  - DOMAIN-SUFFIX,pq.stat.ku6.com,NODE UDP
+  - DOMAIN-SUFFIX,st.vq.ku6.cn,NODE UDP
+  - DOMAIN-SUFFIX,static.ku6.com,NODE UDP
+  - DOMAIN-SUFFIX,1.letvlive.com,NODE UDP
+  - DOMAIN-SUFFIX,2.letvlive.com,NODE UDP
+  - DOMAIN-SUFFIX,ark.letv.com,NODE UDP
+  - DOMAIN-SUFFIX,dc.letv.com,NODE UDP
+  - DOMAIN-SUFFIX,fz.letv.com,NODE UDP
+  - DOMAIN-SUFFIX,g3.letv.com,NODE UDP
+  - DOMAIN-SUFFIX,game.letvstore.com,NODE UDP
+  - DOMAIN-SUFFIX,i0.letvimg.com,NODE UDP
+  - DOMAIN-SUFFIX,i3.letvimg.com,NODE UDP
+  - DOMAIN-SUFFIX,minisite.letv.com,NODE UDP
+  - DOMAIN-SUFFIX,n.mark.letv.com,NODE UDP
+  - DOMAIN-SUFFIX,pro.hoye.letv.com,NODE UDP
+  - DOMAIN-SUFFIX,pro.letv.com,NODE UDP
+  - DOMAIN-SUFFIX,stat.letv.com,NODE UDP
+  - DOMAIN-SUFFIX,static.app.m.letv.com,NODE UDP
+  - DOMAIN-SUFFIX,click.hunantv.com,NODE UDP
+  - DOMAIN-SUFFIX,da.hunantv.com,NODE UDP
+  - DOMAIN-SUFFIX,da.mgtv.com,NODE UDP
+  - DOMAIN-SUFFIX,log.hunantv.com,NODE UDP
+  - DOMAIN-SUFFIX,log.v2.hunantv.com,NODE UDP
+  - DOMAIN-SUFFIX,p2.hunantv.com,NODE UDP
+  - DOMAIN-SUFFIX,res.hunantv.com,NODE UDP
+  - DOMAIN-SUFFIX,888.tv.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,adnet.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,ads.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,aty.hd.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,aty.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,bd.hd.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,click.hd.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,click2.hd.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,ctr.hd.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,epro.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,epro.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,go.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,golden1.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,golden1.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,hui.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,inte.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,inte.sogoucdn.com,NODE UDP
+  - DOMAIN-SUFFIX,inte.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,lm.tv.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,lu.sogoucdn.com,NODE UDP
+  - DOMAIN-SUFFIX,pb.hd.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,push.tv.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,pv.hd.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,pv.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,pv.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,theta.sogoucdn.com,NODE UDP
+  - DOMAIN-SUFFIX,um.hd.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,uranus.sogou.com,NODE UDP
+  - DOMAIN-SUFFIX,uranus.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,wan.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,wl.hd.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,yule.sohu.com,NODE UDP
+  - DOMAIN-SUFFIX,afp.pplive.com,NODE UDP
+  - DOMAIN-SUFFIX,app.aplus.pptv.com,NODE UDP
+  - DOMAIN-SUFFIX,as.aplus.pptv.com,NODE UDP
+  - DOMAIN-SUFFIX,asimgs.pplive.cn,NODE UDP
+  - DOMAIN-SUFFIX,de.as.pptv.com,NODE UDP
+  - DOMAIN-SUFFIX,jp.as.pptv.com,NODE UDP
+  - DOMAIN-SUFFIX,pp2.pptv.com,NODE UDP
+  - DOMAIN-SUFFIX,stat.pptv.com,NODE UDP
+  - DOMAIN-SUFFIX,btrace.video.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,c.l.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,dp3.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,livep.l.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,lives.l.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,livew.l.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,mcgi.v.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,mdevstat.qqlive.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,omgmta1.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,p.l.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,rcgi.video.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,t.l.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,u.l.qq.com,NODE UDP
+  - DOMAIN-SUFFIX,a-dxk.play.api.3g.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,actives.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,ad.api.3g.tudou.com,NODE UDP
+  - DOMAIN-SUFFIX,ad.api.3g.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,ad.api.mobile.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,ad.mobile.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,adcontrol.tudou.com,NODE UDP
+  - DOMAIN-SUFFIX,adplay.tudou.com,NODE UDP
+  - DOMAIN-SUFFIX,b.smartvideo.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,c.yes.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,dev-push.m.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,dl.g.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,dmapp.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,e.stat.ykimg.com,NODE UDP
+  - DOMAIN-SUFFIX,gamex.mobile.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,goods.tudou.com,NODE UDP
+  - DOMAIN-SUFFIX,hudong.pl.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,hz.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,iwstat.tudou.com,NODE UDP
+  - DOMAIN-SUFFIX,iyes.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,l.ykimg.com,NODE UDP
+  - DOMAIN-SUFFIX,l.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,lstat.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,lvip.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,mobilemsg.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,msg.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,myes.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,nstat.tudou.com,NODE UDP
+  - DOMAIN-SUFFIX,p-log.ykimg.com,NODE UDP
+  - DOMAIN-SUFFIX,p.l.ykimg.com,NODE UDP
+  - DOMAIN-SUFFIX,p.l.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,passport-log.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,push.m.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,r.l.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,s.p.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,sdk.m.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,stat.tudou.com,NODE UDP
+  - DOMAIN-SUFFIX,stat.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,stats.tudou.com,NODE UDP
+  - DOMAIN-SUFFIX,store.tv.api.3g.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,store.xl.api.3g.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,tdrec.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,test.ott.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,v.l.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,val.api.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,wan.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,ykatr.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,ykrec.youku.com,NODE UDP
+  - DOMAIN-SUFFIX,ykrectab.youku.com,NODE UDP
+  - IP-CIDR,117.177.248.17/32,NODE UDP,no-resolve
+  - IP-CIDR,117.177.248.41/32,NODE UDP,no-resolve
+  - IP-CIDR,223.87.176.139/32,NODE UDP,no-resolve
+  - IP-CIDR,223.87.176.176/32,NODE UDP,no-resolve
+  - IP-CIDR,223.87.177.180/32,NODE UDP,no-resolve
+  - IP-CIDR,223.87.177.182/32,NODE UDP,no-resolve
+  - IP-CIDR,223.87.177.184/32,NODE UDP,no-resolve
+  - IP-CIDR,223.87.177.43/32,NODE UDP,no-resolve
+  - IP-CIDR,223.87.177.47/32,NODE UDP,no-resolve
+  - IP-CIDR,223.87.177.80/32,NODE UDP,no-resolve
+  - IP-CIDR,223.87.182.101/32,NODE UDP,no-resolve
+  - IP-CIDR,223.87.182.102/32,NODE UDP,no-resolve
+  - IP-CIDR,223.87.182.11/32,NODE UDP,no-resolve
+  - IP-CIDR,223.87.182.52/32,NODE UDP,no-resolve
+  - DOMAIN-SUFFIX,azabu-u.ac.jp,NODE UDP
+  - DOMAIN-SUFFIX,couchcoaster.jp,NODE UDP
+  - DOMAIN-SUFFIX,delivery.dmkt-sp.jp,NODE UDP
+  - DOMAIN-SUFFIX,ehg-youtube.hitbox.com,NODE UDP
+  - DOMAIN-SUFFIX,m-78.jp,NODE UDP
+  - DOMAIN-SUFFIX,nichibenren.or.jp,NODE UDP
+  - DOMAIN-SUFFIX,nicorette.co.kr,NODE UDP
+  - DOMAIN-SUFFIX,ssl-youtube.2cnt.net,NODE UDP
+  - DOMAIN-SUFFIX,youtube.112.2o7.net,NODE UDP
+  - DOMAIN-SUFFIX,youtube.2cnt.net,NODE UDP
+  - DOMAIN-SUFFIX,acsystem.wasu.tv,NODE UDP
+  - DOMAIN-SUFFIX,ads.cdn.tvb.com,NODE UDP
+  - DOMAIN-SUFFIX,ads.wasu.tv,NODE UDP
+  - DOMAIN-SUFFIX,afp.wasu.tv,NODE UDP
+  - DOMAIN-SUFFIX,c.algovid.com,NODE UDP
+  - DOMAIN-SUFFIX,cc.xtgreat.com,NODE UDP
+  - DOMAIN-SUFFIX,d.dsp.imageter.com,NODE UDP
+  - DOMAIN-SUFFIX,gg.jtertp.com,NODE UDP
+  - DOMAIN-SUFFIX,gridsum-vd.cntv.cn,NODE UDP
+  - DOMAIN-SUFFIX,kwflvcdn.000dn.com,NODE UDP
+  - DOMAIN-SUFFIX,logstat.t.sfht.com,NODE UDP
+  - DOMAIN-SUFFIX,match.rtbidder.net,NODE UDP
+  - DOMAIN-SUFFIX,n-st.vip.com,NODE UDP
+  - DOMAIN-SUFFIX,pop.uusee.com,NODE UDP
+  - DOMAIN-SUFFIX,static.duoshuo.com,NODE UDP
+  - DOMAIN-SUFFIX,t.cr-nielsen.com,NODE UDP
+  - DOMAIN-SUFFIX,terren.cntv.cn,NODE UDP
+  - DOMAIN-SUFFIX,1.win7china.com,NODE UDP
+  - DOMAIN-SUFFIX,168.it168.com,NODE UDP
+  - DOMAIN-SUFFIX,2.win7china.com,NODE UDP
+  - DOMAIN-SUFFIX,801.tianya.cn,NODE UDP
+  - DOMAIN-SUFFIX,801.tianyaui.cn,NODE UDP
+  - DOMAIN-SUFFIX,803.tianya.cn,NODE UDP
+  - DOMAIN-SUFFIX,803.tianyaui.cn,NODE UDP
+  - DOMAIN-SUFFIX,806.tianya.cn,NODE UDP
+  - DOMAIN-SUFFIX,806.tianyaui.cn,NODE UDP
+  - DOMAIN-SUFFIX,808.tianya.cn,NODE UDP
+  - DOMAIN-SUFFIX,808.tianyaui.cn,NODE UDP
+  - DOMAIN-SUFFIX,92x.tumblr.com,NODE UDP
+  - DOMAIN-SUFFIX,a1.itc.cn,NODE UDP
+  - DOMAIN-SUFFIX,ad-channel.wikawika.xyz,NODE UDP
+  - DOMAIN-SUFFIX,ad-display.wikawika.xyz,NODE UDP
+  - DOMAIN-SUFFIX,ad.12306.cn,NODE UDP
+  - DOMAIN-SUFFIX,ad.3.cn,NODE UDP
+  - DOMAIN-SUFFIX,ad.95306.cn,NODE UDP
+  - DOMAIN-SUFFIX,ad.caiyunapp.com,NODE UDP
+  - DOMAIN-SUFFIX,ad.cctv.com,NODE UDP
+  - DOMAIN-SUFFIX,ad.cmvideo.cn,NODE UDP
+  - DOMAIN-SUFFIX,ad.csdn.net,NODE UDP
+  - DOMAIN-SUFFIX,ad.ganji.com,NODE UDP
+  - DOMAIN-SUFFIX,ad.house365.com,NODE UDP
+  - DOMAIN-SUFFIX,ad.thepaper.cn,NODE UDP
+  - DOMAIN-SUFFIX,ad.unimhk.com,NODE UDP
+  - DOMAIN-SUFFIX,adadmin.house365.com,NODE UDP
+  - DOMAIN-SUFFIX,adhome.1fangchan.com,NODE UDP
+  - DOMAIN-SUFFIX,adm.10jqka.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,ads.csdn.net,NODE UDP
+  - DOMAIN-SUFFIX,ads.feedly.com,NODE UDP
+  - DOMAIN-SUFFIX,ads.genieessp.com,NODE UDP
+  - DOMAIN-SUFFIX,ads.house365.com,NODE UDP
+  - DOMAIN-SUFFIX,ads.linkedin.com,NODE UDP
+  - DOMAIN-SUFFIX,adshownew.it168.com,NODE UDP
+  - DOMAIN-SUFFIX,adv.ccb.com,NODE UDP
+  - DOMAIN-SUFFIX,advert.api.thejoyrun.com,NODE UDP
+  - DOMAIN-SUFFIX,analytics.ganji.com,NODE UDP
+  - DOMAIN-SUFFIX,api-deal.kechenggezi.com,NODE UDP
+  - DOMAIN-SUFFIX,api-z.weidian.com,NODE UDP
+  - DOMAIN-SUFFIX,app-monitor.ele.me,NODE UDP
+  - DOMAIN-SUFFIX,bat.bing.com,NODE UDP
+  - DOMAIN-SUFFIX,bd1.52che.com,NODE UDP
+  - DOMAIN-SUFFIX,bd2.52che.com,NODE UDP
+  - DOMAIN-SUFFIX,bdj.tianya.cn,NODE UDP
+  - DOMAIN-SUFFIX,bdj.tianyaui.cn,NODE UDP
+  - DOMAIN-SUFFIX,beacon.tingyun.com,NODE UDP
+  - DOMAIN-SUFFIX,cdn.jiuzhilan.com,NODE UDP
+  - DOMAIN-SUFFIX,click.cheshi-img.com,NODE UDP
+  - DOMAIN-SUFFIX,click.cheshi.com,NODE UDP
+  - DOMAIN-SUFFIX,click.ganji.com,NODE UDP
+  - DOMAIN-SUFFIX,click.tianya.cn,NODE UDP
+  - DOMAIN-SUFFIX,click.tianyaui.cn,NODE UDP
+  - DOMAIN-SUFFIX,client-api.ele.me,NODE UDP
+  - DOMAIN-SUFFIX,collector.githubapp.com,NODE UDP
+  - DOMAIN-SUFFIX,counter.csdn.net,NODE UDP
+  - DOMAIN-SUFFIX,d0.xcar.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,de.soquair.com,NODE UDP
+  - DOMAIN-SUFFIX,dol.tianya.cn,NODE UDP
+  - DOMAIN-SUFFIX,dol.tianyaui.cn,NODE UDP
+  - DOMAIN-SUFFIX,dw.xcar.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,e.nexac.com,NODE UDP
+  - DOMAIN-SUFFIX,eq.10jqka.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,exp.17wo.cn,NODE UDP
+  - DOMAIN-SUFFIX,game.51yund.com,NODE UDP
+  - DOMAIN-SUFFIX,ganjituiguang.ganji.com,NODE UDP
+  - DOMAIN-SUFFIX,grand.ele.me,NODE UDP
+  - DOMAIN-SUFFIX,hosting.miarroba.info,NODE UDP
+  - DOMAIN-SUFFIX,iadsdk.apple.com,NODE UDP
+  - DOMAIN-SUFFIX,image.gentags.com,NODE UDP
+  - DOMAIN-SUFFIX,its-dori.tumblr.com,NODE UDP
+  - DOMAIN-SUFFIX,log.outbrain.com,NODE UDP
+  - DOMAIN-SUFFIX,m.12306media.com,NODE UDP
+  - DOMAIN-SUFFIX,media.cheshi-img.com,NODE UDP
+  - DOMAIN-SUFFIX,media.cheshi.com,NODE UDP
+  - DOMAIN-SUFFIX,mobile-pubt.ele.me,NODE UDP
+  - DOMAIN-SUFFIX,mobileads.msn.com,NODE UDP
+  - DOMAIN-SUFFIX,n.cosbot.cn,NODE UDP
+  - DOMAIN-SUFFIX,newton-api.ele.me,NODE UDP
+  - DOMAIN-SUFFIX,ozone.10jqka.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,pdl.gionee.com,NODE UDP
+  - DOMAIN-SUFFIX,pica-juicy.picacomic.com,NODE UDP
+  - DOMAIN-SUFFIX,pixel.wp.com,NODE UDP
+  - DOMAIN-SUFFIX,pub.mop.com,NODE UDP
+  - DOMAIN-SUFFIX,push.wandoujia.com,NODE UDP
+  - DOMAIN-SUFFIX,pv.cheshi-img.com,NODE UDP
+  - DOMAIN-SUFFIX,pv.cheshi.com,NODE UDP
+  - DOMAIN-SUFFIX,pv.xcar.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,qdp.qidian.com,NODE UDP
+  - DOMAIN-SUFFIX,res.gwifi.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,ssp.kssws.ks-cdn.com,NODE UDP
+  - DOMAIN-SUFFIX,sta.ganji.com,NODE UDP
+  - DOMAIN-SUFFIX,stat.10jqka.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,stat.it168.com,NODE UDP
+  - DOMAIN-SUFFIX,stats.chinaz.com,NODE UDP
+  - DOMAIN-SUFFIX,stats.developingperspective.com,NODE UDP
+  - DOMAIN-SUFFIX,track.hujiang.com,NODE UDP
+  - DOMAIN-SUFFIX,tracker.yhd.com,NODE UDP
+  - DOMAIN-SUFFIX,tralog.ganji.com,NODE UDP
+  - DOMAIN-SUFFIX,up.qingdaonews.com,NODE UDP
+  - DOMAIN-SUFFIX,vaserviece.10jqka.com.cn,NODE UDP
+  - DOMAIN-SUFFIX,265.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,2mdn.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,alt1-mtalk.google.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,alt2-mtalk.google.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,alt3-mtalk.google.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,alt4-mtalk.google.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,alt5-mtalk.google.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,alt6-mtalk.google.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,alt7-mtalk.google.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,alt8-mtalk.google.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,app-measurement.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,c.android.clients.google.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,cache.pack.google.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,clickserve.dartsearch.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,clientservices.googleapis.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,crl.pki.goog,GLOBAL UDP
+  - DOMAIN-SUFFIX,dl.google.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,dl.l.google.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,fonts.googleapis.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,fonts.gstatic.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,googletagmanager.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,googletagservices.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,gtm.oasisfeng.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,imasdk.googleapis.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,mtalk.google.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ocsp.pki.goog,GLOBAL UDP
+  - DOMAIN-SUFFIX,recaptcha.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,safebrowsing-cache.google.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,safebrowsing.googleapis.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,settings.crashlytics.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ssl-google-analytics.l.google.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ssl.gstatic.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,toolbarqueries.google.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,tools.google.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,tools.l.google.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,update.googleapis.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,www-googletagmanager.l.google.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,www.gstatic.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,t.me,CONFIG
+  - DOMAIN-SUFFIX,tdesktop.com,CONFIG
+  - DOMAIN-SUFFIX,telegra.ph,CONFIG
+  - DOMAIN-SUFFIX,telegram.me,CONFIG
+  - DOMAIN-SUFFIX,telegram.org,CONFIG
+  - DOMAIN-SUFFIX,telesco.pe,CONFIG
+  - IP-CIDR,91.108.0.0/16,CONFIG,no-resolve
+  - IP-CIDR,109.239.140.0/24,CONFIG,no-resolve
+  - IP-CIDR,149.154.160.0/20,CONFIG,no-resolve
+  - IP-CIDR6,2001:67c:4e8::/48,CONFIG,no-resolve
+  - IP-CIDR6,2001:b28:f23d::/48,CONFIG,no-resolve
+  - IP-CIDR6,2001:b28:f23f::/48,CONFIG,no-resolve
+  - DOMAIN-SUFFIX,edgedatg.com,CONFIG
+  - DOMAIN-SUFFIX,go.com,CONFIG
+  - DOMAIN-KEYWORD,abematv.akamaized.net,CONFIG
+  - DOMAIN-SUFFIX,abema.io,CONFIG
+  - DOMAIN-SUFFIX,abema.tv,CONFIG
+  - DOMAIN-SUFFIX,ameba.jp,CONFIG
+  - DOMAIN-SUFFIX,hayabusa.io,CONFIG
+  - DOMAIN-SUFFIX,c4assets.com,CONFIG
+  - DOMAIN-SUFFIX,channel4.com,CONFIG
+  - DOMAIN, atv-ps.amazon.com,CONFIG
+  - DOMAIN, fls-na.amazon.com,CONFIG
+  - DOMAIN-SUFFIX, media-amazon.com,CONFIG
+  - DOMAIN-SUFFIX,aiv-cdn.net,CONFIG
+  - DOMAIN-SUFFIX,amazonaws.co.uk,CONFIG
+  - DOMAIN-SUFFIX,amazonaws.com,CONFIG
+  - DOMAIN-SUFFIX,amazonvideo.com,CONFIG
+  - DOMAIN-SUFFIX,llnwd.net,CONFIG
+  - DOMAIN-SUFFIX,primevideo.com,CONFIG
+  - DOMAIN,gspe1-ssl.ls.apple.com,CONFIG
+  - DOMAIN,np-edge.itunes.apple.com,CONFIG
+  - DOMAIN,play-edge.itunes.apple.com,CONFIG
+  - DOMAIN-SUFFIX,tv.apple.com,CONFIG
+  - DOMAIN-KEYWORD,bbcfmt,CONFIG
+  - DOMAIN-KEYWORD,uk-live,CONFIG
+  - DOMAIN,aod-dash-uk-live.akamaized.net,CONFIG
+  - DOMAIN,aod-hls-uk-live.akamaized.net,CONFIG
+  - DOMAIN,vod-dash-uk-live.akamaized.net,CONFIG
+  - DOMAIN,vod-thumb-uk-live.akamaized.net,CONFIG
+  - DOMAIN-SUFFIX,bbc.co,CONFIG
+  - DOMAIN-SUFFIX,bbc.co.uk,CONFIG
+  - DOMAIN-SUFFIX,bbc.com,CONFIG
+  - DOMAIN-SUFFIX,bbc.net.uk,CONFIG
+  - DOMAIN-SUFFIX,bbcfmt.hs.llnwd.net,CONFIG
+  - DOMAIN-SUFFIX,bbci.co,CONFIG
+  - DOMAIN-SUFFIX,bbci.co.uk,CONFIG
+  - DOMAIN-SUFFIX,bidi.net.uk,CONFIG
+  - DOMAIN,gamer-cds.cdn.hinet.net,CONFIG
+  - DOMAIN,gamer2-cds.cdn.hinet.net,CONFIG
+  - DOMAIN-SUFFIX,bahamut.com.tw,CONFIG
+  - DOMAIN-SUFFIX,gamer.com.tw,CONFIG
+  - DOMAIN-SUFFIX,hinet.net,CONFIG
+  - DOMAIN-KEYWORD,livedazn,CONFIG
+  - DOMAIN-KEYWORD,vod2dazn,CONFIG
+  - DOMAIN-KEYWORD,voddazn,CONFIG
+  - DOMAIN,d151l6v8er5bdm.cloudfront.net,CONFIG
+  - DOMAIN,edge.api.brightcove.com,CONFIG
+  - DOMAIN,players.brightcove.net,CONFIG
+  - DOMAIN-SUFFIX,amplify.outbrain.com,CONFIG
+  - DOMAIN-SUFFIX,bluekai.com,CONFIG
+  - DOMAIN-SUFFIX,control.kochava.com,CONFIG
+  - DOMAIN-SUFFIX,cws.conviva.com,CONFIG
+  - DOMAIN-SUFFIX,d151l6v8er5bdm.cloudfront.net,CONFIG
+  - DOMAIN-SUFFIX,d1sgwhnao7452x.cloudfront.net,CONFIG
+  - DOMAIN-SUFFIX,dazn-api.com,CONFIG
+  - DOMAIN-SUFFIX,dazn.com,CONFIG
+  - DOMAIN-SUFFIX,dazndn.com,CONFIG
+  - DOMAIN-SUFFIX,dc1-voddash-perform.secure.footprint.net,CONFIG
+  - DOMAIN-SUFFIX,dc1live21715dazn.akamaized.net,CONFIG
+  - DOMAIN-SUFFIX,dc2-live2dash-perform.secure.footprint.net,CONFIG
+  - DOMAIN-SUFFIX,dc2-live2hls-perform.secure.footprint.net,CONFIG
+  - DOMAIN-SUFFIX,dc2-vodhls-perform.secure.footprint.net,CONFIG
+  - DOMAIN-SUFFIX,dca-livedash-perform.secure.footprint.net,CONFIG
+  - DOMAIN-SUFFIX,dca-voddash-perform.secure.footprint.net,CONFIG
+  - DOMAIN-SUFFIX,dca-vodhls-perform.secure.footprint.net,CONFIG
+  - DOMAIN-SUFFIX,dcb-livedash-perform.secure.footprint.net,CONFIG
+  - DOMAIN-SUFFIX,dcb-voddash-perform.secure.footprint.net,CONFIG
+  - DOMAIN-SUFFIX,dcblivedazn.akamaized.net,CONFIG
+  - DOMAIN-SUFFIX,indazn.com,CONFIG
+  - DOMAIN-SUFFIX,indaznlab.com,CONFIG
+  - DOMAIN-SUFFIX,intercom.io,CONFIG
+  - DOMAIN-SUFFIX,perfops.doracdn.com,CONFIG
+  - DOMAIN-SUFFIX,s.llnwi.net,CONFIG
+  - DOMAIN-SUFFIX,s.yimg.jp,CONFIG
+  - DOMAIN-SUFFIX,secure.footprint.net,CONFIG
+  - DOMAIN-SUFFIX,sentry.io,CONFIG
+  - DOMAIN-SUFFIX,urbanairship.com,CONFIG
+  - DOMAIN-SUFFIX,vjs.zencdn.net,CONFIG
+  - DOMAIN-SUFFIX,widevine.entitlement.us.theplatform.com,CONFIG
+  - DOMAIN-SUFFIX,yahoo.co.jp,CONFIG
+  - DOMAIN-SUFFIX,deezer.com,CONFIG
+  - DOMAIN-SUFFIX,dzcdn.net,CONFIG
+  - DOMAIN,cdn.registerdisney.go.com,CONFIG
+  - DOMAIN-SUFFIX,adobedtm.com,CONFIG
+  - DOMAIN-SUFFIX,bam.nr-data.net,CONFIG
+  - DOMAIN-SUFFIX,bamgrid.com,CONFIG
+  - DOMAIN-SUFFIX,braze.com,CONFIG
+  - DOMAIN-SUFFIX,cdn.optimizely.com,CONFIG
+  - DOMAIN-SUFFIX,cdn.registerdisney.go.com,CONFIG
+  - DOMAIN-SUFFIX,cws.conviva.com,CONFIG
+  - DOMAIN-SUFFIX,d9.flashtalking.com,CONFIG
+  - DOMAIN-SUFFIX,disney-plus.net,CONFIG
+  - DOMAIN-SUFFIX,disney-portal.my.onetrust.com,CONFIG
+  - DOMAIN-SUFFIX,disney.demdex.net,CONFIG
+  - DOMAIN-SUFFIX,disney.my.sentry.io,CONFIG
+  - DOMAIN-SUFFIX,disneyplus.bn5x.net,CONFIG
+  - DOMAIN-SUFFIX,disneyplus.com,CONFIG
+  - DOMAIN-SUFFIX,disneyplus.com.ssl.sc.omtrdc.net,CONFIG
+  - DOMAIN-SUFFIX,disneystreaming.com,CONFIG
+  - DOMAIN-SUFFIX,dssott.com,CONFIG
+  - DOMAIN-SUFFIX,execute-api.us-east-1.amazonaws.com,CONFIG
+  - DOMAIN-SUFFIX,js-agent.newrelic.com,CONFIG
+  - DOMAIN,bcbolt446c5271-a.akamaihd.net,CONFIG
+  - DOMAIN,content.jwplatform.com,CONFIG
+  - DOMAIN,edge.api.brightcove.com,CONFIG
+  - DOMAIN,videos-f.jwpsrv.com,CONFIG
+  - DOMAIN-SUFFIX,encoretvb.com,CONFIG
+  - DOMAIN-SUFFIX,fox.com,CONFIG
+  - DOMAIN-SUFFIX,foxdcg.com,CONFIG
+  - DOMAIN-SUFFIX,uplynk.com,CONFIG
+  - DOMAIN,44wilhpljf.execute-api.ap-southeast-1.amazonaws.com,CONFIG
+  - DOMAIN,bcbolthboa-a.akamaihd.net,CONFIG
+  - DOMAIN,cf-images.ap-southeast-1.prod.boltdns.net,CONFIG
+  - DOMAIN,dai3fd1oh325y.cloudfront.net,CONFIG
+  - DOMAIN,hboasia1-i.akamaihd.net,CONFIG
+  - DOMAIN,hboasia2-i.akamaihd.net,CONFIG
+  - DOMAIN,hboasia3-i.akamaihd.net,CONFIG
+  - DOMAIN,hboasia4-i.akamaihd.net,CONFIG
+  - DOMAIN,hboasia5-i.akamaihd.net,CONFIG
+  - DOMAIN,players.brightcove.net,CONFIG
+  - DOMAIN,s3-ap-southeast-1.amazonaws.com,CONFIG
+  - DOMAIN-SUFFIX,hbo.com,CONFIG
+  - DOMAIN-SUFFIX,hbogo.com,CONFIG
+  - DOMAIN-SUFFIX,hbogoasia.com,CONFIG
+  - DOMAIN-SUFFIX,hbogoasia.hk,CONFIG
+  - DOMAIN-SUFFIX,hbomax.com,CONFIG
+  - DOMAIN-SUFFIX,hbomaxcdn.com,CONFIG
+  - DOMAIN-SUFFIX,hbonow.com,CONFIG
+  - DOMAIN-KEYWORD,.hbogoasia.,CONFIG
+  - DOMAIN,44wilhpljf.execute-api.ap-southeast-1.amazonaws.com,CONFIG
+  - DOMAIN,bcbolthboa-a.akamaihd.net,CONFIG
+  - DOMAIN,cf-images.ap-southeast-1.prod.boltdns.net,CONFIG
+  - DOMAIN,dai3fd1oh325y.cloudfront.net,CONFIG
+  - DOMAIN,hboasia1-i.akamaihd.net,CONFIG
+  - DOMAIN,hboasia2-i.akamaihd.net,CONFIG
+  - DOMAIN,hboasia3-i.akamaihd.net,CONFIG
+  - DOMAIN,hboasia4-i.akamaihd.net,CONFIG
+  - DOMAIN,hboasia5-i.akamaihd.net,CONFIG
+  - DOMAIN,hboasialive.akamaized.net,CONFIG
+  - DOMAIN,hbogoprod-vod.akamaized.net,CONFIG
+  - DOMAIN,hbolb.onwardsmg.com,CONFIG
+  - DOMAIN,hbounify-prod.evergent.com,CONFIG
+  - DOMAIN,players.brightcove.net,CONFIG
+  - DOMAIN,s3-ap-southeast-1.amazonaws.com,CONFIG
+  - DOMAIN-SUFFIX,hbogoasia.com,CONFIG
+  - DOMAIN-SUFFIX,hbogoasia.hk,CONFIG
+  - DOMAIN-SUFFIX,5itv.tv,CONFIG
+  - DOMAIN-SUFFIX,ocnttv.com,CONFIG
+  - DOMAIN-SUFFIX,cws-hulu.conviva.com,CONFIG
+  - DOMAIN-SUFFIX,hulu.com,CONFIG
+  - DOMAIN-SUFFIX,hulu.hb.omtrdc.net,CONFIG
+  - DOMAIN-SUFFIX,hulu.sc.omtrdc.net,CONFIG
+  - DOMAIN-SUFFIX,huluad.com,CONFIG
+  - DOMAIN-SUFFIX,huluim.com,CONFIG
+  - DOMAIN-SUFFIX,hulustream.com,CONFIG
+  - DOMAIN-SUFFIX,happyon.jp,CONFIG
+  - DOMAIN-SUFFIX,hjholdings.jp,CONFIG
+  - DOMAIN-SUFFIX,hulu.jp,CONFIG
+  - DOMAIN-SUFFIX,prod.hjholdings.tv,CONFIG
+  - DOMAIN-SUFFIX,streaks.jp,CONFIG
+  - DOMAIN-SUFFIX,yb.uncn.jp,CONFIG
+  - DOMAIN,itvpnpmobile-a.akamaihd.net,CONFIG
+  - DOMAIN-SUFFIX,itv.com,CONFIG
+  - DOMAIN-SUFFIX,itvstatic.com,CONFIG
+  - DOMAIN-KEYWORD,jooxweb-api,CONFIG
+  - DOMAIN-SUFFIX,joox.com,CONFIG
+  - DOMAIN-KEYWORD,japonx,CONFIG
+  - DOMAIN-KEYWORD,japronx,CONFIG
+  - DOMAIN-SUFFIX,japonx.com,CONFIG
+  - DOMAIN-SUFFIX,japonx.net,CONFIG
+  - DOMAIN-SUFFIX,japonx.tv,CONFIG
+  - DOMAIN-SUFFIX,japonx.vip,CONFIG
+  - DOMAIN-SUFFIX,japronx.com,CONFIG
+  - DOMAIN-SUFFIX,japronx.net,CONFIG
+  - DOMAIN-SUFFIX,japronx.tv,CONFIG
+  - DOMAIN-SUFFIX,japronx.vip,CONFIG
+  - DOMAIN-SUFFIX,kfs.io,CONFIG
+  - DOMAIN-SUFFIX,kkbox.com,CONFIG
+  - DOMAIN-SUFFIX,kkbox.com.tw,CONFIG
+  - DOMAIN,kktv-theater.kk.stream,CONFIG
+  - DOMAIN-SUFFIX,kktv.com.tw,CONFIG
+  - DOMAIN-SUFFIX,kktv.me,CONFIG
+  - DOMAIN,litvfreemobile-hichannel.cdn.hinet.net,CONFIG
+  - DOMAIN-SUFFIX,litv.tv,CONFIG
+  - DOMAIN,d3c7rimkq79yfu.cloudfront.net,CONFIG
+  - DOMAIN-SUFFIX,d3c7rimkq79yfu.cloudfront.net,CONFIG
+  - DOMAIN-SUFFIX,linetv.tw,CONFIG
+  - DOMAIN-SUFFIX,profile.line-scdn.net,CONFIG
+  - DOMAIN,d349g9zuie06uo.cloudfront.net,CONFIG
+  - DOMAIN-SUFFIX,channel5.com,CONFIG
+  - DOMAIN-SUFFIX,my5.tv,CONFIG
+  - DOMAIN,mytvsuperlimited.hb.omtrdc.net,CONFIG
+  - DOMAIN,mytvsuperlimited.sc.omtrdc.net,CONFIG
+  - DOMAIN-SUFFIX,mytvsuper.com,CONFIG
+  - DOMAIN-SUFFIX,tvb.com,CONFIG
+  - DOMAIN-KEYWORD,dualstack.apiproxy-,CONFIG
+  - DOMAIN-KEYWORD,dualstack.ichnaea-web-,CONFIG
+  - DOMAIN,netflix.com.edgesuite.net,CONFIG
+  - DOMAIN-SUFFIX,fast.com,CONFIG
+  - DOMAIN-SUFFIX,netflix.com,CONFIG
+  - DOMAIN-SUFFIX,netflix.net,CONFIG
+  - DOMAIN-SUFFIX,netflixdnstest0.com,CONFIG
+  - DOMAIN-SUFFIX,netflixdnstest1.com,CONFIG
+  - DOMAIN-SUFFIX,netflixdnstest2.com,CONFIG
+  - DOMAIN-SUFFIX,netflixdnstest3.com,CONFIG
+  - DOMAIN-SUFFIX,netflixdnstest4.com,CONFIG
+  - DOMAIN-SUFFIX,netflixdnstest5.com,CONFIG
+  - DOMAIN-SUFFIX,netflixdnstest6.com,CONFIG
+  - DOMAIN-SUFFIX,netflixdnstest7.com,CONFIG
+  - DOMAIN-SUFFIX,netflixdnstest8.com,CONFIG
+  - DOMAIN-SUFFIX,netflixdnstest9.com,CONFIG
+  - DOMAIN-SUFFIX,nflxext.com,CONFIG
+  - DOMAIN-SUFFIX,nflximg.com,CONFIG
+  - DOMAIN-SUFFIX,nflximg.net,CONFIG
+  - DOMAIN-SUFFIX,nflxso.net,CONFIG
+  - DOMAIN-SUFFIX,nflxvideo.net,CONFIG
+  - IP-CIDR,8.41.4.0/24,CONFIG,no-resolve
+  - IP-CIDR,23.246.0.0/18,CONFIG,no-resolve
+  - IP-CIDR,34.210.42.111/32,CONFIG,no-resolve
+  - IP-CIDR,37.77.184.0/21,CONFIG,no-resolve
+  - IP-CIDR,38.72.126.0/24,CONFIG,no-resolve
+  - IP-CIDR,45.57.0.0/17,CONFIG,no-resolve
+  - IP-CIDR,52.89.124.203/32,CONFIG,no-resolve
+  - IP-CIDR,54.148.37.5/32,CONFIG,no-resolve
+  - IP-CIDR,64.120.128.0/17,CONFIG,no-resolve
+  - IP-CIDR,66.197.128.0/17,CONFIG,no-resolve
+  - IP-CIDR,69.53.224.0/19,CONFIG,no-resolve
+  - IP-CIDR,103.87.204.0/22,CONFIG,no-resolve
+  - IP-CIDR,108.175.32.0/20,CONFIG,no-resolve
+  - IP-CIDR,185.2.220.0/22,CONFIG,no-resolve
+  - IP-CIDR,185.9.188.0/22,CONFIG,no-resolve
+  - IP-CIDR,192.173.64.0/18,CONFIG,no-resolve
+  - IP-CIDR,198.38.96.0/19,CONFIG,no-resolve
+  - IP-CIDR,198.45.48.0/20,CONFIG,no-resolve
+  - IP-CIDR,207.45.72.0/22,CONFIG,no-resolve
+  - IP-CIDR,208.75.76.0/22,CONFIG,no-resolve
+  - DOMAIN-SUFFIX,dmc.nico,CONFIG
+  - DOMAIN-SUFFIX,nicovideo.jp,CONFIG
+  - DOMAIN-SUFFIX,nimg.jp,CONFIG
+  - DOMAIN-SUFFIX,pbs.org,CONFIG
+  - DOMAIN-SUFFIX,pandora.com,CONFIG
+  - DOMAIN-SUFFIX,phncdn.com,CONFIG
+  - DOMAIN-SUFFIX,phprcdn.com,CONFIG
+  - DOMAIN-SUFFIX,pornhub.com,CONFIG
+  - DOMAIN-SUFFIX,pornhubpremium.com,CONFIG
+  - DOMAIN-SUFFIX,qobuz.com,CONFIG
+  - DOMAIN-SUFFIX,p-cdn.us,CONFIG
+  - DOMAIN-SUFFIX,sndcdn.com,CONFIG
+  - DOMAIN-SUFFIX,soundcloud.com,CONFIG
+  - DOMAIN-KEYWORD,-spotify-com,CONFIG
+  - DOMAIN-KEYWORD,spotify.com,CONFIG
+  - DOMAIN-SUFFIX,pscdn.co,CONFIG
+  - DOMAIN-SUFFIX,scdn.co,CONFIG
+  - DOMAIN-SUFFIX,spoti.fi,CONFIG
+  - DOMAIN-SUFFIX,spotify.com,CONFIG
+  - DOMAIN-SUFFIX,spotifycdn.com,CONFIG
+  - DOMAIN-SUFFIX,spotifycdn.net,CONFIG
+  - DOMAIN-SUFFIX,tidal-cms.s3.amazonaws.com,CONFIG
+  - DOMAIN-SUFFIX,tidal.com,CONFIG
+  - DOMAIN-SUFFIX,tidalhifi.com,CONFIG
+  - DOMAIN,hamifans.emome.net,CONFIG
+  - DOMAIN-SUFFIX,skyking.com.tw,CONFIG
+  - DOMAIN-KEYWORD,-tiktokcdn-com,CONFIG
+  - DOMAIN-SUFFIX,byteoversea.com,CONFIG
+  - DOMAIN-SUFFIX,ibytedtos.com,CONFIG
+  - DOMAIN-SUFFIX,ipstatp.com,CONFIG
+  - DOMAIN-SUFFIX,muscdn.com,CONFIG
+  - DOMAIN-SUFFIX,musical.ly,CONFIG
+  - DOMAIN-SUFFIX,tik-tokapi.com,CONFIG
+  - DOMAIN-SUFFIX,tiktok.com,CONFIG
+  - DOMAIN-SUFFIX,tiktokcdn.com,CONFIG
+  - DOMAIN-SUFFIX,tiktokv.com,CONFIG
+  - DOMAIN-KEYWORD,ttvnw,CONFIG
+  - DOMAIN-SUFFIX,jtvnw.net,CONFIG
+  - DOMAIN-SUFFIX,ttvnw.net,CONFIG
+  - DOMAIN-SUFFIX,twitch.tv,CONFIG
+  - DOMAIN-SUFFIX,twitchcdn.net,CONFIG
+  - DOMAIN,api.viu.now.com,CONFIG
+  - DOMAIN,d1k2us671qcoau.cloudfront.net,CONFIG
+  - DOMAIN,d2anahhhmp1ffz.cloudfront.net,CONFIG
+  - DOMAIN,dfp6rglgjqszk.cloudfront.net,CONFIG
+  - DOMAIN-SUFFIX,bootstrapcdn.com,CONFIG
+  - DOMAIN-SUFFIX,cloudfront.net,CONFIG
+  - DOMAIN-SUFFIX,cognito-identity.us-east-1.amazonaws.com,CONFIG
+  - DOMAIN-SUFFIX,firebaseio.com,CONFIG
+  - DOMAIN-SUFFIX,jwpcdn.com,CONFIG
+  - DOMAIN-SUFFIX,jwplayer.com,CONFIG
+  - DOMAIN-SUFFIX,mobileanalytics.us-east-1.amazonaws.com,CONFIG
+  - DOMAIN-SUFFIX,nowe.com,CONFIG
+  - DOMAIN-SUFFIX,viu.com,CONFIG
+  - DOMAIN-SUFFIX,viu.now.com,CONFIG
+  - DOMAIN-SUFFIX,viu.tv,CONFIG
+  - DOMAIN-KEYWORD,youtube,CONFIG
+  - DOMAIN,youtubei.googleapis.com,CONFIG
+  - DOMAIN,yt3.ggpht.com,CONFIG
+  - DOMAIN-SUFFIX,googlevideo.com,CONFIG
+  - DOMAIN-SUFFIX,gvt2.com,CONFIG
+  - DOMAIN-SUFFIX,youtu.be,CONFIG
+  - DOMAIN-SUFFIX,youtube.com,CONFIG
+  - DOMAIN-SUFFIX,ytimg.com,CONFIG
+  - DOMAIN-SUFFIX,1password.com,CONFIG
+  - DOMAIN-SUFFIX,adguard.org,CONFIG
+  - DOMAIN-SUFFIX,bit.no.com,CONFIG
+  - DOMAIN-SUFFIX,btlibrary.me,CONFIG
+  - DOMAIN-SUFFIX,cccat.io,CONFIG
+  - DOMAIN-SUFFIX,cloudcone.com,CONFIG
+  - DOMAIN-SUFFIX,dubox.com,CONFIG
+  - DOMAIN-SUFFIX,gameloft.com,CONFIG
+  - DOMAIN-SUFFIX,garena.com,CONFIG
+  - DOMAIN-SUFFIX,hoyolab.com,CONFIG
+  - DOMAIN-SUFFIX,inoreader.com,CONFIG
+  - DOMAIN-SUFFIX,ip138.com,CONFIG
+  - DOMAIN-SUFFIX,ping.pe,CONFIG
+  - DOMAIN-SUFFIX,reddit.com,CONFIG
+  - DOMAIN-SUFFIX,teddysun.com,CONFIG
+  - DOMAIN-SUFFIX,tumbex.com,CONFIG
+  - DOMAIN-SUFFIX,twdvd.com,CONFIG
+  - DOMAIN-SUFFIX,unsplash.com,CONFIG
+  - DOMAIN-SUFFIX,xn--i2ru8q2qg.com,CONFIG
+  - DOMAIN-SUFFIX,yunpanjingling.com,CONFIG
+  - DOMAIN-SUFFIX,eu,CONFIG
+  - DOMAIN-SUFFIX,hk,CONFIG
+  - DOMAIN-SUFFIX,jp,CONFIG
+  - DOMAIN-SUFFIX,kr,CONFIG
+  - DOMAIN-SUFFIX,sg,CONFIG
+  - DOMAIN-SUFFIX,tw,CONFIG
+  - DOMAIN-SUFFIX,uk,CONFIG
+  - DOMAIN-SUFFIX,us,CONFIG
+  - DOMAIN-KEYWORD,1e100,CONFIG
+  - DOMAIN-KEYWORD,abema,CONFIG
+  - DOMAIN-KEYWORD,appledaily,CONFIG
+  - DOMAIN-KEYWORD,avtb,CONFIG
+  - DOMAIN-KEYWORD,beetalk,CONFIG
+  - DOMAIN-KEYWORD,blogspot,CONFIG
+  - DOMAIN-KEYWORD,dropbox,CONFIG
+  - DOMAIN-KEYWORD,facebook,CONFIG
+  - DOMAIN-KEYWORD,fbcdn,CONFIG
+  - DOMAIN-KEYWORD,github,CONFIG
+  - DOMAIN-KEYWORD,gmail,CONFIG
+  - DOMAIN-KEYWORD,google,CONFIG
+  - DOMAIN-KEYWORD,instagram,CONFIG
+  - DOMAIN-KEYWORD,porn,CONFIG
+  - DOMAIN-KEYWORD,sci-hub,CONFIG
+  - DOMAIN-KEYWORD,spotify,CONFIG
+  - DOMAIN-KEYWORD,telegram,CONFIG
+  - DOMAIN-KEYWORD,twitter,CONFIG
+  - DOMAIN-KEYWORD,whatsapp,CONFIG
+  - DOMAIN-KEYWORD,youtube,CONFIG
+  - DOMAIN-SUFFIX,4sqi.net,CONFIG
+  - DOMAIN-SUFFIX,a248.e.akamai.net,CONFIG
+  - DOMAIN-SUFFIX,adobedtm.com,CONFIG
+  - DOMAIN-SUFFIX,ampproject.org,CONFIG
+  - DOMAIN-SUFFIX,android.com,CONFIG
+  - DOMAIN-SUFFIX,aolcdn.com,CONFIG
+  - DOMAIN-SUFFIX,apkmirror.com,CONFIG
+  - DOMAIN-SUFFIX,apkpure.com,CONFIG
+  - DOMAIN-SUFFIX,app-measurement.com,CONFIG
+  - DOMAIN-SUFFIX,appspot.com,CONFIG
+  - DOMAIN-SUFFIX,archive.org,CONFIG
+  - DOMAIN-SUFFIX,armorgames.com,CONFIG
+  - DOMAIN-SUFFIX,aspnetcdn.com,CONFIG
+  - DOMAIN-SUFFIX,awsstatic.com,CONFIG
+  - DOMAIN-SUFFIX,azureedge.net,CONFIG
+  - DOMAIN-SUFFIX,azurewebsites.net,CONFIG
+  - DOMAIN-SUFFIX,bandwagonhost.com,CONFIG
+  - DOMAIN-SUFFIX,bing.com,CONFIG
+  - DOMAIN-SUFFIX,bkrtx.com,CONFIG
+  - DOMAIN-SUFFIX,blogcdn.com,CONFIG
+  - DOMAIN-SUFFIX,blogger.com,CONFIG
+  - DOMAIN-SUFFIX,blogsmithmedia.com,CONFIG
+  - DOMAIN-SUFFIX,blogspot.com,CONFIG
+  - DOMAIN-SUFFIX,blogspot.hk,CONFIG
+  - DOMAIN-SUFFIX,blogspot.jp,CONFIG
+  - DOMAIN-SUFFIX,bloomberg.cn,CONFIG
+  - DOMAIN-SUFFIX,bloomberg.com,CONFIG
+  - DOMAIN-SUFFIX,box.com,CONFIG
+  - DOMAIN-SUFFIX,cachefly.net,CONFIG
+  - DOMAIN-SUFFIX,cdnst.net,CONFIG
+  - DOMAIN-SUFFIX,cloudfront.net,CONFIG
+  - DOMAIN-SUFFIX,comodoca.com,CONFIG
+  - DOMAIN-SUFFIX,daum.net,CONFIG
+  - DOMAIN-SUFFIX,demdex.net,CONFIG
+  - DOMAIN-SUFFIX,deskconnect.com,CONFIG
+  - DOMAIN-SUFFIX,disqus.com,CONFIG
+  - DOMAIN-SUFFIX,disquscdn.com,CONFIG
+  - DOMAIN-SUFFIX,dropbox.com,CONFIG
+  - DOMAIN-SUFFIX,dropboxapi.com,CONFIG
+  - DOMAIN-SUFFIX,dropboxstatic.com,CONFIG
+  - DOMAIN-SUFFIX,dropboxusercontent.com,CONFIG
+  - DOMAIN-SUFFIX,duckduckgo.com,CONFIG
+  - DOMAIN-SUFFIX,edgecastcdn.net,CONFIG
+  - DOMAIN-SUFFIX,edgekey.net,CONFIG
+  - DOMAIN-SUFFIX,edgesuite.net,CONFIG
+  - DOMAIN-SUFFIX,eurekavpt.com,CONFIG
+  - DOMAIN-SUFFIX,fastmail.com,CONFIG
+  - DOMAIN-SUFFIX,firebaseio.com,CONFIG
+  - DOMAIN-SUFFIX,flickr.com,CONFIG
+  - DOMAIN-SUFFIX,flipboard.com,CONFIG
+  - DOMAIN-SUFFIX,gfx.ms,CONFIG
+  - DOMAIN-SUFFIX,gongm.in,CONFIG
+  - DOMAIN-SUFFIX,hulu.com,CONFIG
+  - DOMAIN-SUFFIX,id.heroku.com,CONFIG
+  - DOMAIN-SUFFIX,io.io,CONFIG
+  - DOMAIN-SUFFIX,issuu.com,CONFIG
+  - DOMAIN-SUFFIX,ixquick.com,CONFIG
+  - DOMAIN-SUFFIX,jtvnw.net,CONFIG
+  - DOMAIN-SUFFIX,kat.cr,CONFIG
+  - DOMAIN-SUFFIX,kik.com,CONFIG
+  - DOMAIN-SUFFIX,kobo.com,CONFIG
+  - DOMAIN-SUFFIX,kobobooks.com,CONFIG
+  - DOMAIN-SUFFIX,licdn.com,CONFIG
+  - DOMAIN-SUFFIX,live.net,CONFIG
+  - DOMAIN-SUFFIX,livefilestore.com,CONFIG
+  - DOMAIN-SUFFIX,llnwd.net,CONFIG
+  - DOMAIN-SUFFIX,macrumors.com,CONFIG
+  - DOMAIN-SUFFIX,medium.com,CONFIG
+  - DOMAIN-SUFFIX,mega.nz,CONFIG
+  - DOMAIN-SUFFIX,megaupload.com,CONFIG
+  - DOMAIN-SUFFIX,messenger.com,CONFIG
+  - DOMAIN-SUFFIX,netdna-cdn.com,CONFIG
+  - DOMAIN-SUFFIX,nintendo.net,CONFIG
+  - DOMAIN-SUFFIX,nsstatic.net,CONFIG
+  - DOMAIN-SUFFIX,nytstyle.com,CONFIG
+  - DOMAIN-SUFFIX,overcast.fm,CONFIG
+  - DOMAIN-SUFFIX,openvpn.net,CONFIG
+  - DOMAIN-SUFFIX,periscope.tv,CONFIG
+  - DOMAIN-SUFFIX,pinimg.com,CONFIG
+  - DOMAIN-SUFFIX,pinterest.com,CONFIG
+  - DOMAIN-SUFFIX,potato.im,CONFIG
+  - DOMAIN-SUFFIX,prfct.co,CONFIG
+  - DOMAIN-SUFFIX,pscp.tv,CONFIG
+  - DOMAIN-SUFFIX,quora.com,CONFIG
+  - DOMAIN-SUFFIX,resilio.com,CONFIG
+  - DOMAIN-SUFFIX,sfx.ms,CONFIG
+  - DOMAIN-SUFFIX,shadowsocks.org,CONFIG
+  - DOMAIN-SUFFIX,slack-edge.com,CONFIG
+  - DOMAIN-SUFFIX,smartdnsproxy.com,CONFIG
+  - DOMAIN-SUFFIX,sndcdn.com,CONFIG
+  - DOMAIN-SUFFIX,soundcloud.com,CONFIG
+  - DOMAIN-SUFFIX,startpage.com,CONFIG
+  - DOMAIN-SUFFIX,staticflickr.com,CONFIG
+  - DOMAIN-SUFFIX,symauth.com,CONFIG
+  - DOMAIN-SUFFIX,symcb.com,CONFIG
+  - DOMAIN-SUFFIX,symcd.com,CONFIG
+  - DOMAIN-SUFFIX,textnow.com,CONFIG
+  - DOMAIN-SUFFIX,textnow.me,CONFIG
+  - DOMAIN-SUFFIX,thefacebook.com,CONFIG
+  - DOMAIN-SUFFIX,thepiratebay.org,CONFIG
+  - DOMAIN-SUFFIX,torproject.org,CONFIG
+  - DOMAIN-SUFFIX,trustasiassl.com,CONFIG
+  - DOMAIN-SUFFIX,tumblr.co,CONFIG
+  - DOMAIN-SUFFIX,tumblr.com,CONFIG
+  - DOMAIN-SUFFIX,tvb.com,CONFIG
+  - DOMAIN-SUFFIX,txmblr.com,CONFIG
+  - DOMAIN-SUFFIX,v2ex.com,CONFIG
+  - DOMAIN-SUFFIX,vimeo.com,CONFIG
+  - DOMAIN-SUFFIX,vine.co,CONFIG
+  - DOMAIN-SUFFIX,vox-cdn.com,CONFIG
+  - DOMAIN-SUFFIX,amazon.co.jp,CONFIG
+  - DOMAIN-SUFFIX,amazon.com,CONFIG
+  - DOMAIN-SUFFIX,amazonaws.com,CONFIG
+  - IP-CIDR,13.32.0.0/15,CONFIG,no-resolve
+  - IP-CIDR,13.35.0.0/17,CONFIG,no-resolve
+  - IP-CIDR,18.184.0.0/15,CONFIG,no-resolve
+  - IP-CIDR,18.194.0.0/15,CONFIG,no-resolve
+  - IP-CIDR,18.208.0.0/13,CONFIG,no-resolve
+  - IP-CIDR,18.232.0.0/14,CONFIG,no-resolve
+  - IP-CIDR,52.58.0.0/15,CONFIG,no-resolve
+  - IP-CIDR,52.74.0.0/16,CONFIG,no-resolve
+  - IP-CIDR,52.77.0.0/16,CONFIG,no-resolve
+  - IP-CIDR,52.84.0.0/15,CONFIG,no-resolve
+  - IP-CIDR,52.200.0.0/13,CONFIG,no-resolve
+  - IP-CIDR,54.93.0.0/16,CONFIG,no-resolve
+  - IP-CIDR,54.156.0.0/14,CONFIG,no-resolve
+  - IP-CIDR,54.226.0.0/15,CONFIG,no-resolve
+  - IP-CIDR,54.230.156.0/22,CONFIG,no-resolve
+  - DOMAIN-KEYWORD,uk-live,CONFIG
+  - DOMAIN-SUFFIX,bbc.co,CONFIG
+  - DOMAIN-SUFFIX,bbc.com,CONFIG
+  - DOMAIN-SUFFIX,apache.org,CONFIG
+  - DOMAIN-SUFFIX,docker.com,CONFIG
+  - DOMAIN-SUFFIX,elastic.co,CONFIG
+  - DOMAIN-SUFFIX,elastic.com,CONFIG
+  - DOMAIN-SUFFIX,gcr.io,CONFIG
+  - DOMAIN-SUFFIX,gitlab.com,CONFIG
+  - DOMAIN-SUFFIX,gitlab.io,CONFIG
+  - DOMAIN-SUFFIX,jitpack.io,CONFIG
+  - DOMAIN-SUFFIX,maven.org,CONFIG
+  - DOMAIN-SUFFIX,medium.com,CONFIG
+  - DOMAIN-SUFFIX,mvnrepository.com,CONFIG
+  - DOMAIN-SUFFIX,quay.io,CONFIG
+  - DOMAIN-SUFFIX,reddit.com,CONFIG
+  - DOMAIN-SUFFIX,redhat.com,CONFIG
+  - DOMAIN-SUFFIX,sonatype.org,CONFIG
+  - DOMAIN-SUFFIX,sourcegraph.com,CONFIG
+  - DOMAIN-SUFFIX,spring.io,CONFIG
+  - DOMAIN-SUFFIX,spring.net,CONFIG
+  - DOMAIN-SUFFIX,stackoverflow.com,CONFIG
+  - DOMAIN-SUFFIX,discord.co,CONFIG
+  - DOMAIN-SUFFIX,discord.com,CONFIG
+  - DOMAIN-SUFFIX,discord.gg,CONFIG
+  - DOMAIN-SUFFIX,discord.media,CONFIG
+  - DOMAIN-SUFFIX,discordapp.com,CONFIG
+  - DOMAIN-SUFFIX,discordapp.net,CONFIG
+  - DOMAIN-SUFFIX,facebook.com,CONFIG
+  - DOMAIN-SUFFIX,fb.com,CONFIG
+  - DOMAIN-SUFFIX,fb.me,CONFIG
+  - DOMAIN-SUFFIX,fbcdn.com,CONFIG
+  - DOMAIN-SUFFIX,fbcdn.net,CONFIG
+  - IP-CIDR,31.13.24.0/21,CONFIG,no-resolve
+  - IP-CIDR,31.13.64.0/18,CONFIG,no-resolve
+  - IP-CIDR,45.64.40.0/22,CONFIG,no-resolve
+  - IP-CIDR,66.220.144.0/20,CONFIG,no-resolve
+  - IP-CIDR,69.63.176.0/20,CONFIG,no-resolve
+  - IP-CIDR,69.171.224.0/19,CONFIG,no-resolve
+  - IP-CIDR,74.119.76.0/22,CONFIG,no-resolve
+  - IP-CIDR,103.4.96.0/22,CONFIG,no-resolve
+  - IP-CIDR,129.134.0.0/17,CONFIG,no-resolve
+  - IP-CIDR,157.240.0.0/17,CONFIG,no-resolve
+  - IP-CIDR,173.252.64.0/18,CONFIG,no-resolve
+  - IP-CIDR,179.60.192.0/22,CONFIG,no-resolve
+  - IP-CIDR,185.60.216.0/22,CONFIG,no-resolve
+  - IP-CIDR,204.15.20.0/22,CONFIG,no-resolve
+  - DOMAIN-SUFFIX,github.com,CONFIG
+  - DOMAIN-SUFFIX,github.io,CONFIG
+  - DOMAIN-SUFFIX,githubapp.com,CONFIG
+  - DOMAIN-SUFFIX,githubassets.com,CONFIG
+  - DOMAIN-SUFFIX,githubusercontent.com,CONFIG
+  - DOMAIN-SUFFIX,1e100.net,CONFIG
+  - DOMAIN-SUFFIX,2mdn.net,CONFIG
+  - DOMAIN-SUFFIX,app-measurement.net,CONFIG
+  - DOMAIN-SUFFIX,g.co,CONFIG
+  - DOMAIN-SUFFIX,ggpht.com,CONFIG
+  - DOMAIN-SUFFIX,goo.gl,CONFIG
+  - DOMAIN-SUFFIX,googleapis.cn,CONFIG
+  - DOMAIN-SUFFIX,googleapis.com,CONFIG
+  - DOMAIN-SUFFIX,gstatic.cn,CONFIG
+  - DOMAIN-SUFFIX,gstatic.com,CONFIG
+  - DOMAIN-SUFFIX,gvt0.com,CONFIG
+  - DOMAIN-SUFFIX,gvt1.com,CONFIG
+  - DOMAIN-SUFFIX,gvt2.com,CONFIG
+  - DOMAIN-SUFFIX,gvt3.com,CONFIG
+  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,CONFIG
+  - DOMAIN-SUFFIX,youtu.be,CONFIG
+  - DOMAIN-SUFFIX,youtube-nocookie.com,CONFIG
+  - DOMAIN-SUFFIX,youtube.com,CONFIG
+  - DOMAIN-SUFFIX,yt.be,CONFIG
+  - DOMAIN-SUFFIX,ytimg.com,CONFIG
+  - IP-CIDR,74.125.0.0/16,CONFIG,no-resolve
+  - IP-CIDR,173.194.0.0/16,CONFIG,no-resolve
+  - IP-CIDR,120.232.181.162/32,CONFIG,no-resolve
+  - IP-CIDR,120.241.147.226/32,CONFIG,no-resolve
+  - IP-CIDR,120.253.253.226/32,CONFIG,no-resolve
+  - IP-CIDR,120.253.255.162/32,CONFIG,no-resolve
+  - IP-CIDR,120.253.255.34/32,CONFIG,no-resolve
+  - IP-CIDR,120.253.255.98/32,CONFIG,no-resolve
+  - IP-CIDR,180.163.150.162/32,CONFIG,no-resolve
+  - IP-CIDR,180.163.150.34/32,CONFIG,no-resolve
+  - IP-CIDR,180.163.151.162/32,CONFIG,no-resolve
+  - IP-CIDR,180.163.151.34/32,CONFIG,no-resolve
+  - IP-CIDR,203.208.39.0/24,CONFIG,no-resolve
+  - IP-CIDR,203.208.40.0/24,CONFIG,no-resolve
+  - IP-CIDR,203.208.41.0/24,CONFIG,no-resolve
+  - IP-CIDR,203.208.43.0/24,CONFIG,no-resolve
+  - IP-CIDR,203.208.50.0/24,CONFIG,no-resolve
+  - IP-CIDR,220.181.174.162/32,CONFIG,no-resolve
+  - IP-CIDR,220.181.174.226/32,CONFIG,no-resolve
+  - IP-CIDR,220.181.174.34/32,CONFIG,no-resolve
+  - DOMAIN-SUFFIX,cdninstagram.com,CONFIG
+  - DOMAIN-SUFFIX,instagram.com,CONFIG
+  - DOMAIN-SUFFIX,instagr.am,CONFIG
+  - DOMAIN-SUFFIX,kakao.com,CONFIG
+  - DOMAIN-SUFFIX,kakao.co.kr,CONFIG
+  - DOMAIN-SUFFIX,kakaocdn.net,CONFIG
+  - IP-CIDR,1.201.0.0/24,CONFIG,no-resolve
+  - IP-CIDR,27.0.236.0/22,CONFIG,no-resolve
+  - IP-CIDR,103.27.148.0/22,CONFIG,no-resolve
+  - IP-CIDR,103.246.56.0/22,CONFIG,no-resolve
+  - IP-CIDR,110.76.140.0/22,CONFIG,no-resolve
+  - IP-CIDR,113.61.104.0/22,CONFIG,no-resolve
+  - DOMAIN-SUFFIX,lin.ee,CONFIG
+  - DOMAIN-SUFFIX,line-apps.com,CONFIG
+  - DOMAIN-SUFFIX,line-cdn.net,CONFIG
+  - DOMAIN-SUFFIX,line-scdn.net,CONFIG
+  - DOMAIN-SUFFIX,line.me,CONFIG
+  - DOMAIN-SUFFIX,line.naver.jp,CONFIG
+  - DOMAIN-SUFFIX,nhncorp.jp,CONFIG
+  - IP-CIDR,103.2.28.0/24,CONFIG,no-resolve
+  - IP-CIDR,103.2.30.0/23,CONFIG,no-resolve
+  - IP-CIDR,119.235.224.0/24,CONFIG,no-resolve
+  - IP-CIDR,119.235.232.0/24,CONFIG,no-resolve
+  - IP-CIDR,119.235.235.0/24,CONFIG,no-resolve
+  - IP-CIDR,119.235.236.0/23,CONFIG,no-resolve
+  - IP-CIDR,147.92.128.0/17,CONFIG,no-resolve
+  - IP-CIDR,203.104.128.0/19,CONFIG,no-resolve
+  - DOMAIN-KEYWORD,1drv,CONFIG
+  - DOMAIN-KEYWORD,onedrive,CONFIG
+  - DOMAIN-KEYWORD,skydrive,CONFIG
+  - DOMAIN-SUFFIX,livefilestore.com,CONFIG
+  - DOMAIN-SUFFIX,oneclient.sfx.ms,CONFIG
+  - DOMAIN-SUFFIX,onedrive.com,CONFIG
+  - DOMAIN-SUFFIX,onedrive.live.com,CONFIG
+  - DOMAIN-SUFFIX,photos.live.com,CONFIG
+  - DOMAIN-SUFFIX,skydrive.wns.windows.com,CONFIG
+  - DOMAIN-SUFFIX,spoprod-a.akamaihd.net,CONFIG
+  - DOMAIN-SUFFIX,storage.live.com,CONFIG
+  - DOMAIN-SUFFIX,storage.msn.com,CONFIG
+  - DOMAIN-KEYWORD,porn,CONFIG
+  - DOMAIN-SUFFIX,8teenxxx.com,CONFIG
+  - DOMAIN-SUFFIX,ahcdn.com,CONFIG
+  - DOMAIN-SUFFIX,bcvcdn.com,CONFIG
+  - DOMAIN-SUFFIX,bongacams.com,CONFIG
+  - DOMAIN-SUFFIX,chaturbate.com,CONFIG
+  - DOMAIN-SUFFIX,dditscdn.com,CONFIG
+  - DOMAIN-SUFFIX,livejasmin.com,CONFIG
+  - DOMAIN-SUFFIX,phncdn.com,CONFIG
+  - DOMAIN-SUFFIX,phprcdn.com,CONFIG
+  - DOMAIN-SUFFIX,pornhub.com,CONFIG
+  - DOMAIN-SUFFIX,pornhubpremium.com,CONFIG
+  - DOMAIN-SUFFIX,rdtcdn.com,CONFIG
+  - DOMAIN-SUFFIX,redtube.com,CONFIG
+  - DOMAIN-SUFFIX,sb-cd.com,CONFIG
+  - DOMAIN-SUFFIX,spankbang.com,CONFIG
+  - DOMAIN-SUFFIX,t66y.com,CONFIG
+  - DOMAIN-SUFFIX,xhamster.com,CONFIG
+  - DOMAIN-SUFFIX,xnxx-cdn.com,CONFIG
+  - DOMAIN-SUFFIX,xnxx.com,CONFIG
+  - DOMAIN-SUFFIX,xvideos-cdn.com,CONFIG
+  - DOMAIN-SUFFIX,xvideos.com,CONFIG
+  - DOMAIN-SUFFIX,ypncdn.com,CONFIG
+  - DOMAIN-SUFFIX,pixiv.net,CONFIG
+  - DOMAIN-SUFFIX,pximg.net,CONFIG
+  - DOMAIN-SUFFIX,amplitude.com,CONFIG
+  - DOMAIN-SUFFIX,firebaseio.com,CONFIG
+  - DOMAIN-SUFFIX,hockeyapp.net,CONFIG
+  - DOMAIN-SUFFIX,readdle.com,CONFIG
+  - DOMAIN-SUFFIX,smartmailcloud.com,CONFIG
+  - DOMAIN-SUFFIX,fanatical.com,CONFIG
+  - DOMAIN-SUFFIX,humblebundle.com,CONFIG
+  - DOMAIN-SUFFIX,steamcommunity.com,CONFIG
+  - DOMAIN-SUFFIX,tap.io,CONFIG
+  - DOMAIN-SUFFIX,taptap.tw,CONFIG
+  - DOMAIN-SUFFIX,twitch.tv,CONFIG
+  - DOMAIN-SUFFIX,ttvnw.net,CONFIG
+  - DOMAIN-SUFFIX,jtvnw.net,CONFIG
+  - DOMAIN-KEYWORD,ttvnw,CONFIG
+  - DOMAIN-SUFFIX,t.co,CONFIG
+  - DOMAIN-SUFFIX,twimg.co,CONFIG
+  - DOMAIN-SUFFIX,twimg.com,CONFIG
+  - DOMAIN-SUFFIX,twimg.org,CONFIG
+  - DOMAIN-SUFFIX,t.me,CONFIG
+  - DOMAIN-SUFFIX,tdesktop.com,CONFIG
+  - DOMAIN-SUFFIX,telegra.ph,CONFIG
+  - DOMAIN-SUFFIX,telegram.me,CONFIG
+  - DOMAIN-SUFFIX,telegram.org,CONFIG
+  - DOMAIN-SUFFIX,telesco.pe,CONFIG
+  - IP-CIDR,91.108.0.0/16,CONFIG,no-resolve
+  - IP-CIDR,109.239.140.0/24,CONFIG,no-resolve
+  - IP-CIDR,149.154.160.0/20,CONFIG,no-resolve
+  - IP-CIDR6,2001:67c:4e8::/48,CONFIG,no-resolve
+  - IP-CIDR6,2001:b28:f23d::/48,CONFIG,no-resolve
+  - IP-CIDR6,2001:b28:f23f::/48,CONFIG,no-resolve
+  - DOMAIN-SUFFIX,terabox.com,CONFIG
+  - DOMAIN-SUFFIX,teraboxcdn.com,CONFIG
+  - IP-CIDR,18.194.0.0/15,CONFIG,no-resolve
+  - IP-CIDR,34.224.0.0/12,CONFIG,no-resolve
+  - IP-CIDR,54.242.0.0/15,CONFIG,no-resolve
+  - IP-CIDR,50.22.198.204/30,CONFIG,no-resolve
+  - IP-CIDR,208.43.122.128/27,CONFIG,no-resolve
+  - IP-CIDR,108.168.174.0/16,CONFIG,no-resolve
+  - IP-CIDR,173.192.231.32/27,CONFIG,no-resolve
+  - IP-CIDR,158.85.5.192/27,CONFIG,no-resolve
+  - IP-CIDR,174.37.243.0/16,CONFIG,no-resolve
+  - IP-CIDR,158.85.46.128/27,CONFIG,no-resolve
+  - IP-CIDR,173.192.222.160/27,CONFIG,no-resolve
+  - IP-CIDR,184.173.128.0/17,CONFIG,no-resolve
+  - IP-CIDR,158.85.224.160/27,CONFIG,no-resolve
+  - IP-CIDR,75.126.150.0/16,CONFIG,no-resolve
+  - IP-CIDR,69.171.235.0/16,CONFIG,no-resolve
+  - DOMAIN-SUFFIX,mediawiki.org,CONFIG
+  - DOMAIN-SUFFIX,wikibooks.org,CONFIG
+  - DOMAIN-SUFFIX,wikidata.org,CONFIG
+  - DOMAIN-SUFFIX,wikileaks.org,CONFIG
+  - DOMAIN-SUFFIX,wikimedia.org,CONFIG
+  - DOMAIN-SUFFIX,wikinews.org,CONFIG
+  - DOMAIN-SUFFIX,wikipedia.org,CONFIG
+  - DOMAIN-SUFFIX,wikiquote.org,CONFIG
+  - DOMAIN-SUFFIX,wikisource.org,CONFIG
+  - DOMAIN-SUFFIX,wikiversity.org,CONFIG
+  - DOMAIN-SUFFIX,wikivoyage.org,CONFIG
+  - DOMAIN-SUFFIX,wiktionary.org,CONFIG
+  - DOMAIN-SUFFIX,neulion.com,CONFIG
+  - DOMAIN-SUFFIX,icntv.xyz,CONFIG
+  - DOMAIN-SUFFIX,flzbcdn.xyz,CONFIG
+  - DOMAIN-SUFFIX,ocnttv.com,CONFIG
+  - DOMAIN-SUFFIX,13th.tech,GLOBAL UDP
+  - DOMAIN-SUFFIX,423down.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,bokecc.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,chaipip.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,chinaplay.store,GLOBAL UDP
+  - DOMAIN-SUFFIX,hrtsea.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,kaikeba.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,laomo.me,GLOBAL UDP
+  - DOMAIN-SUFFIX,mpyit.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,qupu123.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,cn,GLOBAL UDP
+  - DOMAIN-SUFFIX,??,GLOBAL UDP
+  - DOMAIN-SUFFIX,??,GLOBAL UDP
+  - DOMAIN-SUFFIX,??,GLOBAL UDP
+  - DOMAIN-KEYWORD,-cn,GLOBAL UDP
+  - DOMAIN-KEYWORD,360buy,GLOBAL UDP
+  - DOMAIN-KEYWORD,alicdn,GLOBAL UDP
+  - DOMAIN-KEYWORD,alimama,GLOBAL UDP
+  - DOMAIN-KEYWORD,alipay,GLOBAL UDP
+  - DOMAIN-KEYWORD,appzapp,GLOBAL UDP
+  - DOMAIN-KEYWORD,baidupcs,GLOBAL UDP
+  - DOMAIN-KEYWORD,bilibili,GLOBAL UDP
+  - DOMAIN-KEYWORD,ccgslb,GLOBAL UDP
+  - DOMAIN-KEYWORD,chinacache,GLOBAL UDP
+  - DOMAIN-KEYWORD,duobao,GLOBAL UDP
+  - DOMAIN-KEYWORD,duolingo,GLOBAL UDP
+  - DOMAIN-KEYWORD,jdpay,GLOBAL UDP
+  - DOMAIN-KEYWORD,moke,GLOBAL UDP
+  - DOMAIN-KEYWORD,qhimg,GLOBAL UDP
+  - DOMAIN-KEYWORD,vpimg,GLOBAL UDP
+  - DOMAIN-KEYWORD,xiami,GLOBAL UDP
+  - DOMAIN-KEYWORD,xiaomi,GLOBAL UDP
+  - DOMAIN-SUFFIX,360.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,360kuai.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,360safe.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,dhrest.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,qhres.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,qhstatic.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,qhupdate.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,so.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,4399.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,4399pk.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,5054399.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,img4399.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,58.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,1688.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,aliapp.org,GLOBAL UDP
+  - DOMAIN-SUFFIX,alibaba.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,alibabacloud.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,alibabausercontent.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,alicdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,alicloudccp.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,aliexpress.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,aliimg.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,alikunlun.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,alipay.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,alipayobjects.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,alisoft.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,aliyun.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,aliyuncdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,aliyuncs.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,aliyundrive.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,amap.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,autonavi.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,dingtalk.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ele.me,GLOBAL UDP
+  - DOMAIN-SUFFIX,hichina.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,mmstat.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,mxhichina.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,soku.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,taobao.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,taobaocdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,tbcache.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,tbcdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,tmall.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,tmall.hk,GLOBAL UDP
+  - DOMAIN-SUFFIX,ucweb.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,xiami.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,xiami.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,ykimg.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,youku.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,baidu.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,baidubcr.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,baidupcs.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,baidustatic.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,bcebos.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,bdimg.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,bdstatic.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,bdurl.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,hao123.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,hao123img.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,jomodns.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,yunjiasu-cdn.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,acg.tv,GLOBAL UDP
+  - DOMAIN-SUFFIX,acgvideo.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,b23.tv,GLOBAL UDP
+  - DOMAIN-SUFFIX,bigfun.cn,GLOBAL UDP
+  - DOMAIN-SUFFIX,bigfunapp.cn,GLOBAL UDP
+  - DOMAIN-SUFFIX,biliapi.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,biliapi.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,bilibili.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,bilibili.tv,GLOBAL UDP
+  - DOMAIN-SUFFIX,biligame.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,biligame.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,bilivideo.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,bilivideo.cn,GLOBAL UDP
+  - DOMAIN-SUFFIX,hdslb.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,im9.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,smtcdns.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,battle.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,battlenet.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,blizzard.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,bytedance.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,bytedance.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,bytedns.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,byteimg.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,feiliao.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,gifshow.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,huoshan.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,iesdouyin.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ixigua.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,kspkg.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,pstatp.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,snssdk.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,toutiao.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,toutiao13.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,toutiaocdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,toutiaocdn.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,toutiaocloud.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,toutiaohao.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,toutiaohao.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,toutiaoimg.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,toutiaopage.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,wukong.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,zijieimg.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,zjbyte.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,zjcdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,cctv.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,cctvpic.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,livechina.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,21cn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,didialift.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,didiglobal.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,udache.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,douyu.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,douyu.tv,GLOBAL UDP
+  - DOMAIN-SUFFIX,douyuscdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,douyutv.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,epicgames.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,helpshift.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,paragon.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,unrealengine.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,dbankcdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,hc-cdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,hicloud.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,huawei.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,huaweicloud.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,huaweishop.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,hwccpc.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,vmall.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,vmallres.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,iflyink.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,iflyrec.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,iflytek.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,71.am,GLOBAL UDP
+  - DOMAIN-SUFFIX,71edge.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,iqiyi.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,iqiyipic.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ppsimg.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,qiyi.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,qiyipic.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,qy.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,360buy.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,360buyimg.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,jcloudcs.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,jd.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,jd.hk,GLOBAL UDP
+  - DOMAIN-SUFFIX,jdcloud.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,jdpay.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,paipai.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,iciba.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ksosoft.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ksyun.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,kuaishou.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,yximgs.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,meitu.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,meitudata.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,meitustat.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,meipai.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,le.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,lecloud.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,letv.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,letvcloud.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,letvimg.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,letvlive.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,letvstore.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,hitv.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,hunantv.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,mgtv.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,duokan.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,mi-img.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,mi.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,miui.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,xiaomi.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,xiaomi.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,xiaomicp.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,126.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,126.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,127.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,163.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,163yun.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,lofter.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,netease.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ydstatic.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,youdao.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,pplive.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,pptv.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,pinduoduo.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,yangkeduo.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,leju.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,miaopai.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,sina.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,sinaapp.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,sinaimg.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,weibo.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,weibocdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,xiaoka.tv,GLOBAL UDP
+  - DOMAIN-SUFFIX,go2map.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,sogo.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,sogou.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,sogoucdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,sohu-inc.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,sohu.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,sohucs.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,sohuno.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,sohurdc.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,v-56.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,playstation.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,playstation.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,playstationnetwork.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,sony.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,sonyentertainmentnetwork.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,csgo.wmsj.cn,GLOBAL UDP
+  - DOMAIN-SUFFIX,dl.steam.ksyna.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,dota2.wmsj.cn,GLOBAL UDP
+  - DOMAIN-SUFFIX,st.dl.bscstorage.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,st.dl.eccdnx.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,st.dl.pinyuncloud.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,steamcommunity-a.akamaihd.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,steamcontent.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,steamgames.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,steampowered.com.8686c.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,steamstat.us,GLOBAL UDP
+  - DOMAIN-SUFFIX,steamstatic.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,steamusercontent.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,steamuserimages-a.akamaihd.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,foxmail.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,gtimg.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,idqqimg.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,igamecj.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,myapp.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,myqcloud.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,qq.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,qqmail.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,qqurl.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,smtcdns.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,smtcdns.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,soso.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,tencent-cloud.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,tencent.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,tencentmind.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,tenpay.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,wechat.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,weixin.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,weiyun.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,appsimg.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,appvipshop.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,vip.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,vipstatic.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ximalaya.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,xmcdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,00cdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,88cdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,kanimg.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,kankan.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,p2cdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,sandai.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,thundercdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,xunlei.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,got001.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,p4pfile.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,rrys.tv,GLOBAL UDP
+  - DOMAIN-SUFFIX,rrys2020.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,yyets.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,zimuzu.io,GLOBAL UDP
+  - DOMAIN-SUFFIX,zimuzu.tv,GLOBAL UDP
+  - DOMAIN-SUFFIX,zmz001.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,zmz002.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,zmz003.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,zmz004.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,zmz2019.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,zmzapi.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,zmzapi.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,zmzfile.com,GLOBAL UDP
+  - DOMAIN-KEYWORD,announce,GLOBAL UDP
+  - DOMAIN-KEYWORD,torrent,GLOBAL UDP
+  - DOMAIN-KEYWORD,tracker,GLOBAL UDP
+  - DOMAIN-SUFFIX,animebytes.tv,GLOBAL UDP
+  - DOMAIN-SUFFIX,animetorrents.me,GLOBAL UDP
+  - DOMAIN-SUFFIX,awesome-hd.me,GLOBAL UDP
+  - DOMAIN-SUFFIX,beitai.pt,GLOBAL UDP
+  - DOMAIN-SUFFIX,bittorrent.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,broadcasthe.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,chdbits.co,GLOBAL UDP
+  - DOMAIN-SUFFIX,classix-unlimited.co.uk,GLOBAL UDP
+  - DOMAIN-SUFFIX,empornium.me,GLOBAL UDP
+  - DOMAIN-SUFFIX,gazellegames.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,hd4fans.org,GLOBAL UDP
+  - DOMAIN-SUFFIX,hdchina.org,GLOBAL UDP
+  - DOMAIN-SUFFIX,hdhome.org,GLOBAL UDP
+  - DOMAIN-SUFFIX,hdsky.me,GLOBAL UDP
+  - DOMAIN-SUFFIX,hdtime.org,GLOBAL UDP
+  - DOMAIN-SUFFIX,hdzone.me,GLOBAL UDP
+  - DOMAIN-SUFFIX,icetorrent.org,GLOBAL UDP
+  - DOMAIN-SUFFIX,jpopsuki.eu,GLOBAL UDP
+  - DOMAIN-SUFFIX,keepfrds.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,leaguehd.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,m-team.cc,GLOBAL UDP
+  - DOMAIN-SUFFIX,madsrevolution.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,msg.vg,GLOBAL UDP
+  - DOMAIN-SUFFIX,nanyangpt.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ncore.cc,GLOBAL UDP
+  - DOMAIN-SUFFIX,open.cd,GLOBAL UDP
+  - DOMAIN-SUFFIX,ourbits.club,GLOBAL UDP
+  - DOMAIN-SUFFIX,passthepopcorn.me,GLOBAL UDP
+  - DOMAIN-SUFFIX,privatehd.to,GLOBAL UDP
+  - DOMAIN-SUFFIX,pthome.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,redacted.ch,GLOBAL UDP
+  - DOMAIN-SUFFIX,springsunday.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,tjupt.org,GLOBAL UDP
+  - DOMAIN-SUFFIX,totheglory.im,GLOBAL UDP
+  - DOMAIN-SUFFIX,trontv.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,teamviewer.com,GLOBAL UDP
+  - IP-CIDR,109.239.140.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,139.220.243.27/32,GLOBAL UDP,no-resolve
+  - IP-CIDR,172.16.102.56/32,GLOBAL UDP,no-resolve
+  - IP-CIDR,185.188.32.1/28,GLOBAL UDP,no-resolve
+  - IP-CIDR,221.226.128.146/32,GLOBAL UDP,no-resolve
+  - IP-CIDR6,2a0b:b580::/48,GLOBAL UDP,no-resolve
+  - IP-CIDR6,2a0b:b581::/48,GLOBAL UDP,no-resolve
+  - IP-CIDR6,2a0b:b582::/48,GLOBAL UDP,no-resolve
+  - IP-CIDR6,2a0b:b583::/48,GLOBAL UDP,no-resolve
+  - DOMAIN-SUFFIX,baomitu.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,bootcss.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,jiasule.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,jsdelivr.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,staticfile.org,GLOBAL UDP
+  - DOMAIN-SUFFIX,upaiyun.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,10010.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,115.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,12306.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,17173.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,178.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,17k.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,360doc.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,36kr.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,3dmgame.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,51cto.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,51job.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,51jobcdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,56.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,8686c.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,abchina.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,abercrombie.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,acfun.tv,GLOBAL UDP
+  - DOMAIN-SUFFIX,air-matters.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,air-matters.io,GLOBAL UDP
+  - DOMAIN-SUFFIX,aixifan.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,algocasts.io,GLOBAL UDP
+  - DOMAIN-SUFFIX,babytree.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,babytreeimg.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,baicizhan.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,baidupan.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,baike.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,biqudu.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,biquge.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,bitauto.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,c-ctrip.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,camera360.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,cdnmama.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,chaoxing.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,che168.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,chinacache.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,chinaso.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,chinaz.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,chinaz.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,chuimg.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,cibntv.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,clouddn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,cloudxns.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,cn163.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,cnbeta.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,cnbetacdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,cnblogs.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,cnki.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,cnmstl.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,coolapk.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,coolapkmarket.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,csdn.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,ctrip.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,dangdang.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,dfcfw.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,dianping.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,dilidili.wang,GLOBAL UDP
+  - DOMAIN-SUFFIX,douban.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,doubanio.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,dpfile.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,duowan.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,dxycdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,dytt8.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,easou.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,eastday.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,eastmoney.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ecitic.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ewqcxz.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,fang.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,fantasy.tv,GLOBAL UDP
+  - DOMAIN-SUFFIX,feng.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,fengkongcloud.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,fir.im,GLOBAL UDP
+  - DOMAIN-SUFFIX,frdic.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,fresh-ideas.cc,GLOBAL UDP
+  - DOMAIN-SUFFIX,ganji.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ganjistatic1.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,geetest.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,geilicdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ghpym.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,godic.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,guazi.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,gwdang.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,gzlzfm.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,haibian.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,haosou.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,hollisterco.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,hongxiu.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,huajiao.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,hupu.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,huxiucdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,huya.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ifeng.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ifengimg.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,images-amazon.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,infzm.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ipip.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,it168.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ithome.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ixdzs.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,jianguoyun.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,jianshu.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,jianshu.io,GLOBAL UDP
+  - DOMAIN-SUFFIX,jianshuapi.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,jiathis.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,jmstatic.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,jumei.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,kaola.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,knewone.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,koowo.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ksyungslb.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,kuaidi100.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,kugou.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,lancdns.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,landiannews.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,lanzou.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,lemicp.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,letitfly.me,GLOBAL UDP
+  - DOMAIN-SUFFIX,linkedin.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,lizhi.fm,GLOBAL UDP
+  - DOMAIN-SUFFIX,lizhi.io,GLOBAL UDP
+  - DOMAIN-SUFFIX,lizhifm.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,loli.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,luoo.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,lvmama.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,lxdns.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,maoyan.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,meilishuo.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,meituan.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,meituan.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,meizu.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,migucloud.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,miguvideo.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,mobike.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,mogu.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,mogucdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,mogujie.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,moji.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,moke.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,msstatic.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,mubu.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,myunlu.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,nruan.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,nuomi.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,onedns.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,onlinedown.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,oracle.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,oschina.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,ourdvs.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,paypal.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,polyv.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,qbox.me,GLOBAL UDP
+  - DOMAIN-SUFFIX,qcloud.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,qcloudcdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,qdaily.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,qdmm.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,qhimg.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,qianqian.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,qidian.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,qihucdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,qin.io,GLOBAL UDP
+  - DOMAIN-SUFFIX,qiniu.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,qiniucdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,qiniudn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,qiushibaike.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,quanmin.tv,GLOBAL UDP
+  - DOMAIN-SUFFIX,qunar.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,qunarzz.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,rarbg.to,GLOBAL UDP
+  - DOMAIN-SUFFIX,repaik.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,rrmj.tv,GLOBAL UDP
+  - DOMAIN-SUFFIX,ruguoapp.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,runoob.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,sankuai.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,segmentfault.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,sf-express.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,shumilou.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,simplecd.me,GLOBAL UDP
+  - DOMAIN-SUFFIX,sm.ms,GLOBAL UDP
+  - DOMAIN-SUFFIX,smzdm.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,snwx.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,soufunimg.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,sspai.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,startssl.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,suning.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,taihe.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,th-sjy.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,tianqi.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,tianqistatic.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,tianyancha.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,tianyaui.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,tietuku.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,tiexue.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,tmiaoo.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,trip.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ttmeiju.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,tudou.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,tuniu.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,tuniucdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,umengcloud.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,upyun.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,uxengine.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,videocc.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,wandoujia.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,weather.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,weico.cc,GLOBAL UDP
+  - DOMAIN-SUFFIX,weidian.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,weiphone.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,weiphone.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,womai.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,wscdns.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,xdrig.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,xhscdn.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,xiachufang.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,xiaohongshu.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,xiaojukeji.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,xinhuanet.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,xip.io,GLOBAL UDP
+  - DOMAIN-SUFFIX,xitek.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,xiumi.us,GLOBAL UDP
+  - DOMAIN-SUFFIX,xslb.net,GLOBAL UDP
+  - DOMAIN-SUFFIX,xueqiu.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,yach.me,GLOBAL UDP
+  - DOMAIN-SUFFIX,yeepay.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,yhd.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,yihaodianimg.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,yinxiang.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,yinyuetai.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,yixia.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,ys168.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,yuewen.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,yy.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,yystatic.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,zealer.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,zhangzishi.cc,GLOBAL UDP
+  - DOMAIN-SUFFIX,zhanqi.tv,GLOBAL UDP
+  - DOMAIN-SUFFIX,zhaopin.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,zhihu.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,zhimg.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,zhongsou.com,GLOBAL UDP
+  - DOMAIN-SUFFIX,zhuihd.com,GLOBAL UDP
+  - IP-CIDR,8.128.0.0/10,GLOBAL UDP,no-resolve
+  - IP-CIDR,8.208.0.0/12,GLOBAL UDP,no-resolve
+  - IP-CIDR,14.1.112.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,41.222.240.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,41.223.119.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,43.242.168.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,45.112.212.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,47.52.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,47.56.0.0/15,GLOBAL UDP,no-resolve
+  - IP-CIDR,47.74.0.0/15,GLOBAL UDP,no-resolve
+  - IP-CIDR,47.76.0.0/14,GLOBAL UDP,no-resolve
+  - IP-CIDR,47.80.0.0/12,GLOBAL UDP,no-resolve
+  - IP-CIDR,47.235.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,47.236.0.0/14,GLOBAL UDP,no-resolve
+  - IP-CIDR,47.240.0.0/14,GLOBAL UDP,no-resolve
+  - IP-CIDR,47.244.0.0/15,GLOBAL UDP,no-resolve
+  - IP-CIDR,47.246.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,47.250.0.0/15,GLOBAL UDP,no-resolve
+  - IP-CIDR,47.252.0.0/15,GLOBAL UDP,no-resolve
+  - IP-CIDR,47.254.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,59.82.0.0/20,GLOBAL UDP,no-resolve
+  - IP-CIDR,59.82.240.0/21,GLOBAL UDP,no-resolve
+  - IP-CIDR,59.82.248.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,72.254.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.38.56.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.52.76.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.206.40.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,110.76.21.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,110.76.23.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,112.125.0.0/17,GLOBAL UDP,no-resolve
+  - IP-CIDR,116.251.64.0/18,GLOBAL UDP,no-resolve
+  - IP-CIDR,119.38.208.0/20,GLOBAL UDP,no-resolve
+  - IP-CIDR,119.38.224.0/20,GLOBAL UDP,no-resolve
+  - IP-CIDR,119.42.224.0/20,GLOBAL UDP,no-resolve
+  - IP-CIDR,139.95.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,140.205.1.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,140.205.122.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,147.139.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,149.129.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,155.102.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,161.117.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,163.181.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,170.33.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,198.11.128.0/18,GLOBAL UDP,no-resolve
+  - IP-CIDR,205.204.96.0/19,GLOBAL UDP,no-resolve
+  - IP-CIDR,19.28.0.0/23,GLOBAL UDP,no-resolve
+  - IP-CIDR,45.40.192.0/19,GLOBAL UDP,no-resolve
+  - IP-CIDR,49.51.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,62.234.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,94.191.0.0/17,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.7.28.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.116.50.0/23,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.231.60.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,109.244.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,111.30.128.0/21,GLOBAL UDP,no-resolve
+  - IP-CIDR,111.30.136.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,111.30.139.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,111.30.140.0/23,GLOBAL UDP,no-resolve
+  - IP-CIDR,115.159.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,119.28.0.0/15,GLOBAL UDP,no-resolve
+  - IP-CIDR,120.88.56.0/23,GLOBAL UDP,no-resolve
+  - IP-CIDR,121.51.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,129.28.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,129.204.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,129.211.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,132.232.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,134.175.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,146.56.192.0/18,GLOBAL UDP,no-resolve
+  - IP-CIDR,148.70.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,150.109.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,152.136.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,162.14.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,162.62.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,170.106.130.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,182.254.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,188.131.128.0/17,GLOBAL UDP,no-resolve
+  - IP-CIDR,203.195.128.0/17,GLOBAL UDP,no-resolve
+  - IP-CIDR,203.205.128.0/17,GLOBAL UDP,no-resolve
+  - IP-CIDR,210.4.138.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,211.152.128.0/23,GLOBAL UDP,no-resolve
+  - IP-CIDR,211.152.132.0/23,GLOBAL UDP,no-resolve
+  - IP-CIDR,211.152.148.0/23,GLOBAL UDP,no-resolve
+  - IP-CIDR,212.64.0.0/17,GLOBAL UDP,no-resolve
+  - IP-CIDR,212.129.128.0/17,GLOBAL UDP,no-resolve
+  - IP-CIDR,45.113.192.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,63.217.23.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,63.243.252.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.235.44.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,104.193.88.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,106.12.0.0/15,GLOBAL UDP,no-resolve
+  - IP-CIDR,114.28.224.0/20,GLOBAL UDP,no-resolve
+  - IP-CIDR,119.63.192.0/21,GLOBAL UDP,no-resolve
+  - IP-CIDR,180.76.0.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,180.76.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,182.61.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,185.10.104.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,202.46.48.0/20,GLOBAL UDP,no-resolve
+  - IP-CIDR,203.90.238.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,43.254.0.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,45.249.212.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,49.4.0.0/17,GLOBAL UDP,no-resolve
+  - IP-CIDR,78.101.192.0/19,GLOBAL UDP,no-resolve
+  - IP-CIDR,78.101.224.0/20,GLOBAL UDP,no-resolve
+  - IP-CIDR,81.52.161.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,85.97.220.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.31.200.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.69.140.0/23,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.218.216.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,114.115.128.0/17,GLOBAL UDP,no-resolve
+  - IP-CIDR,114.116.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,116.63.128.0/18,GLOBAL UDP,no-resolve
+  - IP-CIDR,116.66.184.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,116.71.96.0/20,GLOBAL UDP,no-resolve
+  - IP-CIDR,116.71.128.0/21,GLOBAL UDP,no-resolve
+  - IP-CIDR,116.71.136.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,116.71.141.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,116.71.142.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,116.71.243.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,116.71.244.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,116.71.251.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,117.78.0.0/18,GLOBAL UDP,no-resolve
+  - IP-CIDR,119.3.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,119.8.0.0/21,GLOBAL UDP,no-resolve
+  - IP-CIDR,119.8.32.0/19,GLOBAL UDP,no-resolve
+  - IP-CIDR,121.36.0.0/17,GLOBAL UDP,no-resolve
+  - IP-CIDR,121.36.128.0/18,GLOBAL UDP,no-resolve
+  - IP-CIDR,121.37.0.0/17,GLOBAL UDP,no-resolve
+  - IP-CIDR,122.112.128.0/17,GLOBAL UDP,no-resolve
+  - IP-CIDR,139.9.0.0/18,GLOBAL UDP,no-resolve
+  - IP-CIDR,139.9.64.0/19,GLOBAL UDP,no-resolve
+  - IP-CIDR,139.9.100.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,139.9.104.0/21,GLOBAL UDP,no-resolve
+  - IP-CIDR,139.9.112.0/20,GLOBAL UDP,no-resolve
+  - IP-CIDR,139.9.128.0/18,GLOBAL UDP,no-resolve
+  - IP-CIDR,139.9.192.0/19,GLOBAL UDP,no-resolve
+  - IP-CIDR,139.9.224.0/20,GLOBAL UDP,no-resolve
+  - IP-CIDR,139.9.240.0/21,GLOBAL UDP,no-resolve
+  - IP-CIDR,139.9.248.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,139.159.128.0/19,GLOBAL UDP,no-resolve
+  - IP-CIDR,139.159.160.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,139.159.164.0/23,GLOBAL UDP,no-resolve
+  - IP-CIDR,139.159.168.0/21,GLOBAL UDP,no-resolve
+  - IP-CIDR,139.159.176.0/20,GLOBAL UDP,no-resolve
+  - IP-CIDR,139.159.192.0/18,GLOBAL UDP,no-resolve
+  - IP-CIDR,159.138.0.0/18,GLOBAL UDP,no-resolve
+  - IP-CIDR,159.138.64.0/21,GLOBAL UDP,no-resolve
+  - IP-CIDR,159.138.79.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,159.138.80.0/20,GLOBAL UDP,no-resolve
+  - IP-CIDR,159.138.96.0/20,GLOBAL UDP,no-resolve
+  - IP-CIDR,159.138.112.0/21,GLOBAL UDP,no-resolve
+  - IP-CIDR,159.138.125.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,159.138.128.0/18,GLOBAL UDP,no-resolve
+  - IP-CIDR,159.138.192.0/20,GLOBAL UDP,no-resolve
+  - IP-CIDR,159.138.223.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,159.138.224.0/19,GLOBAL UDP,no-resolve
+  - IP-CIDR,168.195.92.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,185.176.76.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,197.199.0.0/18,GLOBAL UDP,no-resolve
+  - IP-CIDR,197.210.163.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,197.252.1.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,197.252.2.0/23,GLOBAL UDP,no-resolve
+  - IP-CIDR,197.252.4.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,197.252.8.0/21,GLOBAL UDP,no-resolve
+  - IP-CIDR,200.32.52.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,200.32.54.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,200.32.57.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,203.135.0.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,203.135.4.0/23,GLOBAL UDP,no-resolve
+  - IP-CIDR,203.135.8.0/23,GLOBAL UDP,no-resolve
+  - IP-CIDR,203.135.11.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,203.135.13.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,203.135.20.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,203.135.22.0/23,GLOBAL UDP,no-resolve
+  - IP-CIDR,203.135.24.0/23,GLOBAL UDP,no-resolve
+  - IP-CIDR,203.135.26.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,203.135.29.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,203.135.33.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,203.135.38.0/23,GLOBAL UDP,no-resolve
+  - IP-CIDR,203.135.40.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,203.135.43.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,203.135.48.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,203.135.50.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,42.186.0.0/16,GLOBAL UDP,no-resolve
+  - IP-CIDR,45.127.128.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,45.195.24.0/24,GLOBAL UDP,no-resolve
+  - IP-CIDR,45.253.132.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,45.253.240.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,45.254.48.0/23,GLOBAL UDP,no-resolve
+  - IP-CIDR,59.111.0.0/20,GLOBAL UDP,no-resolve
+  - IP-CIDR,59.111.128.0/17,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.71.120.0/21,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.71.128.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.71.196.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.71.200.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.72.12.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.72.18.0/23,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.72.24.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.72.28.0/23,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.72.38.0/23,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.72.40.0/23,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.72.44.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.72.48.0/21,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.72.128.0/21,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.74.24.0/21,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.74.48.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.126.92.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.129.252.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.131.252.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.135.240.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,103.196.64.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,106.2.32.0/19,GLOBAL UDP,no-resolve
+  - IP-CIDR,106.2.64.0/18,GLOBAL UDP,no-resolve
+  - IP-CIDR,114.113.196.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,114.113.200.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,115.236.112.0/20,GLOBAL UDP,no-resolve
+  - IP-CIDR,115.238.76.0/22,GLOBAL UDP,no-resolve
+  - IP-CIDR,123.58.160.0/19,GLOBAL UDP,no-resolve
+  - IP-CIDR,223.252.192.0/19,GLOBAL UDP,no-resolve
+  - IP-CIDR,101.198.128.0/18,GLOBAL UDP,no-resolve
+  - IP-CIDR,101.198.192.0/19,GLOBAL UDP,no-resolve
+  - IP-CIDR,101.199.196.0/22,GLOBAL UDP,no-resolve
+  - GEOIP,CN,GLOBAL UDP
+  - MATCH,STABILIZER
+
+
+port: 3333
+socks-port: 23456
+redir-port: 23457
+allow-lan: true
+mode: Rule
+log-level: error
+external-controller: 192.168.50.1:9990
+experimental:
+  ignore-resolve-fail: true
+external-ui: dashboard
+secret: "clash"
+profile:
+  store-selected: true
+ipv6: false
+
+hosts:
+  router.asus.com: 192.168.50.1
+  services.googleapis.cn: 74.125.193.94
+  ipv6.msftconnecttest.com: 2a01:111:2003::52 #??
+  www.msftconnecttest.com: 13.107.4.52 #??
+
+dns:
+  enable: true
+  ipv6: false
+  # These nameservers are used to resolve the DNS nameserver hostnames below.
+  # Specify IP addresses only
+  default-nameserver:
+    - 223.5.5.5
+    - 8.8.8.8
+  listen: :23453
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16 
+  fake-ip-filter:
+    - '*.lan'
+    - '*.linksys.com'
+    - '*.linksyssmartwifi.com'
+    - 'swscan.apple.com'
+    - 'mesu.apple.com'
+    - '*.msftconnecttest.com'
+    - '*.msftncsi.com'
+    # === NTP Service ===
+    - 'time.*.com'
+    - 'time.*.gov'
+    - 'time.*.edu.cn'
+    - 'time.*.apple.com'
+    - 'time1.*.com'
+    - 'time2.*.com'
+    - 'time3.*.com'
+    - 'time4.*.com'
+    - 'time5.*.com'
+    - 'time6.*.com'
+    - 'time7.*.com'
+    - 'ntp.*.com'
+    - 'ntp.*.com'
+    - 'ntp1.*.com'
+    - 'ntp2.*.com'
+    - 'ntp3.*.com'
+    - 'ntp4.*.com'
+    - 'ntp5.*.com'
+    - 'ntp6.*.com'
+    - 'ntp7.*.com'
+    - '*.time.edu.cn'
+    - '*.ntp.org.cn'
+    - '+.pool.ntp.org'
+    - 'time1.cloud.tencent.com'
+    # === Music Service ===
+    ## NetEase
+    - '+.music.163.com'
+    - '+.126.net'
+    ## Baidu
+    - 'musicapi.taihe.com'
+    - 'music.taihe.com'
+    ## Kugou
+    - 'songsearch.kugou.com'
+    - 'trackercdn.kugou.com'
+    ## Kuwo
+    - '*.kuwo.cn'
+    ## JOOX
+    - 'api-jooxtt.sanook.com'
+    - 'api.joox.com'
+    - 'joox.com'
+    ## QQ
+    - '+.music.tc.qq.com'
+    - 'aqqmusic.tc.qq.com'
+    - '+.stream.qqmusic.qq.com'
+    ## Xiami
+    - '+.xiami.com'
+    ## Migu
+    - '+.music.migu.cn'
+    # === Game Service ===
+    ## Nintendo Switch
+    - '+.srv.nintendo.net'
+    ## Sony PlayStation
+    - '+.stun.playstation.net'
+    ## Microsoft Xbox
+    - 'xbox.*.microsoft.com'
+    - '+.xboxlive.com'
+    # === Other ===
+    ## QQ Quick Login
+    - 'localhost.ptlogin2.qq.com'
+    ## Golang
+    - 'proxy.golang.org'
+    ## STUN Server
+    - 'stun.*.*'
+    - 'stun.*.*.*'
+    # === ?? ===
+    - '+.qq.com'
+    - '+.baidu.com'
+    - '+.163.com'
+    - '+.126.net'
+    - '+.taobao.com'
+    - '+.jd.com'
+    - '+.tmall.com'
+  nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+    - 180.76.76.76
+  fallback:
+    - https://doh.dns.sb/dns-query
+    - tcp://208.67.222.222:443
+    - tls://dns.google
+  fallback-filter:
+    geoip: true
+    ipcidr:
+      - 240.0.0.0/4
+tproxy: true
+tproxy-port: 23458
