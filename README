@@ -13,3 +13,11 @@ apt-get update && apt-get upgrade -y && update-grub && sleep 2 && reboot
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl && wget https://raw.githubusercontent.com/mdxscript/mdScript/main/Files/install.sh && chmod +x install.sh && ./install.sh
 
 ======================================================
+
+XRAY
+
+apt-get update && apt-get upgrade -y && update-grub && sleep 2 && reboot
+
+sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl && wget https://raw.githubusercontent.com/mdxscript/mdScript/main/Files/installx.sh && chmod +x installx.sh && ./installx.sh
+
+======================================================
