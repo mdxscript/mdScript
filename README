@@ -2,7 +2,9 @@
 
 Encrypt Bash Files
 
-wget https://raw.githubusercontent.com/mdxscript/mdScript/main/Files/enc.sh && root +x enc.sh && ./enc.sh
+wget -O /usr/local/bin/enc "https://raw.githubusercontent.com/mdxscript/mdScript/main/Files/enc.sh" && chmod +x /usr/local/bin/enc && encg
+
+
 
 ======================================================
 
