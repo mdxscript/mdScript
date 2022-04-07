@@ -11,6 +11,7 @@
 - FREE AUTOSCRIPT XRAY-CORE ONLY
 - MUST HAVE YOUR OWN DOMAIN BEFORE INSTALL THIS SCRIPT
 
+# VPN SERVICES AND PORTS
 - VMESS-WS-NONTLS     : 80
 - VMESS-WS-TLS        : 443
 - VLESS-WS-NONTLS     : 8000
@@ -18,5 +19,10 @@
 - VLESS-XTLS-DIRECT   : 443
 - VLESS-XTLS-SPLICE   : 443
 - TROJAN TCP          : 443
+
+wget -O "https://raw.githubusercontent.com/mdxscript/mdScript/main/Files/xray-setup.sh" && chmod +x xray-setup.sh && ./xray-setup.sh
+ 
+
+
 
 
