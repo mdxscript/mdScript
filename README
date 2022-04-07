@@ -1,21 +1,50 @@
-======================================================
+<h1 align="center">AutoScriptVPS</h1>
 
-Encrypt Bash Files
+<h3 align="center">Supported Linux Distribution</h3>
+<p align="center"><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=debian&label=Debian%2010&message=Buster&color=red"> <img src="https://img.shields.io/static/v1?style=for-the-badge&logo=ubuntu&label=Ubuntu%2018&message=18.04 LTS&color=red"> </p>
 
+
+ENCRYPTION BASH
+
+```html
 wget -O /usr/local/bin/enc "https://raw.githubusercontent.com/mdxscript/mdScript/main/Files/enc.sh" && chmod +x /usr/local/bin/enc && enc
+  ```
+<h3 align="center">Screenshots</h3>
+<p align="center">
+<img src="https://raw.githubusercontent.com/jinGGo007/AUTOSCRIPT/main/enc.jpg">
+ 
 
+ # INSTALLATION AUTOSCRIPT XRAY-CORE ONLY
 
+- YOU MUST HAVE DOMAIN BEFORE INSTALL THIS SCRIPT FOR V6 VERSION
+- COPY AND PASTE COMMAND BELOW
 
-======================================================
-
-
-
-======================================================
-
-Xray-Core
-
+  
+```html
 wget -O "https://raw.githubusercontent.com/mdxscript/mdScript/main/Files/xray-setup.sh" && chmod +x xray-setup.sh && ./xray-setup.sh
+  ```
+ 
+ <h3 align="center">Screenshots</h3>
+<p align="center">
+<img src="https://raw.githubusercontent.com/jinGGo007/AUTOSCRIPT/main/v6.jpg">
+  
 
-Type menux for more option
+  # VPN SERVICES AND PORTS
 
-======================================================
+- VMESS-WS-TLS           : 443 
+- VMESS-WS-NONTLS        : 80 
+- VLESSWS-TLS            : 443
+- VLESS-WS-NONTLS        : 8000
+- TROJAN TCP             : 443
+- VLESS-XTLS-DIRECT      : 443
+- VLESS-XTLS-SPLICE      : 443
+
+- NGINX                  : 81
+
+
+  
+
+
+  
+
+
