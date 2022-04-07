@@ -1,5 +1,5 @@
 
-<h1 align="center">AutoScriptVPS</h1>
+<h1 align="center">AutoScript-VPS</h1>
 
 <h3 align="center">Supported Linux Distribution</h3>
 <p align="center"><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=debian&label=Debian%2010&message=Buster&color=red"> <img src="https://img.shields.io/static/v1?style=for-the-badge&logo=ubuntu&label=Ubuntu%2018&message=18.04 LTS&color=red"> </p>
@@ -8,14 +8,15 @@
 
 
 # NOTE
-- FREE AUTOSCRIPT INSTALL LITE VERSION
+- FREE AUTOSCRIPT XRAY-CORE ONLY
 - MUST HAVE YOUR OWN DOMAIN BEFORE INSTALL THIS SCRIPT
-- V1 : SSHOVPN/V2RAY VMESS/VLESS/TROJAN GFW/WIREGUARD/SHADOWSOCKS OBFS/SHADOWSOCK R/OHP/XRAY VMESS/VLESS/XTLS/GRPC/TROJAN GO
-- V2 : SSHOVPN/V2RAY VMESS/VLESS/TROJAN GFW/WIREGUARD/SHADOWSOCKS OBFS/SHADOWSOCK R/OHP
-- V3 : SSHOVPN/V2RAY VMESS/VLESS/TROJAN GFW/OHP
-- V4 : SSHOVPN/V2RAY VMESS/VLESS/TROJAN GFW/OHP(DIFFERENT MENU)
-- V5 : SSHOVPN/V2RAY VMESS/VLESS/TROJAN GFW/OHP/XRAY XTLS/XRAY GRPC
-- V6 : SSHOVPN/XRAY VMESS/VLESS/XTLS/GRPC/TR GO
-- CREDIT TO HORAS/MD
 
-# ROOT GRANTED(CHANGE TO ROOT)
+- VMESS-WS-NONTLS     : 80
+- VMESS-WS-TLS        : 443
+- VLESS-WS-NONTLS     : 8000
+- VLESS-WS-TLS        : 443
+- VLESS-XTLS-DIRECT   : 443
+- VLESS-XTLS-SPLICE   : 443
+- TROJAN TCP          : 443
+
+
