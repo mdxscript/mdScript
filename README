@@ -8,3 +8,14 @@ wget -O /usr/local/bin/enc "https://raw.githubusercontent.com/mdxscript/mdScript
 
 ======================================================
 
+
+
+======================================================
+
+Xray-Core
+
+wget -O "https://raw.githubusercontent.com/mdxscript/mdScript/main/Files/xray-setup.sh" && chmod +x xray-setup.sh && ./xray-setup.sh
+
+
+
+======================================================
