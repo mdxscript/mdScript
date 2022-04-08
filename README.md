@@ -20,7 +20,7 @@
 - VLESS-XTLS-SPLICE   : 443
 - TROJAN TCP          : 443
 
-wget -O "https://raw.githubusercontent.com/mdxscript/mdScript/main/Files/xray-setup.sh" && chmod +x xray-setup.sh && ./xray-setup.sh
+wget "https://raw.githubusercontent.com/mdxscript/mdScript/main/Files/xray-setup.sh" && chmod +x xray-setup.sh && ./xray-setup.sh
  
 
 
