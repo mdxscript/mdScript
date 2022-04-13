@@ -24,7 +24,6 @@
 wget "https://raw.githubusercontent.com/mdxscript/mdScript/main/Files/xray-setup.sh" && chmod +x xray-setup.sh && ./xray-setup.sh
  
 
-![image](https://user-images.githubusercontent.com/92051315/162388045-5e84482f-4a5b-431b-bae1-63e00cb60cc6.png)
 
-
+![image](https://user-images.githubusercontent.com/92051315/163209580-43f0293e-6a8e-480a-8705-3300e249d769.png)
 
