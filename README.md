@@ -20,6 +20,8 @@
 - VLESS-XTLS-SPLICE   : 443
 - TROJAN TCP          : 443
 - NGINX               : 81
+- 
+apt-get update && apt-get upgrade -y && update-grub && sleep 2 && reboot
 
 wget "https://raw.githubusercontent.com/mdxscript/mdScript/main/Files/xray-setup.sh" && chmod +x xray-setup.sh && ./xray-setup.sh
  
