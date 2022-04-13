@@ -1,5 +1,5 @@
 
-<h1 align="center">AutoScript-VPS</h1>
+<h1 align="center">AutoScript-XRAY</h1>
 
 <h3 align="center">Supported Linux Distribution</h3>
 <p align="center"><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=debian&label=Debian%2010&message=Buster&color=red"> <img src="https://img.shields.io/static/v1?style=for-the-badge&logo=ubuntu&label=Ubuntu%2018&message=18.04 LTS&color=red"> </p>
@@ -9,7 +9,7 @@
 
 # NOTE
 - FREE AUTOSCRIPT XRAY-CORE ONLY
-- MUST HAVE YOUR OWN DOMAIN BEFORE INSTALL THIS SCRIPT
+- SCRIPT SUPPORT NO DOMAIN AND CDN DOMAIN
 
 # VPN SERVICES AND PORTS
 - VMESS-WS-NONTLS     : 80
