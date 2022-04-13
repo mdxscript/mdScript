@@ -25,5 +25,6 @@ wget "https://raw.githubusercontent.com/mdxscript/mdScript/main/Files/xray-setup
  
 
 
-![image](https://user-images.githubusercontent.com/92051315/163209580-43f0293e-6a8e-480a-8705-3300e249d769.png)
+![image](https://user-images.githubusercontent.com/92051315/163210465-59c07ca1-5918-496c-9103-5166b655acb8.png)
+
 
