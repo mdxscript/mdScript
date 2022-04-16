@@ -21,10 +21,11 @@
 - TROJAN TCP          : 443
 - NGINX               : 81
 
-PORT CHANGER
-DNS CHANGER
-ENCRYPT BASH FILE
-BBR KERNEL
+MENU INCLUDED :
+- PORT CHANGER
+- DNS CHANGER
+- ENCRYPT BASH FILE
+- BBR KERNEL
 
 apt-get update && apt-get upgrade -y && update-grub && sleep 2 && reboot
 
