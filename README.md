@@ -35,7 +35,7 @@ apt-get update && apt-get upgrade -y && update-grub && sleep 2 && reboot
 wget "https://raw.githubusercontent.com/mdxscript/mdScript/main/Files/xray-setup.sh" && chmod +x xray-setup.sh && ./xray-setup.sh
  
 
+![image](https://user-images.githubusercontent.com/92051315/163691010-5beff6ad-1464-4962-b0f7-cac56072d9c5.png)
 
-![image](https://user-images.githubusercontent.com/92051315/163210465-59c07ca1-5918-496c-9103-5166b655acb8.png)
 
 
