@@ -8,7 +8,7 @@
 ### INSTALL SCRIPT
 
 Update Debian 9/10/11
-<pre><code>apt update -y && apt upgrade -y && apt dist-upgrade -y && reboot</code></pre>
+<pre><code>apt update -y && apt upgrade -y && apt install bzip2 -y && apt dist-upgrade -y && reboot</code></pre>
 Update Ubuntu 18/20
 <pre><code>apt-get update && apt-get upgrade -y && apt install bzip2 -y && apt dist-upgrade -y && update-grub && sleep 2 && reboot</code></pre>
 Script Setup
@@ -26,7 +26,7 @@ Update menu ( under maintenance)
 - Tuning profiles on the server
 - Xray Core by @dharak36
 - Added fail2ban
-- Added Bot Telegram
+- Added Bot Telegram ( next update )
 
 ### PORT INFO
 ```
