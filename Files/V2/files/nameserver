@@ -1,0 +1,21 @@
+#!/bin/sh
+REPO="https://raw.githubusercontent.com/mdxscript/mdScript/refs/heads/main/Files/V2/"
+
+	DOMAIN=$(cat /etc/xray/domain)
+	NS_DOMAIN=ns-${DOMAIN}
+
+	IP=$(wget -qO- ipinfo.io/ip)
+	echo "Updating DNS NS for ${NS_DOMAIN}..."
+	cd
+	mkdir -p /etc/slowdns
+	wget -O dnstt-server "${REPOS}slowdns/dnstt-server" >/dev/null 2>&1
+	chmod +x dnstt-server >/dev/null 2>&1
+	wget -O dnstt-client "${REPOS}slowdns/dnstt-client" >/dev/null 2>&1
+	chmod +x dnstt-client >/dev/null 2>&1
+	./dnstt-server -gen-key -privkey-file server.key -pubkey-file server.pub
+	chmod +x *
+	mv * /etc/slowdns
+	wget -O /etc/systemd/system/client.service "${REPOS}slowdns/client" >/dev/null 2>&1
+	wget -O /etc/systemd/system/server.service "${REPOS}slowdns/server" >/dev/null 2>&1
+	sed -i "s/xxxx/$NS_DOMAIN/g" /etc/systemd/system/client.service 
+	sed -i "s/xxxx/$NS_DOMAIN/g" /etc/systemd/system/server.service 
